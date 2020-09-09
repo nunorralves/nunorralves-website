@@ -1,11 +1,11 @@
 # NextJS Blog Website
 
-![GitHub repo size](https://img.shields.io/github/repo-size/nunorralves/seed-nextjs-typescript)
-![GitHub contributors](https://img.shields.io/github/contributors/nunorralves/seed-nextjs-typescript)
-![GitHub stars](https://img.shields.io/github/stars/nunorralves/seed-nextjs-typescript)
-![GitHub downloads](https://img.shields.io/github/downloads/nunorralves/seed-nextjs-typescript/total)
-![GitHub forks](https://img.shields.io/github/forks/nunorralves/seed-nextjs-typescript)
-![GPLv3 license](https://img.shields.io/github/license/nunorralves/seed-nextjs-typescript)
+![GitHub repo size](https://img.shields.io/github/repo-size/nunorralves/nextjs-blog-website)
+![GitHub contributors](https://img.shields.io/github/contributors/nunorralves/nextjs-blog-website)
+![GitHub stars](https://img.shields.io/github/stars/nunorralves/nextjs-blog-website)
+![GitHub downloads](https://img.shields.io/github/downloads/nunorralves/nextjs-blog-website/total)
+![GitHub forks](https://img.shields.io/github/forks/nunorralves/nextjs-blog-website)
+![GPLv3 license](https://img.shields.io/github/license/nunorralves/nextjs-blog-website)
 
 NextJS Blog Website. Created cloning "seed Next.js TypeScript" repository
 
@@ -22,7 +22,7 @@ To install NextJS Blog Website, follow these steps:
 
 Linux, macOS, Windows:
 
-`git clone https://github.com/nunorralves/seed-nextjs-typescript.git`
+`git clone https://github.com/nunorralves/nextjs-blog-website.git`
 
 ## Using NextJS Blog Website
 
