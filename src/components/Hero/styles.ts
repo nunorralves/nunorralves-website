@@ -19,7 +19,7 @@ export const HeroWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 300px;
-  margin: 15px 40px;
+  margin: 15px 20px;
   border-bottom: 1px solid lightgray;
 
   @media only screen and (max-width: 500px) {
@@ -86,7 +86,6 @@ export const Photo = styled.img`
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin-right: 10px;
 
   @media only screen and (max-width: 500px) {
     margin: 20px 0;

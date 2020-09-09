@@ -17,7 +17,7 @@ export const HeaderContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  margin: 15px 20px;
   flex-flow: wrap;
 
   @media only screen and (max-width: 600px) {

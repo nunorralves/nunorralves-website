@@ -17,5 +17,5 @@ export const LatestWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 300px;
-  padding: 15px 40px;
+  margin: 15px 20px;
 `;
