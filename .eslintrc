@@ -1,0 +1,32 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true,
+    "jest": true // prepare for using jest in the future
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/standard",
+    "prettier/react"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "space-before-function-paren": "off", // Disable space between function and parentheses
+    "react/prop-types": "off", // No need to use React propTypes since we will be using TypeScript
+    "semi": [2, "always", { "omitLastInOneLineBlock": true }], // AirBnb style. enforce semi-columns
+    "react/react-in-jsx-scope": "off" // Disable need for importing React since we are already using Next (not needed)
+  }
+}
