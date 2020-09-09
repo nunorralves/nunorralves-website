@@ -61,25 +61,21 @@ export const LinkedIn = styled(FaLinkedin)`
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  cursor: pointer;
 `;
 export const Twitter = styled(FaTwitter)`
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  cursor: pointer;
 `;
 export const Github = styled(FaGithub)`
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  cursor: pointer;
 `;
 export const Email = styled(CgMail)`
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  cursor: pointer;
 `;
 
 export const Photo = styled.img`
@@ -90,4 +86,15 @@ export const Photo = styled.img`
   @media only screen and (max-width: 500px) {
     margin: 20px 0;
   }
+`;
+
+export const StyledLink = styled.a`
+  color: ${props => props.theme.colors.text};
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  transition: scale 100ms ease-in-out;
 `;

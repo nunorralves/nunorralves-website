@@ -13,9 +13,27 @@ export const LatestWrapper = styled.div`
   max-width: 70rem;
   width: 70rem;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: top;
+  padding-bottom: 25px;
+  border-bottom: 1px solid lightgray;
+
+  h1 {
+    color: ${props => props.theme.colors.text};
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+`;
+
+export const CardsWrapper = styled.div`
+  width: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 300px;
-  margin: 15px 20px;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `;

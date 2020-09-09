@@ -89,9 +89,14 @@ export const StyledLink = styled.a`
   cursor: pointer;
   /* text-decoration: none; */
 
-  &:hover {
+  /* &:hover {
     font-weight: 600;
   }
 
-  transition: font-weight 100ms ease-in-out;
+  transition: font-weight 100ms ease-in-out; */
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  transition: scale 100ms ease-in-out;
 `;

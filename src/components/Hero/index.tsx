@@ -7,7 +7,8 @@ import {
   Twitter,
   LinkedIn,
   Github,
-  Email
+  Email,
+  StyledLink
 } from './styles';
 
 export const Hero: React.FC = () => {
@@ -18,19 +19,27 @@ export const Hero: React.FC = () => {
           <h1>Nuno Alves</h1>
           <h2>FullStack Developer</h2>
           <p>
-            Father, Husband, Son, Developer, Manager, Maker...
+            Father, Husband, Son, SW Developer and Manager, Maker...
             <br /> and whatever more i can get time to.
             <br />
             Passionate and eager to learn everyday!
           </p>
           <SocialMedia>
-            <LinkedIn />
-            <Github />
-            <Twitter />
-            <Email />
+            <StyledLink>
+              <LinkedIn />
+            </StyledLink>
+            <StyledLink href="https://github.com/nunorralves">
+              <Github />
+            </StyledLink>
+            <StyledLink>
+              <Twitter />
+            </StyledLink>
+            <StyledLink>
+              <Email />
+            </StyledLink>
           </SocialMedia>
         </Description>
-        <Photo src="photo3.jpg" />
+        <Photo src="photo.jpg" />
       </HeroWrapper>
     </Container>
   );
