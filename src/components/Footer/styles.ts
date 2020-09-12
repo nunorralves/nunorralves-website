@@ -7,9 +7,9 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 15px 20px;
 
   p:first-child {
+    margin-top: 25px;
     font-size: 0.8rem;
   }
   p {
