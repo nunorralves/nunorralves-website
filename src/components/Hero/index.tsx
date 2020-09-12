@@ -19,7 +19,8 @@ export const Hero: React.FC = () => {
           <h1>Nuno Alves</h1>
           <h2>FullStack Developer</h2>
           <p>
-            Father, Husband, Son, SW Developer and Manager, Maker...
+            Father, Husband, Son, SW Development, Management, <br/>
+            Electronics, IOT, Robotics, Maker...
             <br /> and whatever more i can get time to.
             <br />
             Passionate and eager to learn everyday!

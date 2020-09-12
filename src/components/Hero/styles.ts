@@ -82,6 +82,7 @@ export const Photo = styled.img`
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.585); */
 
   @media only screen and (max-width: 500px) {
     margin: 20px 0;

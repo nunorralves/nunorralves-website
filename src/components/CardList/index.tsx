@@ -1,7 +1,7 @@
 import { reformatDate, truncateBlogSummary } from '../../utils';
 import { Container, PostContainer, PostImage } from './styles';
 
-const CardPost: React.FC = ({ post }) => {
+const CardList: React.FC = ({ post }) => {
   return (
     <Container>
       <PostImage src={post.image} alt="" />
@@ -19,4 +19,4 @@ const CardPost: React.FC = ({ post }) => {
   );
 };
 
-export default CardPost;
+export default CardList;

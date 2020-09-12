@@ -12,11 +12,13 @@ const Header: React.FC = () => {
   return (
     <Container>
       <HeaderContainer>
-        <Logo>
-          <LogoText>
-            <h1>nunoalves</h1>
-          </LogoText>
-        </Logo>
+        <Link href="/">
+          <StyledLink>
+            <LogoText>
+              <h1>nunoalves</h1>
+            </LogoText>
+          </StyledLink>
+        </Link>
         <SearchForm>
           <input type="text" placeholder="Search Blog Posts..." />
         </SearchForm>

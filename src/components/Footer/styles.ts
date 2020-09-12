@@ -9,10 +9,11 @@ export const Container = styled.div`
   align-items: center;
 
   p:first-child {
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 0.8rem;
   }
   p {
+    padding-top: 5px;
     font-size: 0.7rem;
   }
 `;

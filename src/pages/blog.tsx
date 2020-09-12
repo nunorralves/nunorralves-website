@@ -1,7 +1,7 @@
 import Header from '../components/Header';
-import Hero from '../components/Hero';
-import LatestEntries from '../components/LatestEntries';
+
 import { Footer } from '../components/Footer';
+import BlogEntries from '../components/BlogEntries';
 
 const posts = [
   {
@@ -27,6 +27,17 @@ const posts = [
   }
 ];
 
+const categories = ['SW Development', 'Electronics'];
+const tags = [
+  'Javascript',
+  'ReactJS',
+  'NextJS',
+  'Arduino',
+  'CSS',
+  'NodeJS',
+  'Express'
+];
+
 const Home: React.FC = () => {
   return (
     <div>
@@ -34,8 +45,8 @@ const Home: React.FC = () => {
         <Header />
       </header>
       <main>
-        <Hero />
-        <LatestEntries latestPosts={posts} />
+        {console.log('cat1:', categories)}
+        <BlogEntries posts={posts} categories={categories} tags={tags} />
       </main>
 
       <footer>

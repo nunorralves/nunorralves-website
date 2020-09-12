@@ -18,6 +18,7 @@ export const LatestWrapper = styled.div`
   align-items: top;
   padding-bottom: 25px;
   border-bottom: 1px solid lightgray;
+  margin: 15px 20px;
 
   h1 {
     color: ${props => props.theme.colors.text};
@@ -30,10 +31,12 @@ export const CardsWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
+  margin-top: 15px;
 
-  @media only screen and (max-width: 500px) {
+  /* @media only screen and (max-width: 500px) {
     flex-direction: column;
-  }
+  } */
 `;

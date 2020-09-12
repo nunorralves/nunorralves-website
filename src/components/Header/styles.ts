@@ -24,18 +24,6 @@ export const HeaderContainer = styled.div`
     flex-direction: column;
   }
 `;
-
-export const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-
-  @media only screen and (max-width: 600px) {
-    margin-bottom: 20px;
-  }
-`;
-
 export const LogoText = styled.div`
   display: flex;
   align-items: center;
@@ -48,12 +36,6 @@ export const LogoText = styled.div`
     padding: 0;
     font-size: 2rem;
     letter-spacing: 0.15rem;
-  }
-
-  span {
-    color: ${props => props.theme.colors.text};
-    font-size: 0.8rem;
-    letter-spacing: 0.1rem;
   }
 `;
 
@@ -94,9 +76,9 @@ export const StyledLink = styled.a`
   }
 
   transition: font-weight 100ms ease-in-out; */
-  &:hover {
+  /* &:hover {
     transform: scale(1.1);
   }
 
-  transition: scale 100ms ease-in-out;
+  transition: scale 100ms ease-in-out; */
 `;

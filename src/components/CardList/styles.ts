@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /* width: 300px; */
-  width: 30%;
-  margin: 15px;
+  width: 95%;
   /* border: 1px solid lightgray; */
   border-radius: 8px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.585);
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
 
   &:hover {
     transform: scale(1.01);
@@ -16,17 +17,11 @@ export const Container = styled.div`
   }
 
   transition: scale 500ms ease-in-out;
-
-  @media only screen and (max-width: 1000px) {
-    width: 45%;
-  }
-  @media only screen and (max-width: 650px) {
-    width: 80%;
-  }
 `;
 
 export const PostImage = styled.img`
-  width: 100%;
+  min-width: 40%;
+  width: 40%;
   overflow: hidden;
   /* border-radius: 8px; */
 `;
