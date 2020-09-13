@@ -28,15 +28,19 @@ export const LatestWrapper = styled.div`
 `;
 
 export const CardsWrapper = styled.div`
-  width: 100%;
+  /* width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   margin-top: 15px;
-
+*/
   /* @media only screen and (max-width: 500px) {
     flex-direction: column;
   } */
+
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;

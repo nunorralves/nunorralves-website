@@ -8,7 +8,7 @@ export const Container = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  margin: 15px;
+  margin: 25px 0;
 
   &:hover {
     transform: scale(1.01);
@@ -17,6 +17,10 @@ export const Container = styled.div`
   }
 
   transition: scale 500ms ease-in-out;
+
+  @media only screen and (max-width: 400px) {
+    flex-direction: column;
+  }
 `;
 
 export const PostImage = styled.img`
@@ -24,6 +28,10 @@ export const PostImage = styled.img`
   width: 40%;
   overflow: hidden;
   /* border-radius: 8px; */
+
+  @media only screen and (max-width: 400px) {
+    width: 100%;
+  }
 `;
 
 export const PostContainer = styled.div`

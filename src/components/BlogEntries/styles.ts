@@ -21,7 +21,7 @@ export const BlogEntriesWrapper = styled.div`
   padding-bottom: 15px;
   border-bottom: 1px solid lightgray;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 700px) {
     flex-direction: column-reverse;
     height: 100%;
     margin: 15px 20px;
@@ -32,7 +32,7 @@ export const BlogEntriesList = styled.div`
   width: 60%;
   height: 100%;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 700px) {
     width: 100%;
   }
 `;
@@ -47,9 +47,9 @@ export const SideBar = styled.div`
     border-bottom: 1px solid lightgray;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 700px) {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 `;
 

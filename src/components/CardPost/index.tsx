@@ -1,4 +1,3 @@
-import { reformatDate, truncateBlogSummary } from '../../utils';
 import { Container, PostContainer, PostImage } from './styles';
 
 const CardPost: React.FC = ({ post }) => {

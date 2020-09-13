@@ -53,7 +53,7 @@ const BlogEntries: React.FC = ({ posts, categories, tags }) => {
             {tags &&
               tags.map(tag => {
                 return (
-                  <Tag>
+                  <Tag key={tag}>
                     <StyledLink>{tag}</StyledLink>
                   </Tag>
                 );

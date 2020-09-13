@@ -2,7 +2,6 @@ import Link from 'next/link';
 import {
   Container,
   HeaderContainer,
-  Logo,
   SearchForm,
   LogoText,
   StyledLink
