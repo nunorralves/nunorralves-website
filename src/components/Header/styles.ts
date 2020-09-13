@@ -69,6 +69,11 @@ export const SearchForm = styled.form`
 export const StyledLink = styled.a`
   color: ${props => props.theme.colors.text};
   cursor: pointer;
+
+  &:hover {
+    color: #000;
+  }
+
   /* text-decoration: none; */
 
   /* &:hover {

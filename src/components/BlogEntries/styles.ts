@@ -44,6 +44,7 @@ export const SideBar = styled.div`
 
   h1 {
     margin: 25px 0;
+    padding-bottom: 5px;
     border-bottom: 1px solid lightgray;
   }
 
@@ -60,6 +61,13 @@ export const Categories = styled.div`
 export const Category = styled.div`
   color: ${props => props.theme.colors.text};
   padding-left: 10px;
+
+  a {
+    &:hover {
+      color: #000;
+      font-size: 0.81rem;
+    }
+  }
 `;
 
 export const Tags = styled.div`
@@ -71,15 +79,15 @@ export const Tag = styled.div`
   color: #ffffff;
   border: 1px solid;
   border-radius: 8px;
-  padding: 3px 8px;
-  margin: 3px;
-  background-color: #33b5e5;
+  padding: 0px 8px 3px 8px;
+  margin: 1px;
+  background-color: #1177dd;
 
   a {
     color: #eee;
   }
   &:hover {
-    background-color: #4285f4;
+    background-color: #1155dd;
   }
 `;
 
@@ -87,5 +95,14 @@ export const StyledLink = styled.a`
   color: ${props => props.theme.colors.text};
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 `;
+
+// color: #ffffff;
+// font-size: 0.7rem;
+// border: 1px solid;
+// border-radius: 8px;
+// padding: 3px 8px;
+// margin: 1px;
+// background-color: #1177dd;
+// font-weight: 600;

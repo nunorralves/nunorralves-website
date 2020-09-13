@@ -1,4 +1,4 @@
-import { Container, PostContainer, PostImage } from './styles';
+import { Container, PostContainer, PostImage, Tags, Tag } from './styles';
 
 const CardList: React.FC = ({ post }) => {
   return (
@@ -13,6 +13,12 @@ const CardList: React.FC = ({ post }) => {
           {/* <ReactMarkdown source={truncateSummary(post.markdownBody)} /> */}
           {post.summary}
         </p>
+        <Tags>
+          {post.tags &&
+            post.tags.map(tag => {
+              return <Tag key={tag}>{tag}</Tag>;
+            })}
+        </Tags>
       </PostContainer>
     </Container>
   );

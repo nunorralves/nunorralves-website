@@ -19,6 +19,7 @@ const LatestEntries: React.FC = ({ latestPosts }) => {
                 post={{
                   image: post.image,
                   title: post.title,
+                  tags: post.tags,
                   date: reformatDate(post.date),
                   readingTime: blogReadingTime(post.content),
                   summary: truncateBlogSummary(post.content, 100)

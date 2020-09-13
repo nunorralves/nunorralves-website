@@ -28,6 +28,7 @@ const BlogEntries: React.FC = ({ posts, categories, tags }) => {
                 post={{
                   image: post.image,
                   title: post.title,
+                  tags: post.tags,
                   date: reformatDate(post.date),
                   readingTime: blogReadingTime(post.content),
                   summary: truncateBlogSummary(post.content, 100)

@@ -56,16 +56,20 @@ export const PostContainer = styled.div`
   }
 `;
 
-export const StyledLink = styled.a`
-  color: ${props => props.theme.colors.text};
-  cursor: pointer;
-  /* text-decoration: none; */
+export const Tags = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  justify-content: flex-end;
+`;
+export const Tag = styled.div`
+  color: #ffffff;
+  font-size: 0.7rem;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 3px 8px;
+  margin: 1px;
+  background-color: #1177dd;
   font-weight: 600;
-  font-size: 0.8rem;
-
-  &:hover {
-    font-size: 0.9rem;
-  }
-
-  transition: font-weight 100ms ease-in-out;
 `;
