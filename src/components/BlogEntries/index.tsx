@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Post } from '../../lib/api';
 import CardList from '../CardList';
 import {
@@ -38,7 +39,9 @@ const BlogEntries: React.FC<IBlogEntriesProps> = ({
               categories.map(category => {
                 return (
                   <Category key={category}>
-                    <StyledLink>{category}</StyledLink>
+                    <Link href={`/categories/${category}`}>
+                      <StyledLink>{category}</StyledLink>
+                    </Link>
                   </Category>
                 );
               })}
@@ -49,7 +52,9 @@ const BlogEntries: React.FC<IBlogEntriesProps> = ({
               tags.map(tag => {
                 return (
                   <Tag key={tag}>
-                    <StyledLink>{tag}</StyledLink>
+                    <Link href={`/tags/${tag}`}>
+                      <StyledLink>{tag}</StyledLink>
+                    </Link>
                   </Tag>
                 );
               })}

@@ -15,9 +15,9 @@ html{
   background: ${props => props.theme.colors.background};
 }
 
-*, button, input{
-  border: 0;
-  background: none;
+*,  button, input{
+  /* border: 0; */
+  /* background: none; */
   font: ${props => props.theme.font.defaultWeight} ${props =>
   props.theme.font.defaultSize} ${props => props.theme.font.default};
 }
