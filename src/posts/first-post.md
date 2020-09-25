@@ -5,8 +5,8 @@ author: 'Nuno Alves'
 description: A primeira publicação do novo site
 date: '2020-09-06'
 coverImage: 'blog1.jpg'
-categories: ['Electronics']
-tags: ['Javascript', 'ReactsJS']
+categories: ['Electronics', 'newCategory']
+tags: ['Javascript', 'ReactsJS', 'Kotlin']
 ---
 
 # Titulo do Primeiro Post

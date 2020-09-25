@@ -61,3 +61,19 @@ export function getAllPosts(): Post[] {
   // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+export function getAllCategories(): string[] {
+  const slugs = getPostSlugs();
+  const categories = slugs.flatMap(slug => getPostBySlug(slug).categories);
+  // sort posts by date in descending order
+  // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return Array.from(new Set(categories));
+}
+
+export function getAllTags(): string[] {
+  const slugs = getPostSlugs();
+  const tags = slugs.flatMap(slug => getPostBySlug(slug).tags);
+  // sort posts by date in descending order
+  // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return Array.from(new Set(tags));
+}
