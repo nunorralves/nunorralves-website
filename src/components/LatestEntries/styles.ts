@@ -44,3 +44,5 @@ export const CardsWrapper = styled.div`
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;
+
+export const StyledLink = styled.a``;

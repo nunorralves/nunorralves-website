@@ -11,6 +11,24 @@ tags: ['Javascript', 'ReactsJS', 'Kotlin']
 
 # Titulo do Primeiro Post
 
-Descrição do post
+## Descrição do post
+
+### Descrição do post H3
 
 lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs
+
+```jsx
+import React from 'react';
+
+const CoolComponent = () => <div>I'm a cool component!!</div>;
+
+export default CoolComponent;
+```
+
+another
+
+```javascript
+let a = 3;
+```
+
+![Cover](/blog1.jpg)

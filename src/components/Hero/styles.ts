@@ -19,8 +19,8 @@ export const HeroWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   /* height: 300px; */
-  margin: 25px 20px;
-  padding-bottom: 25px;
+  margin: 35px 20px;
+  padding-bottom: 35px;
   border-bottom: 1px solid lightgray;
 
   @media only screen and (max-width: 500px) {

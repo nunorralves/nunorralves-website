@@ -20,7 +20,7 @@ export const Hero: React.FC = () => {
           <h2>FullStack Developer & Engineering Manager</h2>
           <p>
             Father, Husband, Son, SW Development, Management, <br />
-            Electronics, IOT, Robotics, Maker...
+            Electronics, IOT, Robotics, Neural Networks...
             <br /> and whatever more i can get time to.
             <br />
             Passionate and eager to learn everyday!

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-const Tags = () => {
+const Tags: React.FC = () => {
   const router = useRouter();
   const { tag } = router.query;
 

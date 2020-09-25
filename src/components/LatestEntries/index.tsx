@@ -1,6 +1,7 @@
-import { Container, LatestWrapper, CardsWrapper } from './styles';
+import { Container, LatestWrapper, CardsWrapper, StyledLink } from './styles';
 import CardPost from '../CardPost';
 import { Post } from '../../lib/api';
+import Link from 'next/link';
 
 interface ILatestEntriesProps {
   latestPosts: Post[];
@@ -12,7 +13,11 @@ const LatestEntries: React.FC<ILatestEntriesProps> = ({ latestPosts }) => {
         <h1>Latest Posts</h1>
         <CardsWrapper>
           {latestPosts.map(post => (
-            <CardPost key={post.title} post={post} />
+            <Link key={post.title} href={`/posts/${post.slug}`}>
+              <StyledLink>
+                <CardPost post={post} />
+              </StyledLink>
+            </Link>
           ))}
         </CardsWrapper>
       </LatestWrapper>
