@@ -17,9 +17,9 @@ export const Hero: React.FC = () => {
       <HeroWrapper>
         <Description>
           <h1>Nuno Alves</h1>
-          <h2>FullStack Developer</h2>
+          <h2>FullStack Developer & Engineering Manager</h2>
           <p>
-            Father, Husband, Son, SW Development, Management, <br/>
+            Father, Husband, Son, SW Development, Management, <br />
             Electronics, IOT, Robotics, Maker...
             <br /> and whatever more i can get time to.
             <br />

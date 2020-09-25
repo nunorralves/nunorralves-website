@@ -2,35 +2,14 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import LatestEntries from '../components/LatestEntries';
 import { Footer } from '../components/Footer';
+import { getAllPosts, Post } from '../lib/api';
+import { GetStaticProps } from 'next';
 
-const posts = [
-  {
-    title: 'Post #1',
-    date: '1-03-2020',
-    image: 'blog1.jpg',
-    tags: ['Javascript', 'ReactsJS'],
-    content:
-      'lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs'
-  },
-  {
-    title: 'Second Post',
-    date: '1-03-2020',
-    image: 'blog2.jpg',
-    tags: ['Javascript', 'ReactsJS', 'NextJS', 'CSS', 'HTML'],
-    content:
-      'lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs'
-  },
-  {
-    title: 'Latest Post dsgdgdfgd fdgd fd',
-    date: '1-03-2020',
-    image: 'blog3.jpg',
-    tags: ['Electronics', 'Arduino'],
-    content:
-      'lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs'
-  }
-];
+interface IndexProps {
+  allPosts: Post[];
+}
 
-const Home: React.FC = () => {
+const Index: React.FC<IndexProps> = ({ allPosts }: IndexProps) => {
   return (
     <div>
       <header>
@@ -38,7 +17,7 @@ const Home: React.FC = () => {
       </header>
       <main>
         <Hero />
-        <LatestEntries latestPosts={posts} />
+        <LatestEntries latestPosts={allPosts} />
       </main>
 
       <footer>
@@ -48,4 +27,12 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export const getStaticProps: GetStaticProps = async () => {
+  const allPosts: Post[] = getAllPosts();
+
+  return {
+    props: { allPosts }
+  };
+};
+
+export default Index;

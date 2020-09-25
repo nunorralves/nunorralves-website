@@ -2,33 +2,8 @@ import Header from '../components/Header';
 
 import { Footer } from '../components/Footer';
 import BlogEntries from '../components/BlogEntries';
-
-const posts = [
-  {
-    title: 'Post #1',
-    date: '1-03-2020',
-    image: 'blog1.jpg',
-    tags: ['Javascript', 'ReactsJS'],
-    content:
-      'lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs'
-  },
-  {
-    title: 'Second Post',
-    date: '1-03-2020',
-    image: 'blog2.jpg',
-    tags: ['Javascript', 'ReactsJS', 'NextJS', 'CSS', 'HTML'],
-    content:
-      'lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs'
-  },
-  {
-    title: 'Latest Post dsgdgdfgd fdgd fd',
-    date: '1-03-2020',
-    image: 'blog3.jpg',
-    tags: ['Electronics', 'Arduino'],
-    content:
-      'lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs'
-  }
-];
+import { getAllPosts, Post } from '../lib/api';
+import { GetStaticProps } from 'next';
 
 const categories = ['SW Development', 'Electronics'];
 const tags = [
@@ -41,15 +16,17 @@ const tags = [
   'Express'
 ];
 
-const Home: React.FC = () => {
+interface BlogProps {
+  allPosts: Post[];
+}
+const Home: React.FC<BlogProps> = ({ allPosts }: BlogProps) => {
   return (
     <div>
       <header>
         <Header />
       </header>
       <main>
-        {console.log('cat1:', categories)}
-        <BlogEntries posts={posts} categories={categories} tags={tags} />
+        <BlogEntries posts={allPosts} categories={categories} tags={tags} />
       </main>
 
       <footer>
@@ -59,4 +36,11 @@ const Home: React.FC = () => {
   );
 };
 
+export const getStaticProps: GetStaticProps = async () => {
+  const allPosts: Post[] = getAllPosts();
+
+  return {
+    props: { allPosts }
+  };
+};
 export default Home;

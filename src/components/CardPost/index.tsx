@@ -1,24 +1,27 @@
+import { Post } from '../../lib/api';
 import {
-  Container,
-  PostContainer,
-  PostImage,
-  Tags,
-  Tag,
-  StyledLink
-} from './styles';
+  blogReadingTime,
+  reformatDate,
+  truncateBlogSummary
+} from '../../utils';
+import { Container, PostContainer, PostImage, Tags, Tag } from './styles';
 
-const CardPost: React.FC = ({ post }) => {
+interface IPost {
+  post: Post;
+}
+
+const CardPost: React.FC<IPost> = ({ post }) => {
   return (
     <Container>
-      <PostImage src={post.image} alt="" />
+      <PostImage src={post.coverImage} alt="" />
       <PostContainer>
         <h2>{post.title}</h2>
         <h3>
-          {post.date} &middot; {post.readingTime}
+          {reformatDate(post.date)} &middot; {blogReadingTime(post.content)}
         </h3>
         <p>
           {/* <ReactMarkdown source={truncateSummary(post.markdownBody)} /> */}
-          {post.summary}
+          {truncateBlogSummary(post.content, 100)}
         </p>
         <Tags>
           {post.tags &&

@@ -18,8 +18,9 @@ export const HeroWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 300px;
-  margin: 15px 20px;
+  /* height: 300px; */
+  margin: 25px 20px;
+  padding-bottom: 25px;
   border-bottom: 1px solid lightgray;
 
   @media only screen and (max-width: 500px) {
@@ -32,11 +33,11 @@ export const Description = styled.div`
   width: 50%;
   color: ${props => props.theme.colors.text};
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 600;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 20px;
   }

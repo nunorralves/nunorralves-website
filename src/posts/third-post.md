@@ -1,10 +1,10 @@
 ---
-title: 'Post #1'
+title: 'Third Post'
 language: pt
 description: A primeira publicação do novo site
-date: '2020-09-06'
-image: 'blog1.jpg'
-tags: ['Javascript', 'ReactsJS']
+date: '1-03-2020'
+image: 'blog3.jpg'
+tags: ['Electronics', 'Arduino']
 ---
 
 # Titulo do Primeiro Post
