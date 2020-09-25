@@ -1,9 +1,11 @@
 ---
 title: 'Third Post'
 language: pt
+author: 'Nuno Alves'
 description: A primeira publicação do novo site
 date: '1-03-2020'
-image: 'blog3.jpg'
+coverImage: 'blog3.jpg'
+categories: ['SW Development', 'Electronics']
 tags: ['Electronics', 'Arduino']
 ---
 

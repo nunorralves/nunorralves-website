@@ -27,17 +27,28 @@ export function getPostBySlug(slug: string): Post {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  let post: Post;
+  const post: Post = {
+    title: '',
+    slug: '',
+    language: '',
+    author: '',
+    date: '',
+    coverImage: '',
+    excerpt: '',
+    categories: [],
+    tags: [],
+    content: ''
+  };
 
-  post.title = data.title;
+  post.title = data.title ? data.title : '';
   post.slug = realSlug;
-  post.language = data.language;
-  post.author = data.author;
-  post.date = data.date;
+  post.language = data.language ? data.language : '';
+  post.author = data.author ? data.author : '';
+  post.date = data.date ? data.date : 'no date';
   post.coverImage = data.coverImage;
-  post.excerpt = data.xcerpt;
-  post.categories = data.categories;
-  post.tags = data.tags;
+  post.excerpt = data.excerpt ? data.excerpt : '';
+  post.categories = data.categories ? data.categories : [];
+  post.tags = data.tags ? data.tags : [];
   post.content = content;
 
   return post;

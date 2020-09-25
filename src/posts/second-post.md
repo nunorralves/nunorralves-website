@@ -1,9 +1,11 @@
 ---
 title: 'Second Post'
 language: pt
+author: 'Nuno Alves'
 description: A primeira publicação do novo site
 date: '1-03-2020'
-image: 'blog2.jpg'
+coverImage: 'blog2.jpg'
+categories: ['SW Development']
 tags: ['Javascript', 'ReactsJS', 'NextJS', 'CSS', 'HTML']
 ---
 
