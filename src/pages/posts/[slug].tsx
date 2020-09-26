@@ -1,10 +1,7 @@
-import Header from '../../components/Header';
-
-import { Footer } from '../../components/Footer';
 import { getPostBySlug, Post } from '../../lib/api';
-import { GetStaticProps } from 'next';
 import { Params } from 'next/dist/next-server/server/router';
 import BlogEntry from '../../components/BlogEntry';
+import { GetServerSideProps } from 'next';
 
 interface BlogProps {
   post: Post;
@@ -16,23 +13,10 @@ const PostEntry: React.FC<BlogProps> = ({
   categories,
   tags
 }: BlogProps) => {
-  return (
-    <div>
-      <header>
-        <Header />
-      </header>
-      <main>
-        <BlogEntry post={post} categories={categories} tags={tags} />
-      </main>
-
-      <footer>
-        <Footer />
-      </footer>
-    </div>
-  );
+  return <BlogEntry post={post} categories={categories} tags={tags} />;
 };
 
-export const getServerSideProps: GetStaticProps = async ({
+export const getServerSideProps: GetServerSideProps = async ({
   params
 }: Params) => {
   const post: Post = getPostBySlug(params.slug);

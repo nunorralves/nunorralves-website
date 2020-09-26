@@ -1,15 +1,15 @@
 ---
-title: 'Second Post'
+title: '6 Post'
 language: pt
 author: 'Nuno Alves'
 description: A primeira publicação do novo site
-date: '2020-03-01'
-coverImage: 'blog2.jpg'
-categories: ['SW Development']
-tags: ['Javascript', 'ReactJS', 'NextJS', 'CSS', 'HTML']
+date: '2020-09-09'
+coverImage: 'blog3.jpg'
+categories: ['SW Development', 'Electronics']
+tags: ['Electronics', 'Arduino']
 ---
 
-# Titulo do Segundo Post
+# Titulo do Primeiro Post
 
 Descrição do post
 

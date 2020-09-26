@@ -12,7 +12,7 @@ interface IPost {
 const CardList: React.FC<IPost> = ({ post }) => {
   return (
     <Container>
-      <PostImage src={post.coverImage} alt="" />
+      <PostImage src={`/${post.coverImage}`} alt="" />
       <PostContainer>
         <h2>{post.title}</h2>
         <h3>

@@ -13,7 +13,7 @@ import {
   StyledLink
 } from './styles';
 
-interface IBlogEntriesProps {
+export interface IBlogEntriesProps {
   posts: Post[];
   categories: string[];
   tags: string[];
@@ -28,9 +28,17 @@ const BlogEntries: React.FC<IBlogEntriesProps> = ({
     <Container>
       <BlogEntriesWrapper>
         <BlogEntriesList>
-          {posts.map(post => {
-            return <CardList key={post.title} post={post} />;
-          })}
+          {posts.map(post => (
+            <Link key={post.title} href={`/posts/${post.slug}`}>
+              <StyledLink>
+                <CardList post={post} />
+              </StyledLink>
+            </Link>
+          ))}
+          {/* <PaginationButtons>
+            <StyledButton onClick={previousPage}>&#8249; Prev</StyledButton>
+            <StyledButton onClick={nextPage}>Next &#8250;</StyledButton>
+          </PaginationButtons> */}
         </BlogEntriesList>
         <SideBar>
           <h1>Categories</h1>
@@ -39,6 +47,7 @@ const BlogEntries: React.FC<IBlogEntriesProps> = ({
               categories.map(category => {
                 return (
                   <Category key={category}>
+                    {/* <Link href={`blog?category=${category}`}> */}
                     <Link href={`/categories/${category}`}>
                       <StyledLink>{category}</StyledLink>
                     </Link>
@@ -52,6 +61,7 @@ const BlogEntries: React.FC<IBlogEntriesProps> = ({
               tags.map(tag => {
                 return (
                   <Tag key={tag}>
+                    {/* <Link href={`blog?tag=${tag}`}> */}
                     <Link href={`/tags/${tag}`}>
                       <StyledLink>{tag}</StyledLink>
                     </Link>

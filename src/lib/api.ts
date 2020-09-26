@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
+import { Tags } from '../components/CardPost/styles';
 
 const postsDirectory = join(process.cwd(), 'src/posts');
 
@@ -44,7 +45,7 @@ export function getPostBySlug(slug: string): Post {
   post.slug = realSlug;
   post.language = data.language ? data.language : '';
   post.author = data.author ? data.author : '';
-  post.date = data.date ? data.date : 'no date';
+  post.date = data.date ? data.date : '';
   post.coverImage = data.coverImage;
   post.excerpt = data.excerpt ? data.excerpt : '';
   post.categories = data.categories ? data.categories : [];
@@ -54,26 +55,52 @@ export function getPostBySlug(slug: string): Post {
   return post;
 }
 
-export function getAllPosts(): Post[] {
+export function getAllPosts(
+  offset = 0,
+  limit = 3,
+  latest = true,
+  category = 'none',
+  tag = 'none',
+  search = 'none'
+): Post[] {
   const slugs = getPostSlugs();
-  const posts = slugs.map(slug => getPostBySlug(slug));
+  let posts = slugs
+    .map(slug => getPostBySlug(slug))
+    .filter(post => {
+      if (category === 'none' && tag === 'none' && search === 'none') {
+        return post;
+      }
+
+      console.log('CATS:', post.categories.toString().toLowerCase());
+      console.log('TAGS:', post.tags.toString().toLowerCase());
+      return (
+        (category !== 'none' && post.categories.includes(category)) ||
+        (tag !== 'none' && post.tags.includes(tag)) ||
+        (search !== 'none' &&
+          (post.tags.toString().toLowerCase().includes(search.toLowerCase()) ||
+            post.categories
+              .toString()
+              .toLowerCase()
+              .includes(search.toLowerCase()) ||
+            post.content.toLowerCase().includes(search.toLowerCase())))
+      );
+    });
+
+  if (latest) {
+    posts = posts.sort((post1, post2) => (post1.date >= post2.date ? -1 : 1));
+  }
   // sort posts by date in descending order
-  // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+  return posts.slice(offset, offset + limit);
 }
 
 export function getAllCategories(): string[] {
   const slugs = getPostSlugs();
   const categories = slugs.flatMap(slug => getPostBySlug(slug).categories);
-  // sort posts by date in descending order
-  // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return Array.from(new Set(categories));
 }
 
 export function getAllTags(): string[] {
   const slugs = getPostSlugs();
   const tags = slugs.flatMap(slug => getPostBySlug(slug).tags);
-  // sort posts by date in descending order
-  // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return Array.from(new Set(tags));
 }

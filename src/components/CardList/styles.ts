@@ -8,7 +8,7 @@ export const Container = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  margin: 25px 0;
+  margin: 45px 0;
 
   &:hover {
     transform: scale(1.01);

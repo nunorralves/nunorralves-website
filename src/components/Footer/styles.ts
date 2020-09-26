@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 10px;
 
   p:first-child {
     margin-top: 20px;

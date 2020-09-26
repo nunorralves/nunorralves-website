@@ -98,6 +98,31 @@ export const StyledLink = styled.a`
   font-size: 0.7rem;
 `;
 
+// export const PaginationButtons = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-end;
+//   margin-top: 50px;
+//   width: 95%;
+// `;
+
+// export const StyledButton = styled.button`
+//   color: #ffffff;
+//   cursor: pointer;
+//   background-color: #1177dd;
+//   width: 150px;
+//   height: 40px;
+//   border: none;
+//   border-radius: 8px;
+//   align-items: right;
+//   margin-left: 10px;
+//   outline: none;
+
+//   &:hover {
+//     background-color: #1155dd;
+//   }
+// `;
+
 // color: #ffffff;
 // font-size: 0.7rem;
 // border: 1px solid;

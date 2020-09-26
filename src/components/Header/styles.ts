@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+// import { FaSearch } from 'react-icons/fa';
 
 export const Container = styled.div`
   max-width: 100%;
@@ -39,10 +40,11 @@ export const LogoText = styled.div`
   }
 `;
 
-export const SearchForm = styled.form`
+export const SearchForm = styled.div`
   margin: 0;
   padding: 0;
   /* width: 100%; */
+  display: flex;
 
   input {
     background: ${props => props.theme.colors.header};
@@ -87,3 +89,11 @@ export const StyledLink = styled.a`
 
   transition: scale 100ms ease-in-out; */
 `;
+
+// export const SearchIcon = styled(FaSearch)`
+//   width: 25px;
+//   height: 25px;
+//   flex-shrink: 0;
+//   margin-left: 5px;
+//   padding-top: 5px;
+// `;

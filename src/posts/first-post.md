@@ -3,10 +3,10 @@ title: 'Post #1'
 language: pt
 author: 'Nuno Alves'
 description: A primeira publicação do novo site
-date: '2020-09-06'
+date: '2020-09-05'
 coverImage: 'blog1.jpg'
 categories: ['Electronics', 'newCategory']
-tags: ['Javascript', 'ReactsJS', 'Kotlin']
+tags: ['Javascript', 'ReactJS', 'Kotlin']
 ---
 
 # Titulo do Primeiro Post
