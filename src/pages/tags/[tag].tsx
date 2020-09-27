@@ -1,4 +1,8 @@
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  GetStaticPaths
+} from 'next';
 import BlogEntries from '../../components/BlogEntries';
 import { getAllCategories, getAllPosts, getAllTags, Post } from '../../lib/api';
 
@@ -14,7 +18,7 @@ const Tags: React.FC<BlogProps> = ({ allPosts, allCategories, allTags }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (
+export const getStaticProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const { tag } = context.params;
@@ -27,6 +31,17 @@ export const getServerSideProps: GetServerSideProps = async (
   return {
     props: { allPosts, allCategories, allTags }
   };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allTags: string[] = await getAllTags();
+
+  const tagsArr = allTags.map(tag => ({
+    params: {
+      tag: tag
+    }
+  }));
+  return { paths: tagsArr, fallback: false };
 };
 
 export default Tags;

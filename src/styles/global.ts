@@ -16,8 +16,6 @@ html{
 }
 
 body, button, input{
-  /* border: 0; */
-  /* background: none; */
   font: ${props => props.theme.font.defaultWeight} ${props =>
   props.theme.font.defaultSize} ${props => props.theme.font.default};
 }

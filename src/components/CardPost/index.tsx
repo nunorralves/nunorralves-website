@@ -6,11 +6,11 @@ import {
 } from '../../utils';
 import { Container, PostContainer, PostImage, Tags, Tag } from './styles';
 
-interface IPost {
+type CardPostProps = {
   post: Post;
-}
+};
 
-const CardPost: React.FC<IPost> = ({ post }) => {
+const CardPost: React.FC<CardPostProps> = ({ post }) => {
   return (
     <Container>
       <PostImage src={post.coverImage} alt="" />
@@ -19,10 +19,7 @@ const CardPost: React.FC<IPost> = ({ post }) => {
         <h3>
           {reformatDate(post.date)} &middot; {blogReadingTime(post.content)}
         </h3>
-        <p>
-          {/* <ReactMarkdown source={truncateSummary(post.markdownBody)} /> */}
-          {truncateBlogSummary(post.content, 100)}
-        </p>
+        <p>{truncateBlogSummary(post.content, 100)}</p>
         <Tags>
           {post.tags &&
             post.tags.map(tag => {

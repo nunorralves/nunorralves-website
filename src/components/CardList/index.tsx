@@ -6,10 +6,10 @@ import {
 } from '../../utils';
 import { Container, PostContainer, PostImage, Tags, Tag } from './styles';
 
-interface IPost {
+type CardListProps = {
   post: Post;
-}
-const CardList: React.FC<IPost> = ({ post }) => {
+};
+const CardList: React.FC<CardListProps> = ({ post }) => {
   return (
     <Container>
       <PostImage src={`/${post.coverImage}`} alt="" />

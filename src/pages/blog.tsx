@@ -2,11 +2,11 @@ import BlogEntries from '../components/BlogEntries';
 import { getAllCategories, getAllPosts, getAllTags, Post } from '../lib/api';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 
-interface BlogProps {
+type BlogProps = {
   allPosts: Post[];
   allCategories: string[];
   allTags: string[];
-}
+};
 
 const Blog: React.FC<BlogProps> = ({
   allPosts,

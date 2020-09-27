@@ -1,4 +1,8 @@
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  GetStaticPaths
+} from 'next';
 import BlogEntries from '../../components/BlogEntries';
 import { getAllCategories, getAllPosts, getAllTags, Post } from '../../lib/api';
 
@@ -18,13 +22,13 @@ const Categories: React.FC<BlogProps> = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (
+export const getStaticProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const { category } = context.params;
   const categoryParam = Array.isArray(category) ? category[0] : category;
 
-  const allPosts: Post[] = getAllPosts(
+  const allPosts: Post[] = await getAllPosts(
     0,
     100,
     true,
@@ -32,12 +36,23 @@ export const getServerSideProps: GetServerSideProps = async (
     'none',
     'none'
   );
-  const allCategories: string[] = getAllCategories();
-  const allTags: string[] = getAllTags();
+  const allCategories: string[] = await getAllCategories();
+  const allTags: string[] = await getAllTags();
 
   return {
     props: { allPosts, allCategories, allTags }
   };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allCategories: string[] = await getAllCategories();
+
+  const pathsArr = allCategories.map(cat => ({
+    params: {
+      category: cat
+    }
+  }));
+  return { paths: pathsArr, fallback: false };
 };
 
 export default Categories;

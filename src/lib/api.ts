@@ -70,8 +70,8 @@ export function getAllPosts(
         return post;
       }
 
-      console.log('CATS:', post.categories.toString().toLowerCase());
-      console.log('TAGS:', post.tags.toString().toLowerCase());
+      // console.log('CATS:', post.categories.toString().toLowerCase());
+      // console.log('TAGS:', post.tags.toString().toLowerCase());
       return (
         (category !== 'none' && post.categories.includes(category)) ||
         (tag !== 'none' && post.tags.includes(tag)) ||

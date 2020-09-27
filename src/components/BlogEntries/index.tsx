@@ -13,13 +13,13 @@ import {
   StyledLink
 } from './styles';
 
-export interface IBlogEntriesProps {
+export type BlogEntriesProps = {
   posts: Post[];
   categories: string[];
   tags: string[];
-}
+};
 
-const BlogEntries: React.FC<IBlogEntriesProps> = ({
+const BlogEntries: React.FC<BlogEntriesProps> = ({
   posts,
   categories,
   tags

@@ -3,10 +3,10 @@ import CardPost from '../CardPost';
 import { Post } from '../../lib/api';
 import Link from 'next/link';
 
-interface ILatestEntriesProps {
+type LatestEntriesProps = {
   latestPosts: Post[];
-}
-const LatestEntries: React.FC<ILatestEntriesProps> = ({ latestPosts }) => {
+};
+const LatestEntries: React.FC<LatestEntriesProps> = ({ latestPosts }) => {
   return (
     <Container>
       <LatestWrapper>

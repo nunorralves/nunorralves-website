@@ -3,9 +3,9 @@ import LatestEntries from '../components/LatestEntries';
 import { getAllPosts, Post } from '../lib/api';
 import { GetStaticProps } from 'next';
 
-interface IndexProps {
+type IndexProps = {
   allPosts: Post[];
-}
+};
 
 const Index: React.FC<IndexProps> = ({ allPosts }: IndexProps) => {
   return (

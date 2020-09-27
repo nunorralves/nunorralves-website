@@ -5,7 +5,7 @@ author: 'Nuno Alves'
 description: A primeira publicação do novo site
 date: '2020-09-06'
 coverImage: 'blog3.jpg'
-categories: ['SW Development', 'Electronics']
+categories: ['SWDevelopment', 'Electronics']
 tags: ['Electronics', 'Arduino']
 ---
 

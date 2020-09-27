@@ -28,21 +28,20 @@ import {
   StyledCoverImage
 } from './styles';
 
-interface IBlogEntryProps {
+type BlogEntryProps = {
   post: Post;
   categories: string[];
   tags: string[];
-}
+};
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 SyntaxHighlighter.registerLanguage('javascript', javascript);
 
-const BlogEntry: React.FC<IBlogEntryProps> = ({ post, categories, tags }) => {
+const BlogEntry: React.FC<BlogEntryProps> = ({ post, categories, tags }) => {
   const CodeBlock = ({ language, value }) => {
     return (
       <SyntaxHighlighter language={language} style={darcula}>
         {value}
       </SyntaxHighlighter>
-      // <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>
     );
   };
 
