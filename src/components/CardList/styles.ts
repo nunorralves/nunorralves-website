@@ -48,7 +48,8 @@ export const PostContainer = styled.div`
   }
   p {
     padding-top: 15px;
-    font-size: 0.95rem;
+    font-weight: 400;
+    font-size: 0.85rem;
 
     span {
       padding-left: 5px;
