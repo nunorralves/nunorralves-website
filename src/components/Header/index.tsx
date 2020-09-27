@@ -11,6 +11,7 @@ import {
 
 const Header: React.FC = () => {
   const [searchText, setSearchText] = useState('');
+  const [prevSearchText, setPrevSearchText] = useState('');
   const router = useRouter();
 
   const updateSearch = async element => {
@@ -19,7 +20,9 @@ const Header: React.FC = () => {
     setSearchText(element.target.value);
   };
 
-  if (searchText !== '') {
+  if (searchText !== '' && searchText !== prevSearchText) {
+    // Required, since it causes a loop this call here
+    setPrevSearchText(searchText);
     router.push({
       pathname: '/blog',
       query: { search: searchText }

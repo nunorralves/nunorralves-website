@@ -1,7 +1,6 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { Tags } from '../components/CardPost/styles';
 
 const postsDirectory = join(process.cwd(), 'src/posts');
 
