@@ -18,31 +18,19 @@ const Blog: React.FC<BlogProps> = ({
   );
 };
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const allPosts: Post[] = getAllPosts(0, 100, true);
-//   const allCategories: string[] = getAllCategories();
-//   const allTags: string[] = getAllTags();
-
-//   return {
-//     props: { allPosts, allCategories, allTags }
-//   };
-// };
-
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const { category, tag, search } = context.query;
+  const { search } = context.query;
 
-  const categoryParam = Array.isArray(category) ? category[0] : category;
-  const tagParam = Array.isArray(tag) ? tag[0] : tag;
   const searchParam = Array.isArray(search) ? search[0] : search;
 
   const allPosts: Post[] = getAllPosts(
     0,
     100,
     true,
-    categoryParam,
-    tagParam,
+    'none',
+    'none',
     searchParam
   );
   const allCategories: string[] = getAllCategories();
