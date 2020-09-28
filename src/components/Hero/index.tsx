@@ -23,7 +23,6 @@ export const Hero: React.FC = () => {
             repudiandae id repellendus maxime architecto inventore esse rerum
             nobis, consectetur, laborum veniam neque, deleniti obcaecati
             doloremque amet temporibus magni et quod. <br />
-            Electronics, IOT, Robotics, Neural Networks...
           </p>
           <SocialMedia>
             <StyledLink href="#">

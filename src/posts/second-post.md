@@ -2,7 +2,7 @@
 title: 'Second Post'
 language: en
 author: 'John Doe'
-description: Second publish on site
+excerpt: Second publish on site
 date: '2020-03-01'
 coverImage: 'blog2.jpg'
 categories: ['SWDevelopment']

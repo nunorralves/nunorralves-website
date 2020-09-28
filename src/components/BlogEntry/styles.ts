@@ -31,6 +31,7 @@ export const BlogEntriesWrapper = styled.div`
 export const BlogEntriesList = styled.div`
   width: 60%;
   height: 100%;
+  overflow: hidden;
 
   @media only screen and (max-width: 700px) {
     width: 100%;
@@ -99,12 +100,6 @@ export const StyledLink = styled.a`
 `;
 
 export const StyledCoverImage = styled.img`
-  width: 240px;
-  height: 240px;
-  /* overflow: hidden; */
-  /* border-radius: 8px; */
-
-  /* @media only screen and (max-width: 400px) {
-    width: 100%;
-  } */
+  width: 100%;
+  margin: 20px 0;
 `;

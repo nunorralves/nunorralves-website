@@ -2,7 +2,7 @@
 title: 'Third Post'
 language: pt
 author: 'John Doe'
-description: Third publish on site
+excerpt: Third publish on site
 date: '2020-09-06'
 coverImage: 'blog3.jpg'
 categories: ['SWDevelopment', 'Electronics']

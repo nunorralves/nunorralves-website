@@ -2,7 +2,7 @@
 title: '6 Post'
 language: pt
 author: 'John Doe'
-description: short description for post
+excerpt: short description for post
 date: '2020-09-09'
 coverImage: 'blog3.jpg'
 categories: ['SWDevelopment', 'Electronics']

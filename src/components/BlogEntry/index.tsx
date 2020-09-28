@@ -50,12 +50,11 @@ const BlogEntry: React.FC<BlogEntryProps> = ({ post, categories, tags }) => {
       <BlogEntriesWrapper>
         <BlogEntriesList>
           <h1>{post.title}</h1>
-          <h1>{post.excerpt}</h1>
-          <h1>{post.language}</h1>
-          <h1>{post.author}</h1>
-          <p>
+          <h3>{post.excerpt}</h3>
+          <small>
+            Published by <strong>{post.author}</strong> on{' '}
             {reformatDate(post.date)} &middot; {blogReadingTime(post.content)}
-          </p>
+          </small>
           <StyledCoverImage src={`/${post.coverImage}`} alt="" />
           <ReactMarkdown
             escapeHtml={false}

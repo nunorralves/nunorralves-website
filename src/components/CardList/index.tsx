@@ -20,7 +20,7 @@ const CardList: React.FC<CardListProps> = ({ post }) => {
         </h3>
         <p>
           {/* <ReactMarkdown source={truncateSummary(post.markdownBody)} /> */}
-          {truncateBlogSummary(post.content, 100)}
+          {truncateBlogSummary(post.excerpt, 100)}
         </p>
         <Tags>
           {post.tags &&

@@ -19,7 +19,7 @@ const CardPost: React.FC<CardPostProps> = ({ post }) => {
         <h3>
           {reformatDate(post.date)} &middot; {blogReadingTime(post.content)}
         </h3>
-        <p>{truncateBlogSummary(post.content, 100)}</p>
+        <p>{truncateBlogSummary(post.excerpt, 100)}</p>
         <Tags>
           {post.tags &&
             post.tags.map(tag => {
