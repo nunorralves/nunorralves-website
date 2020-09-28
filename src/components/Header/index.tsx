@@ -35,7 +35,7 @@ const Header: React.FC = () => {
         <Link href="/">
           <StyledLink onClick={() => setSearchText('')}>
             <LogoText>
-              <h1>nunoalves</h1>
+              <h1>John Doe</h1>
             </LogoText>
           </StyledLink>
         </Link>

@@ -1,16 +1,16 @@
 ---
 title: 'Fourth Post'
-language: pt
-author: 'Nuno Alves'
-description: A primeira publicação do novo site
+language: en
+author: 'John Doe'
+description: short description for post
 date: '2020-09-07'
 coverImage: 'blog3.jpg'
 categories: ['SWDevelopment', 'Electronics']
 tags: ['Electronics', 'Arduino']
 ---
 
-# Titulo do Primeiro Post
+# 4th Post Title
 
-Descrição do post
+Post Description
 
 lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs

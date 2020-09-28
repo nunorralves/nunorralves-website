@@ -1,16 +1,16 @@
 ---
 title: 'Second Post'
-language: pt
-author: 'Nuno Alves'
-description: A primeira publicação do novo site
+language: en
+author: 'John Doe'
+description: Second publish on site
 date: '2020-03-01'
 coverImage: 'blog2.jpg'
 categories: ['SWDevelopment']
 tags: ['Javascript', 'ReactJS', 'NextJS', 'CSS', 'HTML']
 ---
 
-# Titulo do Segundo Post
+# Second post title
 
-Descrição do post
+Post description
 
 lorem ipsum dfgsdjkfhs sduhfslgjks dghslghdf asfafd sdfsdjsl sdgdsjsdhgsdfjghdlfjhgdlhgd jfghdfjgh ghdfllgdhs

@@ -1,17 +1,17 @@
 ---
 title: 'Post #1'
-language: pt
-author: 'Nuno Alves'
-description: A primeira publicação do novo site
+language: en
+author: 'John Doe'
+description: First publish on site
 date: '2020-09-05'
 coverImage: 'blog1.jpg'
 categories: ['Electronics', 'newCategory']
 tags: ['Javascript', 'ReactJS', 'Kotlin']
 ---
 
-# Titulo do Primeiro Post
+# First post title
 
-## Descrição do post
+Post description
 
 ### Descrição do post H3
 

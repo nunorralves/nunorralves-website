@@ -16,26 +16,26 @@ export const Hero: React.FC = () => {
     <Container>
       <HeroWrapper>
         <Description>
-          <h1>Nuno Alves</h1>
-          <h2>FullStack Developer & Engineering Manager</h2>
+          <h1>John Doe</h1>
+          <h2>FullStack Developer</h2>
           <p>
-            Father, Husband, Son, SW Development, Management, <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            repudiandae id repellendus maxime architecto inventore esse rerum
+            nobis, consectetur, laborum veniam neque, deleniti obcaecati
+            doloremque amet temporibus magni et quod. <br />
             Electronics, IOT, Robotics, Neural Networks...
-            <br /> and whatever more i can get time to.
-            <br />
-            Passionate and eager to learn everyday!
           </p>
           <SocialMedia>
-            <StyledLink>
+            <StyledLink href="#">
               <LinkedIn />
             </StyledLink>
-            <StyledLink href="https://github.com/nunorralves">
+            <StyledLink href="#">
               <Github />
             </StyledLink>
-            <StyledLink>
+            <StyledLink href="#">
               <Twitter />
             </StyledLink>
-            <StyledLink>
+            <StyledLink href="#">
               <Email />
             </StyledLink>
           </SocialMedia>
