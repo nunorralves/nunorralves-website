@@ -16,13 +16,11 @@ const lightTheme = {
     white: '#fff',
 
     htmlBackground: '#fff',
-    // headerBackground: 'rgba(240,240,240, 0.8)',
     headerBackground: 'rgba(255,255,255, 0.9)',
     navBackground: 'transparent',
     navItemsBackground: '#DDDDDD',
 
     textPrimary: '#222222',
-    // textSecondary: '#f05a22',
     textSecondary: '#555555',
     textTertiary: '#0090D4',
 
