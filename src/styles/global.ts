@@ -11,8 +11,9 @@ export default createGlobalStyle`
 }
 
 html{
-  min-height: 100%;
-  background: ${props => props.theme.colors.background};
+  background: ${props => props.theme.colors.htmlBackground};
+  color: ${props => props.theme.colors.textPrimary};
+  min-height: 100vh;
 }
 
 body, button, input{
@@ -20,7 +21,4 @@ body, button, input{
   props.theme.font.defaultSize} ${props => props.theme.font.default};
 }
 
-ul {
-  list-style: none;
-}
 `;

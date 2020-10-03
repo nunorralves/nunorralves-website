@@ -5,7 +5,6 @@ author: 'John Doe'
 excerpt: short description for post
 date: '2020-09-08'
 coverImage: 'blog3.jpg'
-categories: ['SWDevelopment', 'Electronics']
 tags: ['Electronics', 'Arduino']
 ---
 

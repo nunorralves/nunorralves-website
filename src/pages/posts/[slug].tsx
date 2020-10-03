@@ -1,36 +1,25 @@
-import { getPostBySlug, getPostSlugs, Post } from '../../lib/api';
-import BlogEntry from '../../components/BlogEntry';
-import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  GetStaticPaths
-} from 'next';
+import { getPostBySlug, getPostSlugs, Post } from '../api/api';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import { BlogPost } from '../../components/BlogPost';
 
 type BlogProps = {
+  slug: string;
   post: Post;
-  categories: string[];
-  tags: string[];
 };
-const PostEntry: React.FC<BlogProps> = ({
-  post,
-  categories,
-  tags
-}: BlogProps) => {
-  return <BlogEntry post={post} categories={categories} tags={tags} />;
+const PostEntry: React.FC<BlogProps> = ({ slug, post }: BlogProps) => {
+  return <BlogPost slug={slug} post={post} />;
 };
 
-export const getStaticProps: GetServerSideProps = async (
-  context: GetServerSidePropsContext
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext
 ) => {
   const { slug } = context.params;
   const slugParam = Array.isArray(slug) ? slug[0] : slug;
 
   const post: Post = getPostBySlug(slugParam);
-  const categories: string[] = post.categories;
-  const tags: string[] = post.tags;
 
   return {
-    props: { post, categories, tags }
+    props: { slug, post }
   };
 };
 

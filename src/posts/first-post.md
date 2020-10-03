@@ -1,11 +1,10 @@
 ---
-title: 'Post #1'
+title: 'First Post on new blog'
 language: en
 author: 'John Doe'
-excerpt: First publish on site
-date: '2020-09-05'
+excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque odio alias similique repudiandae ratione'
+date: '2020-03-05'
 coverImage: 'blog1.jpg'
-categories: ['Electronics', 'newCategory']
 tags: ['Javascript', 'ReactJS', 'Kotlin']
 ---
 

@@ -3,9 +3,8 @@ title: '7 Post'
 language: pt
 author: 'John Doe'
 excerpt: short description for post
-date: '2020-09-09'
+date: '2020-09-10'
 coverImage: 'blog3.jpg'
-categories: ['SWDevelopment', 'Electronics']
 tags: ['Electronics', 'Arduino']
 ---
 

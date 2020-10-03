@@ -4,7 +4,7 @@ import {
   GetStaticPaths
 } from 'next';
 import BlogEntries from '../../components/BlogEntries';
-import { getAllCategories, getAllPosts, getAllTags, Post } from '../../lib/api';
+import { getAllCategories, getAllPosts, getAllTags, Post } from '../api/api';
 
 type BlogProps = {
   allPosts: Post[];

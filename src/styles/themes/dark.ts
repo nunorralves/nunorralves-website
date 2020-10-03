@@ -1,25 +1,38 @@
-import baseTheme from './base';
-
 const darkTheme = {
-  ...baseTheme,
+  title: 'dark',
+  font: {
+    default: 'Roboto, system-ui, sans-serif',
+    monospaced: 'monospace',
+    defaultSize: '16px',
+    defaultWeight: 400
+  },
+  borderRadius: '5px',
   colors: {
-    ...baseTheme.colors,
-    background: '#121212',
-    text: '#fff',
-    header: '#242424',
+    error: '#dc3545',
+    info: '#007bff',
+    success: '#28a745',
+    warning: '#ffc107',
+    black: '#000',
+    white: '#fff',
 
-    primary: '#ff0000',
-    formBackground: '#202020',
-    inputBackground: '#353535',
-    button: '#ff0000',
-    buttonText: '#fff',
-    buttonHover: '#FF6666',
-    link: '#ff0000',
-    linkHover: '#FF6666'
+    htmlBackground: '#121212',
+    headerBackground: 'rgba(0,0,0, 0.9)',
+    navBackground: 'transparent',
+    navItemsBackground: '#242424',
 
-    // lightGray: '#292929',
-    // gray: '#202020',
-    // darkGray: '#101010',
+    textPrimary: '#cccccc',
+    textSecondary: '#aaaaaa',
+    textTertiary: '#0090D4',
+
+    backgroundPrimary: '#121212',
+    backgroundSecondary: '',
+    backgroundTertiary: '',
+
+    button: '',
+    buttonText: '',
+    buttonHover: '',
+    link: '#0090D4',
+    linkHover: 'red'
   }
 };
 

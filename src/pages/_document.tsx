@@ -2,11 +2,11 @@ import Document, {
   DocumentInitialProps,
   DocumentContext,
   Html,
+  Head,
   Main,
   NextScript
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import Head from 'next/head';
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -38,16 +38,15 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="pt">
+      <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <title>Nuno Alves Developer Journal</title>
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
 
-          <link rel="icon" href="" />
+          <link rel="icon" href="/#" />
         </Head>
         <body>
           <Main />

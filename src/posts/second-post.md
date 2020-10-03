@@ -2,12 +2,13 @@
 title: 'Second Post'
 language: en
 author: 'John Doe'
-excerpt: Second publish on site
-date: '2020-03-01'
+excerpt: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque odio alias similique repudiandae ratione
+date: '2020-04-01'
 coverImage: 'blog2.jpg'
-categories: ['SWDevelopment']
 tags: ['Javascript', 'ReactJS', 'NextJS', 'CSS', 'HTML']
 ---
+
+![Cover](/blog2.jpg)
 
 # Second post title
 

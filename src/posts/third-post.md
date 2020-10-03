@@ -2,10 +2,9 @@
 title: 'Third Post'
 language: pt
 author: 'John Doe'
-excerpt: Third publish on site
-date: '2020-09-06'
+excerpt: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque odio alias similique repudiandae ratione
+date: '2020-05-06'
 coverImage: 'blog3.jpg'
-categories: ['SWDevelopment', 'Electronics']
 tags: ['Electronics', 'Arduino']
 ---
 

@@ -10,6 +10,6 @@ export function reformatDate(fullDate: string): string {
 }
 
 export function blogReadingTime(text = ''): string {
-  const minutes = Math.ceil(text.split(/s/g).length / 200);
+  const minutes = Math.ceil(text.split(/s/g).length / 250);
   return minutes + ' min read';
 }
