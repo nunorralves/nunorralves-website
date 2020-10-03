@@ -10,7 +10,6 @@ Project Description
 - [ ] Create Site props for common strings  
 - [ ] Add social links  
 - [ ] Create Contact page (inside about?)  
-- [ ] review theme localstorage  
 
 ### In Progress
 
@@ -22,4 +21,5 @@ Project Description
 - [x] Build Main Layout  
 - [x] Create Firebase Account for page-views  
 - [x] add likes  
+- [x] review theme localstorage  
 
