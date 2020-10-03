@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import React, { useContext } from 'react';
-import { Container, StyledLink, StyledSeparator } from './styles';
+import { Container, StyledLink } from './styles';
 import { LanguageContext } from '../../intl/LanguageProvider';
 import useTranslation from '../../intl/useTranslation';
 
