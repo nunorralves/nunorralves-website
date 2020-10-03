@@ -31,7 +31,7 @@ const lightTheme = {
     button: '',
     buttonText: '',
     buttonHover: '',
-    link: '#0090D4',
+    link: '#007bff',
     linkHover: 'red'
   }
 };

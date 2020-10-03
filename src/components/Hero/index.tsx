@@ -1,17 +1,17 @@
 import { Container, HeroWrapper, Description } from './styles';
+import useTranslation from '../../intl/useTranslation';
 
 export const Hero: React.FC = () => {
+  const { translate } = useTranslation();
+
   return (
     <Container>
       <HeroWrapper>
         <Description>
-          <h1>John Doe</h1>
-          <h2>FullStack Developer & Engineering Manager</h2>
+          <h1>{translate('hero_name')}</h1>
+          <h2>{translate('hero_name_role')}</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-            repudiandae id repellendus maxime architecto inventore esse rerum
-            nobis, consectetur, laborum veniam neque, deleniti obcaecati
-            doloremque amet temporibus magni et quod. <br />
+            {translate('hero_name_description')} <br />
           </p>
         </Description>
       </HeroWrapper>

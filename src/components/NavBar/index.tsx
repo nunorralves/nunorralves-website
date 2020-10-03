@@ -9,6 +9,9 @@ import {
 } from './styles';
 import { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
+import siteConfig from '../../../site.config';
+import useTranslation from '../../intl/useTranslation';
+import { LanguageLink } from '../LanguageLink';
 
 type NavBarProps = {
   toggleTheme(): void;
@@ -17,21 +20,24 @@ type NavBarProps = {
 const NavBar: React.FC<NavBarProps> = ({ toggleTheme }) => {
   const { title } = useContext(ThemeContext);
 
+  const { translate } = useTranslation();
+
   return (
     <ContainerNav>
       <Link href="/">
-        <LogoStyledLink>John Doe</LogoStyledLink>
+        <LogoStyledLink>{siteConfig.site_name}</LogoStyledLink>
       </Link>
       <NavWrapper>
         <Link href="/blog">
-          <StyledLink>Blog</StyledLink>
+          <StyledLink>{translate('blog')}</StyledLink>
         </Link>
         <Link href="/#">
-          <StyledLink>About</StyledLink>
+          <StyledLink>{translate('about')}</StyledLink>
         </Link>
         <StyledLink onClick={toggleTheme}>
           {title === 'light' ? <ThemeSwitcherMoon /> : <ThemeSwitcherSun />}
         </StyledLink>
+        <LanguageLink />
       </NavWrapper>
     </ContainerNav>
   );

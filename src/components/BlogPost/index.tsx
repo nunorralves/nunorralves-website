@@ -34,6 +34,7 @@ import { Tag } from '../Tag';
 import { ViewsCounter } from '../ViewsCounter';
 import { LikeButton } from '../LikeButton';
 import { LikesCounter } from '../LikesCounter';
+import useTranslation from '../../intl/useTranslation';
 
 type BlogPostProps = {
   slug: string;
@@ -88,6 +89,7 @@ const shareOnReddit = (slug: string, post: Post) => {
 
 export const BlogPost: React.FC<BlogPostProps> = ({ slug, post }) => {
   const { title, excerpt } = post;
+  const { translate } = useTranslation();
 
   const CodeBlock = ({ language, value }) => {
     return (
@@ -133,11 +135,11 @@ export const BlogPost: React.FC<BlogPostProps> = ({ slug, post }) => {
         </Link>
       </SocialMedia>
       <SubTitle>
-        {/* <p>{`${views ? views : '–––'} views`}</p> */}
         <SubTitleAuthor>
           <AuthorImage src="/photo.jpg" />
           <h4>
-            Posted by {post.author} on {reformatDate(post.date)}
+            {translate('posted_by')} {post.author} {translate('on')}{' '}
+            {reformatDate(post.date)}
           </h4>
         </SubTitleAuthor>
         <h4>

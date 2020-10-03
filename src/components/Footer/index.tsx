@@ -7,8 +7,12 @@ import {
   Twitter,
   Youtube
 } from './styles';
+import siteConfig from '../../../site.config';
+import useTranslation from '../../intl/useTranslation';
 
 export const Footer: React.FC = () => {
+  const { translate } = useTranslation();
+
   return (
     <FooterContainer>
       <SocialMedia>
@@ -25,7 +29,10 @@ export const Footer: React.FC = () => {
           <Youtube />
         </StyledLink>
       </SocialMedia>
-      <p>&#169;2020 John Doe - All rights reserved</p>
+      <p>
+        &#169;{siteConfig.site_year} {siteConfig.site_name} -{' '}
+        {translate('copyright')}
+      </p>
     </FooterContainer>
   );
 };

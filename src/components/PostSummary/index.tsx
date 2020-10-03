@@ -11,6 +11,7 @@ import {
   Title,
   ViewsLikesContainer
 } from './styles';
+import useTranslation from '../../intl/useTranslation';
 
 type PostSummaryProps = {
   post: Post;
@@ -18,6 +19,7 @@ type PostSummaryProps = {
 
 export const PostSummary: React.FC<PostSummaryProps> = ({ post }) => {
   const { title, excerpt } = post;
+  const { translate } = useTranslation();
 
   return (
     <Container>
@@ -35,8 +37,8 @@ export const PostSummary: React.FC<PostSummaryProps> = ({ post }) => {
         </ViewsLikesContainer>
       </Title>
       <h5>
-        Posted by {post.author} on {reformatDate(post.date)} &middot;{' '}
-        {blogReadingTime(post.content)}
+        {translate('posted_by')} {post.author} {translate('on')}{' '}
+        {reformatDate(post.date)} &middot; {blogReadingTime(post.content)}
       </h5>
       <p>{excerpt}</p>
       <Tags>

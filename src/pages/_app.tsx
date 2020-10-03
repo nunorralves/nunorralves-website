@@ -5,8 +5,9 @@ import darkTheme from '../styles/themes/dark';
 import lightTheme from '../styles/themes/light';
 import { MainLayout } from '../components/layouts/MainLayout';
 import Head from 'next/head';
-import usePersistedState from '../lib/usePersistedStateHook';
-import { useEffect, useState } from 'react';
+// import usePersistedState from '../lib/usePersistedStateHook';
+import { useState } from 'react';
+import { LanguageProvider } from '../intl/LanguageProvider';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   // const [theme, setTheme] = usePersistedState<string>('theme', 'light');
@@ -19,13 +20,15 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <Head>
-          <title>John Doe</title>
-        </Head>
-        <MainLayout toggleTheme={toggleTheme}>
-          <Component {...pageProps} />
-        </MainLayout>
+        <LanguageProvider>
+          <GlobalStyles />
+          <Head>
+            <title>John Doe</title>
+          </Head>
+          <MainLayout toggleTheme={toggleTheme}>
+            <Component {...pageProps} />
+          </MainLayout>
+        </LanguageProvider>
       </ThemeProvider>
     </>
   );

@@ -9,6 +9,10 @@ export const ContainerNav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 export const LogoStyledLink = styled.a`

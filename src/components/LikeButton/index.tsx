@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Container, Heart, HeartFilled } from './styles';
+import useTranslation from '../../intl/useTranslation';
 
 type LikesProps = {
   id: string;
 };
 
 export const LikeButton: React.FC<LikesProps> = ({ id }) => {
-  const [liked, setLiked] = useState('oodt');
+  const [liked, setLiked] = useState('');
+  const { translate } = useTranslation();
 
   const toggleLike = () => {
     if (liked === 'like') {
@@ -20,7 +22,7 @@ export const LikeButton: React.FC<LikesProps> = ({ id }) => {
 
   return (
     <Container onClick={toggleLike}>
-      Like&nbsp;
+      {translate('btn_like_text')}&nbsp;
       {liked === 'like' ? <HeartFilled /> : <Heart />}
     </Container>
   );

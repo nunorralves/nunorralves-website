@@ -12,6 +12,10 @@ export const Container = styled.div`
   line-height: 30px;
   color: ${props => props.theme.colors.white};
   background-color: ${props => props.theme.colors.textTertiary};
+
+  &:hover {
+    background-color: ${props => props.theme.colors.buttonHover};
+  }
 `;
 
 export const Heart = styled(FaRegHeart)`

@@ -1,6 +1,7 @@
 import { ContainerSpan } from './styles';
 import loadDb from '../../lib/db';
 import { useEffect, useState } from 'react';
+import useTranslation from '../../intl/useTranslation';
 
 type ViewsCounterProps = {
   id: string;
@@ -12,6 +13,7 @@ export const ViewsCounter: React.FC<ViewsCounterProps> = ({
   increment = false
 }) => {
   const [views, setViews] = useState('');
+  const { translate } = useTranslation();
 
   useEffect(() => {
     const onViews = newViews => setViews(newViews.val());
@@ -37,9 +39,14 @@ export const ViewsCounter: React.FC<ViewsCounterProps> = ({
     };
   }, [id]);
 
-  const viewsStr = `${views || 'no'} ${
-    views && parseInt(views) === 1 ? 'view' : 'views'
-  }`;
+  // const viewsStr = `${views || 'no'} ${
+  //   views && parseInt(views) === 1 ? translate('view') : translate('views')
+  // }`;
+  const viewsStr = views
+    ? parseInt(views) === 1
+      ? `${views} ${translate('view')}`
+      : `${views} ${translate('views')}`
+    : translate('no_views');
 
   // return `${views ? format(views) : '–––'} views`;
   return <ContainerSpan>{viewsStr}</ContainerSpan>;

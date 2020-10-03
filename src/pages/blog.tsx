@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 import { PostsList } from '../components/PostsList';
 import { useState } from 'react';
+import useTranslation from '../intl/useTranslation';
 
 type BlogProps = {
   allPosts: Post[];
@@ -40,6 +41,7 @@ const StyledInput = styled.input`
 
 const Blog: React.FC<BlogProps> = ({ allPosts }: BlogProps) => {
   const [searchvalue, setSearchValue] = useState('');
+  const { translate } = useTranslation();
 
   const filteredBlogPosts = allPosts
     .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
@@ -52,22 +54,19 @@ const Blog: React.FC<BlogProps> = ({ allPosts }: BlogProps) => {
 
   return (
     <section>
-      <StyledH1>Blog</StyledH1>
-      <StyledP>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque at
-        explicabo quia odit. Numquam nemo qui cupiditate.{' '}
-      </StyledP>
+      <StyledH1>{translate('blog')}</StyledH1>
+      <StyledP>{translate('blog_description')}</StyledP>
       <StyledInput
         aria-label="Search articles"
         type="text"
         onChange={e => setSearchValue(e.target.value)}
-        placeholder="Search articles by title, excerpt or tag"
+        placeholder={translate('blog_search_placeholder')}
       />
       {/* <PostsList title={'Most Popular'} posts={mostPopular(allPosts)} />
       <br /> */}
       {(!filteredBlogPosts.length && 'No posts found.') ||
         (filteredBlogPosts.length && (
-          <PostsList title={'All Posts'} posts={filteredBlogPosts} />
+          <PostsList title={translate('all_posts')} posts={filteredBlogPosts} />
         ))}
     </section>
   );
