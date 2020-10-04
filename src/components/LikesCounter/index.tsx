@@ -29,8 +29,6 @@ export const LikesCounter: React.FC<LikesCounterProps> = ({ id }) => {
     };
   }, [id]);
 
-  // const likesStr = `${likes || 'no'} ${
-  //   likes && parseInt(likes) === 1 ? translate('like') : translate('likes')
   const likesStr = likes
     ? parseInt(likes) === 1
       ? `${likes} ${translate('like')}`

@@ -34,3 +34,4 @@ yarn-error.log*
 .vercel
 
 nextblog-firebase.json
+.mdx-data

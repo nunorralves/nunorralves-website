@@ -1,8 +1,10 @@
 {
   "presets": ["next/babel"],
   "plugins": [
+    "import-glob-array",
+
+    // "styled-components",
     [
-      // "styled-components",
       "babel-plugin-styled-components",
       {
         "ssr": false, // false for dev (true)

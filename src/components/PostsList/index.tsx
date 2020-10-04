@@ -1,27 +1,26 @@
-import { Post } from '../../pages/api/api';
 import { PostSummary } from '../PostSummary';
 import { ContainerSection } from './styles';
 import useTranslation from '../../intl/useTranslation';
+import { PostMetadata } from '../../../types/PostMetadata';
 
 type PostsListProps = {
   title: string;
-  posts: Post[];
+  postsMetadata: PostMetadata[];
 };
 
-export const PostsList: React.FC<PostsListProps> = ({ title, posts }) => {
+export const PostsList: React.FC<PostsListProps> = ({
+  title,
+  postsMetadata
+}) => {
   const { translate } = useTranslation();
 
   return (
     <ContainerSection>
       <h2>{title}</h2>
-      {(!posts || !posts.length) && translate('no_posts_found')}
-      {posts &&
-        posts.map(post => (
-          // <Link key={post.title} href={`/posts/${post.slug}`}>
-          //   <StyledLink>
-          <PostSummary key={post.title} post={post} />
-          //   </StyledLink>
-          // </Link>
+      {(!postsMetadata || !postsMetadata.length) && translate('no_posts_found')}
+      {postsMetadata &&
+        postsMetadata.map(postMetadata => (
+          <PostSummary key={postMetadata.title} postMetadata={postMetadata} />
         ))}
     </ContainerSection>
   );

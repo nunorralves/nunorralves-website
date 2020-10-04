@@ -8,8 +8,3 @@ export function reformatDate(fullDate: string): string {
   // return date.toDateString().slice(4);
   // return date.getUTCMonth() + ' ' + date.getDay() + ', ' + date.getFullYear();
 }
-
-export function blogReadingTime(text = ''): string {
-  const minutes = Math.ceil(text.split(/s/g).length / 250);
-  return minutes + ' min';
-}

@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { Post } from '../../pages/api/api';
-import { blogReadingTime, reformatDate } from '../../utils';
+import { reformatDate } from '../../utils/utils';
 import { LikesCounter } from '../LikesCounter';
 import { Tag } from '../Tag';
 import { ViewsCounter } from '../ViewsCounter';
@@ -12,36 +11,41 @@ import {
   ViewsLikesContainer
 } from './styles';
 import useTranslation from '../../intl/useTranslation';
+import { PostMetadata } from '../../../types/PostMetadata';
 
 type PostSummaryProps = {
-  post: Post;
+  postMetadata: PostMetadata;
 };
 
-export const PostSummary: React.FC<PostSummaryProps> = ({ post }) => {
-  const { title, excerpt } = post;
+export const PostSummary: React.FC<PostSummaryProps> = ({ postMetadata }) => {
+  const {
+    title,
+    author,
+    date,
+    excerpt,
+    slug,
+    readingTime,
+    tags
+  } = postMetadata;
   const { translate } = useTranslation();
 
   return (
     <Container>
       <Title>
-        <Link href={`/posts/${post.slug}`} passHref>
+        <Link href={`/blog/${slug}`} passHref>
           <StyledLink>{title}</StyledLink>
         </Link>
-        {/* <p>{`${views ? views : '–––'} views`}</p> */}
-        {/* <p>{views} views</p> */}
         <ViewsLikesContainer>
-          <ViewsCounter id={post.slug} increment={false} />
-          &nbsp;&middot;&nbsp; <LikesCounter id={post.slug} />
+          <ViewsCounter id={slug} increment={false} />
+          &nbsp;&middot;&nbsp; <LikesCounter id={slug} />
         </ViewsLikesContainer>
       </Title>
       <h5>
-        {translate('posted_by')} {post.author} {translate('on')}{' '}
-        {reformatDate(post.date)} &middot; {blogReadingTime(post.content)}
+        {translate('posted_by')} {author} {translate('on')} {reformatDate(date)}{' '}
+        &middot; {readingTime}
       </h5>
       <p>{excerpt}</p>
-      <Tags>
-        {post.tags && post.tags.map(tag => <Tag key={tag} tag={tag} />)}
-      </Tags>
+      <Tags>{tags && tags.map(tag => <Tag key={tag} tag={tag} />)}</Tags>
     </Container>
   );
 };

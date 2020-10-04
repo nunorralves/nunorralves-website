@@ -1,13 +1,8 @@
-import { getAllPosts, Post } from './api/api';
-import { GetStaticProps } from 'next';
 import styled from 'styled-components';
+import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { PostsList } from '../components/PostsList';
 import { useState } from 'react';
 import useTranslation from '../intl/useTranslation';
-
-type BlogProps = {
-  allPosts: Post[];
-};
 
 const StyledH1 = styled.h1`
   font-size: 2.25rem;
@@ -35,15 +30,11 @@ const StyledInput = styled.input`
   }
 `;
 
-// const mostPopular: Post[] = (allPosts: Post[]) => {
-//   return allPosts;
-// };
-
-const Blog: React.FC<BlogProps> = ({ allPosts }: BlogProps) => {
+const Blog: React.FC = () => {
   const [searchvalue, setSearchValue] = useState('');
   const { translate } = useTranslation();
 
-  const filteredBlogPosts = allPosts
+  const filteredBlogPosts = blogPosts
     .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
     .filter(
       post =>
@@ -66,18 +57,13 @@ const Blog: React.FC<BlogProps> = ({ allPosts }: BlogProps) => {
       <br /> */}
       {(!filteredBlogPosts.length && 'No posts found.') ||
         (filteredBlogPosts.length && (
-          <PostsList title={translate('all_posts')} posts={filteredBlogPosts} />
+          <PostsList
+            title={translate('all_posts')}
+            postsMetadata={filteredBlogPosts}
+          />
         ))}
     </section>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const allPosts: Post[] = getAllPosts();
-
-  return {
-    props: { allPosts }
-  };
 };
 
 export default Blog;

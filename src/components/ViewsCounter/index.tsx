@@ -17,7 +17,7 @@ export const ViewsCounter: React.FC<ViewsCounterProps> = ({
 
   useEffect(() => {
     const onViews = newViews => setViews(newViews.val());
-    let db;
+    let db = null;
 
     const fetchData = async () => {
       db = await loadDb('views');
@@ -39,15 +39,11 @@ export const ViewsCounter: React.FC<ViewsCounterProps> = ({
     };
   }, [id]);
 
-  // const viewsStr = `${views || 'no'} ${
-  //   views && parseInt(views) === 1 ? translate('view') : translate('views')
-  // }`;
   const viewsStr = views
     ? parseInt(views) === 1
       ? `${views} ${translate('view')}`
       : `${views} ${translate('views')}`
     : translate('no_views');
 
-  // return `${views ? format(views) : '–––'} views`;
   return <ContainerSpan>{viewsStr}</ContainerSpan>;
 };
