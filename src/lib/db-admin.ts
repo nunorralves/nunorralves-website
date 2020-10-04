@@ -41,7 +41,7 @@ try {
       privateKey: process.env.NEXT_PUBLIC_FIREBASE_PRIVATE_KEY,
       projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
     }),
-    databaseURL: 'https://nextblog-6aa55.firebaseio.com'
+    databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL
   });
 } catch (error) {
   /*
