@@ -19,6 +19,8 @@ export const LogoStyledLink = styled.a`
   font-size: 2.5rem;
   letter-spacing: 0.15rem;
   font-weight: 600;
+  text-decoration: none;
+  color: ${props => props.theme.colors.textPrimary};
 
   &:hover {
     cursor: pointer;
@@ -36,6 +38,8 @@ export const StyledLink = styled.a`
   padding: 0 1rem;
   line-height: 2.5rem;
   border-radius: ${props => props.theme.borderRadius};
+  text-decoration: none;
+  color: ${props => props.theme.colors.textPrimary};
 
   &:hover {
     cursor: pointer;

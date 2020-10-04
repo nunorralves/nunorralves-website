@@ -24,10 +24,8 @@ export const PostSummary: React.FC<PostSummaryProps> = ({ post }) => {
   return (
     <Container>
       <Title>
-        <Link key={post.title} href={`/posts/${post.slug}`}>
-          <StyledLink>
-            <h3>{title}</h3>
-          </StyledLink>
+        <Link href={`/posts/${post.slug}`} passHref>
+          <StyledLink>{title}</StyledLink>
         </Link>
         {/* <p>{`${views ? views : '–––'} views`}</p> */}
         {/* <p>{views} views</p> */}

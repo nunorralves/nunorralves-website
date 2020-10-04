@@ -24,14 +24,14 @@ const NavBar: React.FC<NavBarProps> = ({ toggleTheme }) => {
 
   return (
     <ContainerNav>
-      <Link href="/">
+      <Link href="/" passHref>
         <LogoStyledLink>{siteConfig.site_name}</LogoStyledLink>
       </Link>
       <NavWrapper>
-        <Link href="/blog">
+        <Link href="/blog" passHref>
           <StyledLink>{translate('blog')}</StyledLink>
         </Link>
-        <Link href="/#">
+        <Link href="/#" passHref>
           <StyledLink>{translate('about')}</StyledLink>
         </Link>
         <StyledLink onClick={toggleTheme}>

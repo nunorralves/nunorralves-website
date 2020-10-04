@@ -18,7 +18,13 @@ export const Container = styled.div`
 `;
 
 export const StyledLink = styled.a`
+  color: ${props => props.theme.colors.textPrimary};
+  text-decoration: none;
   cursor: pointer;
+
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 600;
 `;
 
 export const Title = styled.div`
@@ -27,12 +33,6 @@ export const Title = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  h3 {
-    font-size: 1.5rem;
-    line-height: 1.25;
-    font-weight: 600;
-  }
 
   p {
     line-height: 1.25;

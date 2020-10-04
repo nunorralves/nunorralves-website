@@ -5,7 +5,7 @@ const DB = async (data: string): Promise<firebase.database.Reference> => {
 
   try {
     firebase.initializeApp({
-      databaseURL: 'https://nextblog-6aa55.firebaseio.com'
+      databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL
     });
   } catch (error) {
     /*
