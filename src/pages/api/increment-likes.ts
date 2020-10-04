@@ -15,7 +15,8 @@ const incrementLikes = async (
     });
   }
 
-  const ref = dbAdmin.ref('likes').child(req.query.id[0]);
+  const id = Array.isArray(req.query.id) ? req.query.id[0] : req.query.id;
+  const ref = dbAdmin.ref('likes').child(id);
   const { snapshot } = await ref.transaction(currentLikes => {
     if (currentLikes === null) {
       return 1;

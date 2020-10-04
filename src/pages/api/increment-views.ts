@@ -11,7 +11,8 @@ const incrementViews = async (
     });
   }
 
-  const ref = dbAdmin.ref('views').child(req.query.id[0]);
+  const id = Array.isArray(req.query.id) ? req.query.id[0] : req.query.id;
+  const ref = dbAdmin.ref('views').child(id);
   const { snapshot } = await ref.transaction(currentViews => {
     if (currentViews === null) {
       return 1;
