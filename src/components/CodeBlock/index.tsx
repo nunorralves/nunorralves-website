@@ -1,16 +1,21 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/vsDark';
+import darkTheme from 'prism-react-renderer/themes/vsDark';
+// import theme from 'prism-react-renderer/themes/oceanicNext';
+import lightTheme from 'prism-react-renderer/themes/github';
 import { Line, LineContent, LineNo } from './styles';
+import { ThemeContext } from 'styled-components';
+import { useContext } from 'react';
 
 const CodeBlock = ({ children, className }) => {
+  const { title } = useContext(ThemeContext);
   const language = className.replace(/language-/, '');
 
   // console.log('==============', children, className, language);
   return (
     <Highlight
       {...defaultProps}
-      theme={theme}
+      theme={title === 'light' ? lightTheme : darkTheme}
       code={children}
       language={language}
     >
