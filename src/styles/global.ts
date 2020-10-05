@@ -21,11 +21,4 @@ body, button, input{
   props.theme.font.defaultSize} ${props => props.theme.font.default};
 }
 
- /* Override for displaying correctly line numbers height on mdx-prism syntax highlight */
-.line-numbers-rows{
-  span {
-    line-height: 1.5rem !important;
-  }
-}
-
 `;
