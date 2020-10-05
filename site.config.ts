@@ -1,4 +1,4 @@
 export default {
-  site_year: '_2020',
-  site_name: '_John Doe'
+  site_year: '2020',
+  site_name: 'John Doe'
 };
