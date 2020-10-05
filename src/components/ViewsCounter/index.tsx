@@ -5,13 +5,9 @@ import useTranslation from '../../intl/useTranslation';
 
 type ViewsCounterProps = {
   id: string;
-  increment: boolean;
 };
 
-export const ViewsCounter: React.FC<ViewsCounterProps> = ({
-  id,
-  increment = false
-}) => {
+export const ViewsCounter: React.FC<ViewsCounterProps> = ({ id }) => {
   const [views, setViews] = useState('');
   const { translate } = useTranslation();
 
@@ -24,13 +20,14 @@ export const ViewsCounter: React.FC<ViewsCounterProps> = ({
       db.child(id).on('value', onViews);
     };
 
-    const registerView = () =>
-      fetch(`/api/increment-views?id=${encodeURIComponent(id)}`);
-
-    if (increment) {
-      registerView();
-    }
     fetchData();
+    //   const registerView = () =>
+    //     fetch(`/api/increment-views?id=${encodeURIComponent(id)}`);
+
+    //   if (increment) {
+    //     registerView();
+    //   }
+    //   fetchData();
 
     return () => {
       if (db) {

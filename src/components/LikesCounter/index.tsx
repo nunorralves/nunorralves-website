@@ -13,7 +13,7 @@ export const LikesCounter: React.FC<LikesCounterProps> = ({ id }) => {
 
   useEffect(() => {
     const onLikes = newLikes => setLikes(newLikes.val());
-    let db;
+    let db = null;
 
     const fetchData = async () => {
       db = await loadDb('likes');

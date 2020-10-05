@@ -1,28 +1,21 @@
 import styled from 'styled-components';
-import { frontMatter as enBlogPosts } from './blog/en/**/*.mdx';
-import { frontMatter as ptBlogPosts } from './blog/pt/**/*.mdx';
+import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { PostsList } from '../components/PostsList';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import useTranslation from '../intl/useTranslation';
-import { LanguageContext } from '../intl/LanguageProvider';
 
 const Blog: React.FC = () => {
   const [searchvalue, setSearchValue] = useState('');
   const { translate } = useTranslation();
-  const [locale] = useContext(LanguageContext);
 
-  const filterBlogPosts = () => {
-    const scannedBlogPosts = locale === 'en' ? enBlogPosts : ptBlogPosts;
-    return scannedBlogPosts
-      .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
-      .filter(
-        post =>
-          post.title.toLowerCase().includes(searchvalue) ||
-          post.excerpt.toLowerCase().includes(searchvalue) ||
-          post.tags.toString().toLowerCase().includes(searchvalue)
-      );
-  };
-  const filteredBlogPosts = filterBlogPosts();
+  const filteredBlogPosts = blogPosts
+    .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
+    .filter(
+      post =>
+        post.title.toLowerCase().includes(searchvalue) ||
+        post.excerpt.toLowerCase().includes(searchvalue) ||
+        post.tags.toString().toLowerCase().includes(searchvalue)
+    );
 
   return (
     <section>
@@ -40,7 +33,6 @@ const Blog: React.FC = () => {
         (filteredBlogPosts.length && (
           <PostsList
             title={translate('all_posts')}
-            subtitle={translate('on_language')}
             postsMetadata={filteredBlogPosts}
           />
         ))}

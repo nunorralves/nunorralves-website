@@ -22,14 +22,14 @@ import { LikeButton } from '../LikeButton';
 import { LikesCounter } from '../LikesCounter';
 import useTranslation from '../../intl/useTranslation';
 import { PostMetadata } from '../../../types/PostMetadata';
-import { useContext, useEffect, useState } from 'react';
-import { LanguageContext } from '../../intl/LanguageProvider';
-import { useRouter } from 'next/dist/client/router';
+import { useEffect } from 'react';
 
 type BlogPostProps = {
   postMetadata: PostMetadata;
   postContent: JSX.Element;
 };
+
+const POST_BASE_URL = process.env.NEXT_PUBLIC_URL + '/blog';
 
 export const BlogPost: React.FC<BlogPostProps> = ({
   postMetadata,
@@ -37,14 +37,10 @@ export const BlogPost: React.FC<BlogPostProps> = ({
 }) => {
   const { title, excerpt, author, date, tags, slug } = postMetadata;
   const { translate } = useTranslation();
-  const [locale] = useContext(LanguageContext);
-  const [prevLocale] = useState(locale);
-  const router = useRouter();
 
   useEffect(() => {
-    console.log('####:', slug, locale, prevLocale);
-    if (locale !== prevLocale) router.push(`/blog/${locale}/${slug}`);
-  }, [locale]);
+    fetch(`/api/increment-views?id=${encodeURIComponent(slug)}`);
+  }, []);
 
   return (
     <ContainerArticle>
@@ -86,9 +82,8 @@ export const BlogPost: React.FC<BlogPostProps> = ({
           </h4>
         </SubTitleAuthor>
         <h4>
-          {postMetadata.readingTime} &middot;{' '}
-          <ViewsCounter id={slug} increment={true} /> &middot;{' '}
-          <LikesCounter id={slug} />
+          {postMetadata.readingTime} &middot; <ViewsCounter id={slug} />{' '}
+          &middot; <LikesCounter id={slug} />
         </h4>
       </SubTitle>
       <Tags>{tags && tags.map(tag => <Tag key={tag} tag={tag} />)}</Tags>
@@ -103,7 +98,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
 };
 
 const shareOnLinkedin = (slug: string, post: PostMetadata) => {
-  const url = `https://johndoe.com/posts/${encodeURI(slug)}`;
+  const url = `${POST_BASE_URL}/${encodeURI(slug)}`;
   const title = encodeURI(post?.title);
   const summary = encodeURI(post?.excerpt);
   const shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&t=${title}&summary=${summary}`;
@@ -111,18 +106,18 @@ const shareOnLinkedin = (slug: string, post: PostMetadata) => {
 };
 
 const shareOnTwitter = (slug: string, post: PostMetadata) => {
-  const url = `https://johndoe.com/posts/${encodeURI(slug)}`;
+  const url = `${POST_BASE_URL}/${encodeURI(slug)}`;
   const text = encodeURI(post?.title);
-  const via = 'nunorralves';
-  const hashtags = post?.tags?.toString();
+  const via = '';
+  const hashtags = encodeURI(post?.tags?.toString());
   const shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}&via=${via}&hashtags=${hashtags}`;
   return shareUrl;
 };
 
 const shareOnFacebook = (slug: string, post: PostMetadata) => {
-  const url = `https://johndoe.com/posts/${encodeURI(slug)}`;
+  const url = `${POST_BASE_URL}/${encodeURI(slug)}`;
   const title = encodeURI(post?.title);
-  const hashtags = post?.tags?.toString();
+  const hashtags = encodeURI(post?.tags?.toString());
   const shareUrl = `http://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}&hashtag=${hashtags}`;
   return shareUrl;
 };
@@ -132,14 +127,14 @@ function isMobileOrTablet() {
 }
 
 const shareOnWhatsapp = (slug: string, post: PostMetadata) => {
-  const url = `https://johndoe.com/posts/${encodeURI(slug)}`;
+  const url = `${POST_BASE_URL}/${encodeURI(slug)}`;
   const title = encodeURI(post?.title);
   const shareUrl = `https://web.whatsapp.com/send?text=${title}%20${url}`;
   return shareUrl;
 };
 
 const shareOnReddit = (slug: string, post: PostMetadata) => {
-  const url = `https://johndoe.com/posts/${encodeURI(slug)}`;
+  const url = `${POST_BASE_URL}/${encodeURI(slug)}`;
   const title = encodeURI(post?.title);
   const shareUrl = `http://www.reddit.com/submit?url=${url}&title=${title}`;
   return shareUrl;

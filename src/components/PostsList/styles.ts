@@ -9,12 +9,6 @@ export const ContainerSection = styled.section`
     font-weight: 600;
     margin: 0;
   }
-
-  h5 {
-    font-size: 0.8rem;
-    font-weight: 400;
-    font-style: italic;
-  }
 `;
 
 export const StyledLink = styled.a`

@@ -16,16 +16,16 @@ export const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <SocialMedia>
-        <StyledLink href="#">
+        <StyledLink target="_blank" href={siteConfig.linkedin}>
           <Linkedin />
         </StyledLink>
-        <StyledLink href="#">
+        <StyledLink target="_blank" href={siteConfig.github}>
           <Github />
         </StyledLink>
-        <StyledLink href="#">
+        <StyledLink target="_blank" href={siteConfig.twitter}>
           <Twitter />
         </StyledLink>
-        <StyledLink href="#">
+        <StyledLink target="_blank" href={siteConfig.youtube}>
           <Youtube />
         </StyledLink>
       </SocialMedia>

@@ -31,7 +31,7 @@ const NavBar: React.FC<NavBarProps> = ({ toggleTheme }) => {
         <Link href="/blog" passHref>
           <StyledLink>{translate('blog')}</StyledLink>
         </Link>
-        <Link href="/#" passHref>
+        <Link href="/about" passHref>
           <StyledLink>{translate('about')}</StyledLink>
         </Link>
         <StyledLink onClick={toggleTheme}>

@@ -18,7 +18,8 @@ export default (
     });
   }
 
-  const ref = dbAdmin.ref('views').child(req.query.id[0]);
+  const id = Array.isArray(req.query.id) ? req.query.id[0] : req.query.id;
+  const ref = dbAdmin.ref('views').child(id);
 
   return ref.once('value', snapshot => {
     res.status(200).json({
