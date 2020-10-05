@@ -1,7 +1,7 @@
 export const LangContent = {
   en: {
-    en: 'english',
-    pt: 'portuguese',
+    en: 'English',
+    pt: 'Portuguese',
     blog: '_Blog',
     about: '_About',
     hero_name: '__John Doe',
@@ -12,6 +12,7 @@ export const LangContent = {
       '_Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque atexplicabo quia odit. Numquam nemo qui cupiditate.',
     blog_search_placeholder: 'Search articles by title, excerpt or tag',
     copyright: '_All rights reserved',
+    on_language: 'on english language',
     no_posts_found: '_No posts found.',
     latest_posts: '_Latest Posts',
     all_posts: 'All Posts',
@@ -26,8 +27,8 @@ export const LangContent = {
     btn_like_text: '_Like'
   },
   pt: {
-    en: 'inglês',
-    pt: 'português',
+    en: 'Inglês',
+    pt: 'Português',
     blog: '_PT_Blog',
     about: 'Acerca',
     hero_name: '_PT_John Doe',
@@ -38,6 +39,7 @@ export const LangContent = {
       '_PT_Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque atexplicabo quia odit. Numquam nemo qui cupiditate.',
     blog_search_placeholder: 'Procurar artigos por titulo, descrição ou tags',
     copyright: '_Todos os direitos reservados',
+    on_language: 'em lingua portuguesa',
     no_posts_found: 'Não foram encontrados artigos.',
     latest_posts: '_Últimos Artigos',
     all_posts: 'Todos os Artigos',

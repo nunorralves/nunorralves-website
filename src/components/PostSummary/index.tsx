@@ -12,6 +12,8 @@ import {
 } from './styles';
 import useTranslation from '../../intl/useTranslation';
 import { PostMetadata } from '../../../types/PostMetadata';
+import { useContext } from 'react';
+import { LanguageContext } from '../../intl/LanguageProvider';
 
 type PostSummaryProps = {
   postMetadata: PostMetadata;
@@ -28,11 +30,12 @@ export const PostSummary: React.FC<PostSummaryProps> = ({ postMetadata }) => {
     tags
   } = postMetadata;
   const { translate } = useTranslation();
+  const [locale] = useContext(LanguageContext);
 
   return (
     <Container>
       <Title>
-        <Link href={`/blog/${slug}`} passHref>
+        <Link href={`/blog/${locale}/${slug}`} passHref>
           <StyledLink>{title}</StyledLink>
         </Link>
         <ViewsLikesContainer>
