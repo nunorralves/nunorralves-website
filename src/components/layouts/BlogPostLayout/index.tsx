@@ -1,17 +1,6 @@
-import { ReactNode } from 'react';
-import { PostMetadata } from '../../../../types/PostMetadata';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { BlogPost } from '../../BlogPost';
 
-type BlogPostLayoutProps = {
-  children: ReactNode;
-  frontMatter: PostMetadata;
-};
-
-const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
-  children,
-  frontMatter
-}) => {
+export default function BlogPostLayout({ children, frontMatter }) {
   return <BlogPost postMetadata={frontMatter} postContent={children} />;
-};
-
-export default BlogPostLayout;
+}

@@ -21,7 +21,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx", "src/components/codeblock.jsx", "src/components/layouts/BlogPostLayout/index.tsx"
   ],
   "exclude": [
     "node_modules"

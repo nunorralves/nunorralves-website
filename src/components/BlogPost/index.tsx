@@ -1,16 +1,4 @@
 import { reformatDate } from '../../utils/utils';
-import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx';
-import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
-import {
-  // dark,
-  // prism,
-  // coy,
-  darcula
-  //, dracula
-  // , tomorrow,
-  // vscDarkPlus
-} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import {
   AuthorImage,
   ContainerArticle,
@@ -34,15 +22,11 @@ import { LikeButton } from '../LikeButton';
 import { LikesCounter } from '../LikesCounter';
 import useTranslation from '../../intl/useTranslation';
 import { PostMetadata } from '../../../types/PostMetadata';
-import { ReactNode } from 'react';
 
 type BlogPostProps = {
   postMetadata: PostMetadata;
-  postContent: ReactNode;
+  postContent: JSX.Element;
 };
-
-SyntaxHighlighter.registerLanguage('jsx', jsx);
-SyntaxHighlighter.registerLanguage('javascript', javascript);
 
 const shareOnLinkedin = (slug: string, post: PostMetadata) => {
   const url = `https://johndoe.com/posts/${encodeURI(slug)}`;
@@ -94,18 +78,6 @@ export const BlogPost: React.FC<BlogPostProps> = ({
   const { title, excerpt, author, date, tags, slug } = postMetadata;
   const { translate } = useTranslation();
 
-  const CodeBlock = ({ language, value }) => {
-    return (
-      <SyntaxHighlighter language={language} style={darcula}>
-        {value}
-      </SyntaxHighlighter>
-    );
-  };
-
-  const ImageRenderer = props => {
-    return <img {...props} style={{ maxWidth: '100%' }} />;
-  };
-
   return (
     <ContainerArticle>
       <h1>{title}</h1>
@@ -153,14 +125,6 @@ export const BlogPost: React.FC<BlogPostProps> = ({
       </SubTitle>
       <Tags>{tags && tags.map(tag => <Tag key={tag} tag={tag} />)}</Tags>
       <br />
-      {/* <ReactMarkdown
-        escapeHtml={false}
-        source={post.content}
-        renderers={{
-          code: CodeBlock,
-          image: ImageRenderer
-        }} />
-        */}
       {postContent}
       <br />
       <FeedbackLikes>

@@ -8,6 +8,8 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { LanguageProvider } from '../intl/LanguageProvider';
 import siteConfig from '../../site.config';
+import { MDXProvider } from '@mdx-js/react';
+import MDXComponents from '../MDXComponents';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [theme, setTheme] = useState<string>('light');
@@ -17,8 +19,8 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   };
 
   return (
-    <>
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <MDXProvider components={MDXComponents}>
         <LanguageProvider>
           <GlobalStyles />
           <Head>
@@ -28,8 +30,8 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             <Component {...pageProps} />
           </MainLayout>
         </LanguageProvider>
-      </ThemeProvider>
-    </>
+      </MDXProvider>
+    </ThemeProvider>
   );
 };
 
