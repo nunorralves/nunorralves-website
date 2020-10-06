@@ -41,6 +41,7 @@ export const Title = styled.div`
 
   @media only screen and (max-width: 700px) {
     flex-direction: column;
+    align-items: flex-start;
   }
 `;
 

@@ -12,6 +12,7 @@ export const ContainerNav = styled.nav`
 
   @media only screen and (max-width: 500px) {
     flex-direction: column;
+    row-gap: 1rem;
   }
 `;
 

@@ -12,7 +12,7 @@ export const ContainerArticle = styled.article`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 3rem 0;
+  margin: 2rem 0;
   /* padding: 1rem; */
 
   h1 {

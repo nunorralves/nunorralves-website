@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const MainLayoutContainer = styled.main`
   // Adjustement due to sticky header & navbar - START
   padding-top: 8rem;
+
+  @media only screen and (max-width: 500px) {
+    padding-top: 12rem;
+  }
   // Adjustement due to sticky header & navbar - END
 
   display: flex;
