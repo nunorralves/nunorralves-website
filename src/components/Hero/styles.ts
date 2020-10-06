@@ -31,6 +31,7 @@ export const Description = styled.div`
   width: 50%;
   color: ${props => props.theme.colors.white};
   padding: 2rem;
+
   h1 {
     font-size: 3rem;
     font-weight: 600;
@@ -39,8 +40,16 @@ export const Description = styled.div`
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 20px;
+    @media only screen and (max-width: 320px) {
+      margin-top: 1rem;
+    }
   }
 
+  p {
+    @media only screen and (max-width: 320px) {
+      display: none;
+    }
+  }
   @media only screen and (max-width: 700px) {
     width: 100%;
   }
