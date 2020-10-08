@@ -37,9 +37,6 @@ export const ContainerArticle = styled.article`
     line-height: 1rem;
   }
 
-
-  }
-
   h5 {
     font-size: 0.8rem;
     line-height: 0.8rem;
@@ -55,13 +52,12 @@ export const SubTitle = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   margin: 0 0 10px 0;
 
   @media only screen and (max-width: 700px) {
     flex-direction: column;
     align-items: flex-start;
-    margin: 20px 0;
   }
 `;
 
@@ -70,16 +66,13 @@ export const SubTitleAuthor = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  @media only screen and (max-width: 500px) {
-    flex-direction: row;
-    align-items: flex-start;
-  }
 `;
 
 export const ViewsLikesContainer = styled.div`
-  @media only screen and (max-width: 500px) {
-    margin-top: 15px;
+  h4 {
+    @media only screen and (max-width: 700px) {
+      margin-top: 15px;
+    }
   }
 `;
 
@@ -96,6 +89,10 @@ export const SubTitleContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
+  h5 {
+    font-style: italic;
+  }
 `;
 
 export const Tags = styled.div`
@@ -103,6 +100,11 @@ export const Tags = styled.div`
   flex-direction: row-reverse;
   flex-wrap: wrap;
   margin-top: 5px;
+
+  @media only screen and (max-width: 700px) {
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
 `;
 
 export const SocialMedia = styled.div`
