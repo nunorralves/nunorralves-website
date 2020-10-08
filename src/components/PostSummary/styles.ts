@@ -10,6 +10,10 @@ export const Container = styled.div`
     font-weight: 400;
     font-size: 0.75rem;
     margin-bottom: 0.4rem;
+
+    span {
+      font-style: italic;
+    }
   }
 
   p {

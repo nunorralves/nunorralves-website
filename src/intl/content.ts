@@ -23,7 +23,8 @@ export const LangContent = {
     like: 'like',
     likes: 'likes',
     no_likes: 'no_likes',
-    btn_like_text: 'Like'
+    btn_like_text: 'Like',
+    article_in: 'Article in'
   },
   pt: {
     en: 'Inglês',
@@ -49,6 +50,7 @@ export const LangContent = {
     like: 'gosto',
     likes: 'gostos',
     no_likes: 'sem gostos',
-    btn_like_text: 'Gosto'
+    btn_like_text: 'Gosto',
+    article_in: 'Artigo em'
   }
 };

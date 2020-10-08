@@ -10,9 +10,11 @@ import {
   StyledLink,
   SubTitle,
   SubTitleAuthor,
+  SubTitleContainer,
   // Tag,
   Tags,
   Twitter,
+  ViewsLikesContainer,
   Whatsapp
 } from './styles';
 import Link from 'next/link';
@@ -35,7 +37,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
   postMetadata,
   postContent
 }) => {
-  const { title, excerpt, author, date, tags, slug } = postMetadata;
+  const { title, language, excerpt, author, date, tags, slug } = postMetadata;
   const { translate } = useTranslation();
 
   useEffect(() => {
@@ -76,15 +78,22 @@ export const BlogPost: React.FC<BlogPostProps> = ({
       <SubTitle>
         <SubTitleAuthor>
           <AuthorImage src="/photo.jpg" />
-          <h4>
-            {translate('posted_by')} {author} {translate('on')}{' '}
-            {reformatDate(date)}
-          </h4>
+          <SubTitleContainer>
+            <h4>
+              {translate('posted_by')} {author} {translate('on')}{' '}
+              {reformatDate(date)}
+            </h4>
+            <h5>
+              {translate('article_in')}&nbsp;{translate(language).toLowerCase()}
+            </h5>
+          </SubTitleContainer>
         </SubTitleAuthor>
-        <h4>
-          {postMetadata.readingTime} &middot; <ViewsCounter id={slug} />{' '}
-          &middot; <LikesCounter id={slug} />
-        </h4>
+        <ViewsLikesContainer>
+          <h4>
+            {postMetadata.readingTime} &middot; <ViewsCounter id={slug} />{' '}
+            &middot; <LikesCounter id={slug} />
+          </h4>
+        </ViewsLikesContainer>
       </SubTitle>
       <Tags>{tags && tags.map(tag => <Tag key={tag} tag={tag} />)}</Tags>
       <br />

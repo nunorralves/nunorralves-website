@@ -20,6 +20,7 @@ type PostSummaryProps = {
 export const PostSummary: React.FC<PostSummaryProps> = ({ postMetadata }) => {
   const {
     title,
+    language,
     author,
     date,
     excerpt,
@@ -27,7 +28,7 @@ export const PostSummary: React.FC<PostSummaryProps> = ({ postMetadata }) => {
     readingTime,
     tags
   } = postMetadata;
-  const { translate } = useTranslation();
+  const { translate, locale } = useTranslation();
 
   return (
     <Container>
@@ -42,7 +43,10 @@ export const PostSummary: React.FC<PostSummaryProps> = ({ postMetadata }) => {
       </Title>
       <h5>
         {translate('posted_by')} {author} {translate('on')} {reformatDate(date)}{' '}
-        &middot; {readingTime}
+        &middot; {readingTime}&nbsp;&middot;&nbsp;
+        <span>
+          {translate('article_in')}&nbsp;{translate(language).toLowerCase()}
+        </span>
       </h5>
       <p>{excerpt}</p>
       <Tags>{tags && tags.map(tag => <Tag key={tag} tag={tag} />)}</Tags>

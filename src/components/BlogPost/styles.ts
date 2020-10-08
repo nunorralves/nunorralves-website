@@ -29,11 +29,20 @@ export const ContainerArticle = styled.article`
   }
 
   h4,
+  h5,
   span {
     color: ${props => props.theme.colors.textSecondary};
     font-weight: 400;
     font-size: 1rem;
     line-height: 1rem;
+  }
+
+
+  }
+
+  h5 {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
   }
 
   p {
@@ -51,6 +60,8 @@ export const SubTitle = styled.div`
 
   @media only screen and (max-width: 700px) {
     flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
   }
 `;
 
@@ -61,7 +72,14 @@ export const SubTitleAuthor = styled.div`
   justify-content: space-between;
 
   @media only screen and (max-width: 500px) {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+`;
+
+export const ViewsLikesContainer = styled.div`
+  @media only screen and (max-width: 500px) {
+    margin-top: 15px;
   }
 `;
 
@@ -71,11 +89,13 @@ export const AuthorImage = styled.img`
   border-radius: 50%;
   /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.585); */
   margin-right: 10px;
+`;
 
-  @media only screen and (max-width: 500px) {
-    margin: 20px 0;
-    margin-right: 0px;
-  }
+export const SubTitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 `;
 
 export const Tags = styled.div`
