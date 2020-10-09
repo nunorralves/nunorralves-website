@@ -5,12 +5,11 @@ Project Description
 ### Todo
 
 - [ ] Add next-seo  
-- [ ] Add about page  
-- [ ] Create Contact page (inside about?)  
-- [ ] replace useContext by useTranslation  
 
 ### In Progress
 
+- [ ] Add about page  
+- [ ] Create Contact page (inside about?)  
 
 ### Done ✓
 
@@ -23,4 +22,5 @@ Project Description
 - [x] review theme localstorage  
 - [x] Add social links  
 - [x] Create Site props for common strings  
+- [x] replace useContext by useTranslation  
 

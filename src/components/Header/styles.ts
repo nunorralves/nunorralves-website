@@ -15,5 +15,4 @@ export const ContainerHeader = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 2rem;
 `;

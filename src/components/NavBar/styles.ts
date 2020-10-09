@@ -5,10 +5,11 @@ export const ContainerNav = styled.nav`
   background-color: ${props => props.theme.colors.navBackground};
 
   width: 100%;
-  max-width: 1100px;
+  max-width: 1000px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 2rem 1rem;
 
   @media only screen and (max-width: 500px) {
     flex-direction: column;

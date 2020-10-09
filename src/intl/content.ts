@@ -24,7 +24,18 @@ export const LangContent = {
     likes: 'likes',
     no_likes: 'no_likes',
     btn_like_text: 'Like',
-    article_in: 'Article in'
+    article_in: 'Article in',
+    about_description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusantium dignissimos similique totam voluptatum molestias dolor mollitia tempora nihil odio molestiae harum incidunt corporis esse quasi pariatur, voluptatem cupiditate ea.',
+    contact_me: 'Contact Me',
+    cannot_be_empty: 'Cannot be empty, please fill the field',
+    invalid_email_format: 'Invalid email format',
+    from: 'Name',
+    email: 'Email',
+    message: 'Message',
+    submit: 'Send',
+    message_sent: 'Message sent!',
+    message_not_sent: 'There was a problem, please try again!'
   },
   pt: {
     en: 'Inglês',
@@ -51,6 +62,18 @@ export const LangContent = {
     likes: 'gostos',
     no_likes: 'sem gostos',
     btn_like_text: 'Gosto',
-    article_in: 'Artigo em'
+    article_in: 'Artigo em',
+    about_description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusantium dignissimos similique totam voluptatum molestias dolor mollitia tempora nihil odio molestiae harum incidunt corporis esse quasi pariatur, voluptatem cupiditate ea.',
+    // contact_me: 'Envie-me um email',
+    contact_me: 'Contacte-me',
+    cannot_be_empty: 'Campo vazio, por favor preencha',
+    invalid_email_format: 'Formato de email inválido',
+    from: 'Nome',
+    email: 'Email',
+    message: 'Mensagem',
+    submit: 'Enviar',
+    message_sent: 'Mensagem enviada!',
+    message_not_sent: 'Houve um problema, por favor tente de novo!'
   }
 };
