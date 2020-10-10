@@ -9,7 +9,10 @@ type ShareOnWhatsappProps = {
 };
 
 function isMobileOrTablet() {
-  if (navigator && navigator.userAgent) {
+  if (
+    typeof window !== 'undefined' &&
+    typeof window.navigator !== 'undefined'
+  ) {
     return /(android|iphone|ipad|mobile)/i.test(navigator.userAgent);
   }
   return false;
