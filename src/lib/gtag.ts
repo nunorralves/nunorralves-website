@@ -13,7 +13,7 @@ type EventProps = {
   action: string;
   category: string;
   label: string;
-  value: string;
+  value: number;
 };
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const event = ({ action, category, label, value }: EventProps): void => {

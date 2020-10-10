@@ -32,7 +32,7 @@ const About: React.FC = () => {
       action: 'submit_form',
       category: 'Contact',
       label: emailData.email,
-      value: emailData.message
+      value: 0
     });
 
     setResponse({ status: '', msg: '' });
