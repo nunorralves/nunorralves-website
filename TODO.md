@@ -4,12 +4,13 @@ Project Description
 
 ### Todo
 
+- [ ] fix share on whatsapp mobile  
 - [ ] Add next-seo  
+- [ ] Add google analytics  
+- [ ] Add Portfolio page  
 
 ### In Progress
 
-- [ ] Add about page  
-- [ ] Create Contact page (inside about?)  
 
 ### Done ✓
 
@@ -23,4 +24,6 @@ Project Description
 - [x] Add social links  
 - [x] Create Site props for common strings  
 - [x] replace useContext by useTranslation  
+- [x] Add about page  
+- [x] Create Contact page (inside about?)  
 

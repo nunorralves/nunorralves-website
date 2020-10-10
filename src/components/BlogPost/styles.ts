@@ -1,11 +1,4 @@
 import styled from 'styled-components';
-import {
-  FaLinkedin,
-  FaTwitter,
-  FaFacebook,
-  FaWhatsapp,
-  FaReddit
-} from 'react-icons/fa';
 import { FcLike } from 'react-icons/fc';
 
 export const ContainerArticle = styled.article`
@@ -109,51 +102,9 @@ export const Tags = styled.div`
 
 export const SocialMedia = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 24px);
+  grid-template-columns: repeat(6, 24px);
   grid-gap: 5px;
   margin-bottom: 1rem;
-`;
-
-export const StyledLink = styled.a`
-  color: ${props => props.theme.colors.textPrimary};
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  transition: scale 100ms ease-in-out;
-`;
-
-export const Linkedin = styled(FaLinkedin)`
-  width: 24px;
-  height: 24px;
-  color: ${props => props.theme.colors.textTertiary};
-  flex-shrink: 0;
-`;
-export const Twitter = styled(FaTwitter)`
-  width: 24px;
-  height: 24px;
-  color: ${props => props.theme.colors.textTertiary};
-  flex-shrink: 0;
-`;
-export const Facebook = styled(FaFacebook)`
-  width: 24px;
-  height: 24px;
-  color: ${props => props.theme.colors.textTertiary};
-  flex-shrink: 0;
-`;
-export const Whatsapp = styled(FaWhatsapp)`
-  width: 24px;
-  height: 24px;
-  color: ${props => props.theme.colors.textTertiary};
-  flex-shrink: 0;
-`;
-export const Reddit = styled(FaReddit)`
-  width: 24px;
-  height: 24px;
-  color: ${props => props.theme.colors.textTertiary};
-  flex-shrink: 0;
 `;
 
 export const FeedbackLikes = styled.div`
