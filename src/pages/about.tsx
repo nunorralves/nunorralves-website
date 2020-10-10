@@ -2,25 +2,30 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import useTranslation from '../intl/useTranslation';
 import Loader from 'react-loader-spinner';
+import { NextSeo } from 'next-seo';
+import siteConfig from '../../site.config';
 
 const About: React.FC = () => {
   const { translate } = useTranslation();
+  const URL = `${siteConfig.url}/about`;
+  const TITLE = `${translate('about_page_title')} - ${siteConfig.title}`;
+  const DESCRIPTION = `${translate('about_page_description')}`;
   const [emailData, setEmailData] = useState({
     from: '',
     email: '',
     message: ''
   });
-  const [response, setResponse] = useState({ status: '' });
+  const [response, setResponse] = useState({ status: '', msg: '' });
   const [sending, setSending] = useState(false);
 
   const handleOnChange = e => {
-    setResponse({ status: '' });
+    setResponse({ status: '', msg: '' });
     setEmailData({ ...emailData, [e.target.id]: e.target.value });
   };
 
   const handleOnSubmit = async e => {
     e.preventDefault();
-    setResponse({ status: '' });
+    setResponse({ status: '', msg: '' });
     setSending(true);
     const res = await fetch('/api/sendmail', {
       method: 'POST',
@@ -37,9 +42,9 @@ const About: React.FC = () => {
     // console.log('RESPONSE:', status, msg);
     if (status === 200) {
       setEmailData({ from: '', email: '', message: '' });
-      setResponse({ status: 'ok' });
+      setResponse({ status: 'ok', msg });
     } else {
-      setResponse({ status: 'error' });
+      setResponse({ status: 'error', msg });
     }
     setSending(false);
   };
@@ -60,64 +65,78 @@ const About: React.FC = () => {
   }
 
   return (
-    <section style={{ width: '100%' }}>
-      {sending ? (
-        <StyledLoaderContainer>
-          <Loader
-            type="Bars"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            // timeout={3000} //3 secs
-            visible={true} //3 secs
-          />
-        </StyledLoaderContainer>
-      ) : (
-        <>
-          <StyledH1>{translate('about')}</StyledH1>
-          <StyledP>{translate('about_description')}</StyledP>
-          <StyledH1 style={{ marginTop: '4rem' }}>
-            {translate('contact_me')}
-          </StyledH1>
-          <StyledForm onSubmit={handleOnSubmit}>
-            <StyledLabel htmlFor="name">{translate('from')}</StyledLabel>
-            <StyledInput
-              id="from"
-              type="text"
-              onChange={handleOnChange}
-              onInvalid={e => InvalidMsg(e)}
-              required
-              value={emailData.from}
+    <>
+      <NextSeo
+        title={TITLE}
+        description={DESCRIPTION}
+        canonical={URL}
+        openGraph={{
+          url: URL,
+          title: TITLE,
+          description: DESCRIPTION
+        }}
+      />
+      <section style={{ width: '100%' }}>
+        {sending ? (
+          <StyledLoaderContainer>
+            <Loader
+              type="Bars"
+              color="#00BFFF"
+              height={100}
+              width={100}
+              // timeout={3000} // 3 secs
+              visible={true} // 3 secs
             />
-            <StyledLabel htmlFor="email">{translate('email')}</StyledLabel>
-            <StyledInput
-              id="email"
-              type="email"
-              onChange={handleOnChange}
-              onInvalid={e => InvalidMsg(e)}
-              required
-              value={emailData.email}
-            />
-            <StyledLabel htmlFor="message">{translate('message')}</StyledLabel>
-            <StyledTextArea
-              id="message"
-              onChange={handleOnChange}
-              onInvalid={e => InvalidMsg(e)}
-              required
-              value={emailData.message}
-            />
-            <StyledButton type="submit">{translate('submit')}</StyledButton>
-          </StyledForm>
-        </>
-      )}
-
-      {response.status !== '' &&
-        (response.status === 'ok' ? (
-          <StyledSuccess>{translate('message_sent')}</StyledSuccess>
+          </StyledLoaderContainer>
         ) : (
-          <StyledError>{translate('message_not_sent')}</StyledError>
-        ))}
-    </section>
+          <>
+            <StyledH1>{translate('about')}</StyledH1>
+            <StyledP>{translate('about_description')}</StyledP>
+            <StyledH1 style={{ marginTop: '4rem' }}>
+              {translate('contact_me')}
+            </StyledH1>
+            <StyledForm onSubmit={handleOnSubmit}>
+              <StyledLabel htmlFor="name">{translate('from')}</StyledLabel>
+              <StyledInput
+                id="from"
+                type="text"
+                onChange={handleOnChange}
+                onInvalid={e => InvalidMsg(e)}
+                required
+                value={emailData.from}
+              />
+              <StyledLabel htmlFor="email">{translate('email')}</StyledLabel>
+              <StyledInput
+                id="email"
+                type="email"
+                onChange={handleOnChange}
+                onInvalid={e => InvalidMsg(e)}
+                required
+                value={emailData.email}
+              />
+              <StyledLabel htmlFor="message">
+                {translate('message')}
+              </StyledLabel>
+              <StyledTextArea
+                id="message"
+                onChange={handleOnChange}
+                onInvalid={e => InvalidMsg(e)}
+                required
+                value={emailData.message}
+              />
+              <StyledButton type="submit">{translate('submit')}</StyledButton>
+            </StyledForm>
+          </>
+        )}
+
+        {response.status !== '' &&
+          (response.status === 'ok' ? (
+            <StyledSuccess>{translate('message_sent')}</StyledSuccess>
+          ) : (
+            <StyledError>{translate('message_not_sent')}</StyledError>
+          ))}
+      </section>
+    </>
   );
 };
 

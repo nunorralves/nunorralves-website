@@ -4,8 +4,6 @@ Project Description
 
 ### Todo
 
-- [ ] fix share on whatsapp mobile  
-- [ ] Add next-seo  
 - [ ] Add google analytics  
 - [ ] Add Portfolio page  
 
@@ -14,6 +12,8 @@ Project Description
 
 ### Done ✓
 
+- [x] Add next-seo  
+- [x] fix share on whatsapp mobile  
 - [x] Add I18N  
 - [x] Create Contact pA  
 - [x] Build Page layout  

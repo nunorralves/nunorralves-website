@@ -3,10 +3,15 @@ import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { PostsList } from '../components/PostsList';
 import { useState } from 'react';
 import useTranslation from '../intl/useTranslation';
+import { NextSeo } from 'next-seo';
+import siteConfig from '../../site.config';
 
 const Blog: React.FC = () => {
-  const [searchvalue, setSearchValue] = useState('');
   const { translate } = useTranslation();
+  const URL = `${siteConfig.url}/blog`;
+  const TITLE = `${translate('blog_page_title')} - ${siteConfig.title}`;
+  const DESCRIPTION = `${translate('blog_page_description')}`;
+  const [searchvalue, setSearchValue] = useState('');
 
   const filteredBlogPosts = blogPosts
     .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
@@ -18,25 +23,37 @@ const Blog: React.FC = () => {
     );
 
   return (
-    <section>
-      <StyledH1>{translate('blog')}</StyledH1>
-      <StyledP>{translate('blog_description')}</StyledP>
-      <StyledInput
-        aria-label="Search articles"
-        type="text"
-        onChange={e => setSearchValue(e.target.value)}
-        placeholder={translate('blog_search_placeholder')}
+    <>
+      <NextSeo
+        title={TITLE}
+        description={DESCRIPTION}
+        canonical={URL}
+        openGraph={{
+          url: URL,
+          title: TITLE,
+          description: DESCRIPTION
+        }}
       />
-      {/* <PostsList title={'Most Popular'} posts={mostPopular(allPosts)} />
+      <section>
+        <StyledH1>{translate('blog')}</StyledH1>
+        <StyledP>{translate('blog_description')}</StyledP>
+        <StyledInput
+          aria-label="Search articles"
+          type="text"
+          onChange={e => setSearchValue(e.target.value)}
+          placeholder={translate('blog_search_placeholder')}
+        />
+        {/* <PostsList title={'Most Popular'} posts={mostPopular(allPosts)} />
       <br /> */}
-      {(!filteredBlogPosts.length && 'No posts found.') ||
-        (filteredBlogPosts.length && (
-          <PostsList
-            title={translate('all_posts')}
-            postsMetadata={filteredBlogPosts}
-          />
-        ))}
-    </section>
+        {(!filteredBlogPosts.length && 'No posts found.') ||
+          (filteredBlogPosts.length && (
+            <PostsList
+              title={translate('all_posts')}
+              postsMetadata={filteredBlogPosts}
+            />
+          ))}
+      </section>
+    </>
   );
 };
 

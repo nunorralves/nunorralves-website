@@ -2,8 +2,14 @@ export const LangContent = {
   en: {
     en: 'English',
     pt: 'Portuguese',
+    site_description: 'My Site Description',
     blog: 'Blog',
+    blog_page_title: 'Blog',
+    blog_page_description:
+      'Articles about software, tutorials, programming tips, tech',
     about: 'About',
+    about_page_title: 'About Me',
+    about_page_description: 'Some words about me and contact form',
     hero_name: 'John Doe',
     hero_name_role: 'FullStack Developer & Engineering Manager',
     hero_name_description:
@@ -40,8 +46,15 @@ export const LangContent = {
   pt: {
     en: 'Inglês',
     pt: 'Português',
+    site_description: 'Descrição Site',
     blog: 'Blog',
+    blog_page_title: 'Blog',
+    blog_page_description:
+      'Artigos sobre software, tutoriais, dicas programação, tecnologia',
     about: 'Acerca',
+    about_page_title: 'Acerca de mim',
+    about_page_description:
+      'Algumas palavras sobre mim e formulário de contacto',
     hero_name: 'John Doe',
     hero_name_role: 'FullStack Developer & Engineering Manager',
     hero_name_description:
@@ -65,7 +78,6 @@ export const LangContent = {
     article_in: 'Artigo em',
     about_description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusantium dignissimos similique totam voluptatum molestias dolor mollitia tempora nihil odio molestiae harum incidunt corporis esse quasi pariatur, voluptatem cupiditate ea.',
-    // contact_me: 'Envie-me um email',
     contact_me: 'Contacte-me',
     cannot_be_empty: 'Campo vazio, por favor preencha',
     invalid_email_format: 'Formato de email inválido',

@@ -80,7 +80,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
       </SocialMedia>
       <SubTitle>
         <SubTitleAuthor>
-          <AuthorImage src="/photo.jpg" />
+          <AuthorImage src="/images/photo.jpg" />
           <SubTitleContainer>
             <h4>
               {translate('posted_by')} {author} {translate('on')}{' '}
