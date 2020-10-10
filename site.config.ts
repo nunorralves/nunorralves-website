@@ -1,7 +1,7 @@
 export default {
-  url: 'https://mySite.com',
+  url: process.env.NEXT_PUBLIC_URL,
   title: 'John Doe',
-  image: 'https://mySite.com/static/images/siteimage.jpg',
+  image: process.env.NEXT_PUBLIC_URL + '/static/images/siteimage.jpg',
   default_publisher_logo: '',
   default_locale: 'en_US',
   site_year: '2020',

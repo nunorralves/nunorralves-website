@@ -23,13 +23,14 @@ import { ShareOnFacebook } from '../ShareOnLinks/ShareOnFacebook';
 import { ShareOnWhatsapp } from '../ShareOnLinks/ShareOnWhatsapp';
 import { ShareOnReddit } from '../ShareOnLinks/ShareOnReddit';
 import { ShareOnPocket } from '../ShareOnLinks/ShareOPocket';
+import siteConfig from '../../../site.config';
 
 type BlogPostProps = {
   postMetadata: PostMetadata;
   postContent: JSX.Element;
 };
 
-const POST_BASE_URL = process.env.NEXT_PUBLIC_URL + '/blog';
+const POST_BASE_URL = siteConfig.url + '/blog';
 
 export const BlogPost: React.FC<BlogPostProps> = ({
   postMetadata,
