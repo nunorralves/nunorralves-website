@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "John Doe",
+  "short_name": "John Doe",
   "icons": [
     {
       "src": "/favicons/android-chrome-192x192.png",
