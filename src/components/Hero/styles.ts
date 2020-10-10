@@ -14,7 +14,7 @@ export const Container = styled.div`
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url('/images/hero6.jpg');
+    url('/images/hero.jpg');
   border-radius: 5px;
   margin-top: 20px;
 `;
