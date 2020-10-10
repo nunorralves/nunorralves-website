@@ -7,8 +7,8 @@ export default {
   site_year: '2020',
   site_name: 'John Doe',
   twitter_username: '@johndoe',
-  linkedin: 'https://linkedin.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com',
-  youtube: 'https://youtube.com'
+  linkedin: 'https://linkedin.com/johndoe',
+  github: 'https://github.com/johndoe',
+  twitter: 'https://twitter.com/johndoe',
+  youtube: 'https://youtube.com/johndoe'
 };
