@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import useTranslation from '../intl/useTranslation';
-import Loader from 'react-loader-spinner';
 import { NextSeo } from 'next-seo';
 import siteConfig from '../../site.config';
+import StyledLoader from '../components/StyledLoader';
+import { ContactForm } from '../components/ContactForm';
 
 const About: React.FC = () => {
   const { translate } = useTranslation();
@@ -78,16 +79,7 @@ const About: React.FC = () => {
       />
       <section style={{ width: '100%' }}>
         {sending ? (
-          <StyledLoaderContainer>
-            <Loader
-              type="Bars"
-              color="#00BFFF"
-              height={100}
-              width={100}
-              // timeout={3000} // 3 secs
-              visible={true} // 3 secs
-            />
-          </StyledLoaderContainer>
+          <StyledLoader />
         ) : (
           <>
             <StyledH1>{translate('about')}</StyledH1>
@@ -95,37 +87,12 @@ const About: React.FC = () => {
             <StyledH1 style={{ marginTop: '4rem' }}>
               {translate('contact_me')}
             </StyledH1>
-            <StyledForm onSubmit={handleOnSubmit}>
-              <StyledLabel htmlFor="name">{translate('from')}</StyledLabel>
-              <StyledInput
-                id="from"
-                type="text"
-                onChange={handleOnChange}
-                onInvalid={e => InvalidMsg(e)}
-                required
-                value={emailData.from}
-              />
-              <StyledLabel htmlFor="email">{translate('email')}</StyledLabel>
-              <StyledInput
-                id="email"
-                type="email"
-                onChange={handleOnChange}
-                onInvalid={e => InvalidMsg(e)}
-                required
-                value={emailData.email}
-              />
-              <StyledLabel htmlFor="message">
-                {translate('message')}
-              </StyledLabel>
-              <StyledTextArea
-                id="message"
-                onChange={handleOnChange}
-                onInvalid={e => InvalidMsg(e)}
-                required
-                value={emailData.message}
-              />
-              <StyledButton type="submit">{translate('submit')}</StyledButton>
-            </StyledForm>
+            <ContactForm
+              handleOnSubmit={handleOnSubmit}
+              handleOnChange={handleOnChange}
+              InvalidMsg={InvalidMsg}
+              emailData={emailData}
+            />
           </>
         )}
 
@@ -140,15 +107,6 @@ const About: React.FC = () => {
   );
 };
 
-const StyledLoaderContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height: 50vh;
-  margin: 0 auto;
-`;
-
 const StyledH1 = styled.h1`
   font-size: 2.25rem;
   line-height: 1.25;
@@ -159,45 +117,6 @@ const StyledH1 = styled.h1`
 const StyledP = styled.p`
   line-height: 1.25;
   color: ${props => props.theme.colors.textPrimary};
-`;
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 80%;
-  margin: 2rem 1rem;
-`;
-
-const StyledLabel = styled.label``;
-
-const StyledInput = styled.input`
-  width: 100%;
-  margin: 0.5rem 0 2rem 0;
-  border: 2px solid ${props => props.theme.colors.textSecondary};
-  padding: 6px;
-  border-radius: 6px;
-  outline: 0;
-
-  &:focus,
-  &:hover {
-    border: 2px solid ${props => props.theme.colors.textTertiary};
-  }
-`;
-
-const StyledTextArea = styled.textarea`
-  width: 100%;
-  margin: 0.5rem 0;
-  border: 2px solid ${props => props.theme.colors.textSecondary};
-  padding: 6px;
-  border-radius: 6px;
-  height: 10rem;
-  outline: 0;
-
-  &:focus,
-  &:hover {
-    border: 2px solid ${props => props.theme.colors.textTertiary};
-  }
 `;
 
 const StyledSuccess = styled.p`
@@ -213,24 +132,6 @@ const StyledError = styled.p`
   line-height: 1.25;
   color: ${props => props.theme.colors.error};
   margin: 0 1rem;
-`;
-
-const StyledButton = styled.button`
-  width: 100px;
-  height: 30px;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  border-radius: 3px;
-  outline: 0;
-  border: 2px solid ${props => props.theme.colors.textTertiary};
-  background-color: ${props => props.theme.colors.textTertiary};
-  color: ${props => props.theme.colors.white};
-
-  &:hover {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.textTertiary};
-    font-weight: bold;
-  }
 `;
 
 export default About;
