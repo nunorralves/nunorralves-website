@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PostMetadata } from '../../../../types/PostMetadata';
 import { StyledLink, Whatsapp } from './styles';
+import useTranslation from '../../../intl/useTranslation';
 
 type ShareOnWhatsappProps = {
   postBaseUrl: string;
@@ -32,9 +33,15 @@ export const ShareOnWhatsapp: React.FC<ShareOnWhatsappProps> = ({
   slug,
   postMetadata
 }) => {
+  const { translate } = useTranslation();
+
   return (
     <Link href={shareOnWhatsapp(postBaseUrl, slug, postMetadata)} passHref>
-      <StyledLink target="_blank" data-action="share/whatsapp/share">
+      <StyledLink
+        target="_blank"
+        ata-action="share/whatsapp/share"
+        title={translate('share_on') + ' WhatsApp'}
+      >
         <Whatsapp />
       </StyledLink>
     </Link>

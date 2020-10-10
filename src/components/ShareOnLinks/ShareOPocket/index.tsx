@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PostMetadata } from '../../../../types/PostMetadata';
 import { Pocket, StyledLink } from './styles';
+import useTranslation from '../../../intl/useTranslation';
 
 type ShareOnPocketProps = {
   postBaseUrl: string;
@@ -20,9 +21,11 @@ export const ShareOnPocket: React.FC<ShareOnPocketProps> = ({
   slug,
   postMetadata
 }) => {
+  const { translate } = useTranslation();
+
   return (
     <Link href={shareOnPocket(postBaseUrl, slug, postMetadata)} passHref>
-      <StyledLink target="_blank" data-action="share/whatsapp/share">
+      <StyledLink target="_blank" title={translate('save_on') + ' Pocket'}>
         <Pocket />
       </StyledLink>
     </Link>

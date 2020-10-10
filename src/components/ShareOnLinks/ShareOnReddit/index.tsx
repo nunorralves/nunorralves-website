@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PostMetadata } from '../../../../types/PostMetadata';
 import { StyledLink, Reddit } from './styles';
+import useTranslation from '../../../intl/useTranslation';
 
 type ShareOnRedditProps = {
   postBaseUrl: string;
@@ -20,9 +21,11 @@ export const ShareOnReddit: React.FC<ShareOnRedditProps> = ({
   slug,
   postMetadata
 }) => {
+  const { translate } = useTranslation();
+
   return (
     <Link href={shareOnReddit(postBaseUrl, slug, postMetadata)} passHref>
-      <StyledLink target="_blank">
+      <StyledLink target="_blank" title={translate('share_on') + ' Reddit'}>
         <Reddit />
       </StyledLink>
     </Link>

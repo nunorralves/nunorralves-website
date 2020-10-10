@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PostMetadata } from '../../../../types/PostMetadata';
 import { Facebook, StyledLink } from './styles';
+import useTranslation from '../../../intl/useTranslation';
 
 type ShareOnFacebookProps = {
   postBaseUrl: string;
@@ -21,9 +22,11 @@ export const ShareOnFacebook: React.FC<ShareOnFacebookProps> = ({
   slug,
   postMetadata
 }) => {
+  const { translate } = useTranslation();
+
   return (
     <Link href={shareOnFacebook(postBaseUrl, slug, postMetadata)} passHref>
-      <StyledLink target="_blank">
+      <StyledLink target="_blank" title={translate('share_on') + ' Facebook'}>
         <Facebook />
       </StyledLink>
     </Link>

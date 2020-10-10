@@ -41,7 +41,9 @@ export const LangContent = {
     message: 'Message',
     submit: 'Send',
     message_sent: 'Message sent!',
-    message_not_sent: 'There was a problem, please try again!'
+    message_not_sent: 'There was a problem, please try again!',
+    share_on: 'Share on',
+    save_on: 'Save on'
   },
   pt: {
     en: 'Inglês',
@@ -86,6 +88,8 @@ export const LangContent = {
     message: 'Mensagem',
     submit: 'Enviar',
     message_sent: 'Mensagem enviada!',
-    message_not_sent: 'Houve um problema, por favor tente de novo!'
+    message_not_sent: 'Houve um problema, por favor tente de novo!',
+    share_on: 'Partilha no',
+    save_on: 'Guarda no'
   }
 };
