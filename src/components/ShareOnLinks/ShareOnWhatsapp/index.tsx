@@ -9,7 +9,10 @@ type ShareOnWhatsappProps = {
 };
 
 function isMobileOrTablet() {
-  return /(android|iphone|ipad|mobile)/i.test(navigator.userAgent);
+  if (navigator && navigator.userAgent) {
+    return /(android|iphone|ipad|mobile)/i.test(navigator.userAgent);
+  }
+  return false;
 }
 
 const shareOnWhatsapp = (ostBaseUrl, slug, post) => {
