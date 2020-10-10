@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
+    "@types/gtag.js": "^0.0.3",
     "@types/styled-components": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",

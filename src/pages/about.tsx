@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo';
 import siteConfig from '../../site.config';
 import StyledLoader from '../components/StyledLoader';
 import { ContactForm } from '../components/ContactForm';
+import * as gtag from '../lib/gtag';
 
 const About: React.FC = () => {
   const { translate } = useTranslation();
@@ -26,6 +27,14 @@ const About: React.FC = () => {
 
   const handleOnSubmit = async e => {
     e.preventDefault();
+
+    gtag.event({
+      action: 'submit_form',
+      category: 'Contact',
+      label: emailData.email,
+      value: emailData.message
+    });
+
     setResponse({ status: '', msg: '' });
     setSending(true);
     const res = await fetch('/api/sendmail', {
