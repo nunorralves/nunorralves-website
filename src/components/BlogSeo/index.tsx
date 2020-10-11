@@ -10,7 +10,7 @@ const BlogSeo: React.FC<PostMetadata> = ({
   coverImage,
   author
 }) => {
-  const dateISO = new Date(date).toISOString();
+  const dateISO = date ? new Date(date).toISOString() : '';
   const blogUrl = `${siteConfig.url}/${slug}`;
   const featuredImage = {
     url: `${siteConfig.url}${coverImage}`,
