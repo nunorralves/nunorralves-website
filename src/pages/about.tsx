@@ -86,7 +86,7 @@ const About: React.FC = () => {
           description: DESCRIPTION
         }}
       />
-      <section>
+      <section style={{ width: '100%' }}>
         {sending ? (
           <StyledLoader />
         ) : (
