@@ -4,7 +4,7 @@ const createSlugFromFile = require('./src/utils/create-slug');
 const blogReadingTime = require('./src/utils/reading-time');
 
 module.exports = withMdxEnhanced({
-  layoutPath: 'src/components/layouts/BlogPostLayout',
+  layoutPath: 'src/layouts/BlogPostLayout',
   defaultLayout: true,
   fileExtensions: ['mdx', 'md'],
   remarkPlugins: [],

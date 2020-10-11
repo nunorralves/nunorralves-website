@@ -5,14 +5,14 @@ export const StyledForm = styled.form`
   flex-direction: column;
   justify-content: center;
   max-width: 80%;
-  margin: 2rem 1rem;
+  margin: 1rem 1rem;
 `;
 
 export const StyledLabel = styled.label``;
 
 export const StyledInput = styled.input`
   width: 100%;
-  margin: 0.5rem 0 2rem 0;
+  margin: 0.5rem 0 1rem 0;
   border: 2px solid ${props => props.theme.colors.textSecondary};
   padding: 6px;
   border-radius: 6px;

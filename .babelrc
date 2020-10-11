@@ -2,8 +2,6 @@
   "presets": ["next/babel"],
   "plugins": [
     "import-glob-array",
-
-    // "styled-components",
     [
       "babel-plugin-styled-components",
       {

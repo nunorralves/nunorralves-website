@@ -19,7 +19,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/codeblock.jsx",
-    "src/components/layouts/BlogPostLayout/index.tsx", "src/lib/gtag.ts"
+    "src/layouts/BlogPostLayout/index.tsx", "src/lib/gtag.ts"
   ],
   "exclude": ["node_modules"]
 }

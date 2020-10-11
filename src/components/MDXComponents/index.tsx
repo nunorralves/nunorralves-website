@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable react/display-name */
-import CodeBlock from '../components/CodeBlock';
+import CodeBlock from '../CodeBlock';
 
 const MDXComponents = {
   // h1: props => <h1 style={{ color: 'tomato' }} {...props} />,

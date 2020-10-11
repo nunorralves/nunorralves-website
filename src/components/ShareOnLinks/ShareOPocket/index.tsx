@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PostMetadata } from '../../../../types/PostMetadata';
+import { PostMetadata } from '../../../types/PostMetadata';
 import { Pocket, StyledLink } from './styles';
 import useTranslation from '../../../intl/useTranslation';
 

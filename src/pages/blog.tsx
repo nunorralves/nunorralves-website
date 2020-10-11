@@ -14,6 +14,7 @@ const Blog: React.FC = () => {
   const [searchvalue, setSearchValue] = useState('');
 
   const filteredBlogPosts = blogPosts
+    .filter(post => post.slug !== 'empty') // To remove empty/dummy required to have blogPost defined
     .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
     .filter(
       post =>

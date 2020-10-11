@@ -1,7 +1,7 @@
 import { PostSummary } from '../PostSummary';
 import { ContainerSection } from './styles';
 import useTranslation from '../../intl/useTranslation';
-import { PostMetadata } from '../../../types/PostMetadata';
+import { PostMetadata } from '../../types/PostMetadata';
 
 type PostsListProps = {
   title: string;

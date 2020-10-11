@@ -15,7 +15,7 @@ import { ViewsCounter } from '../ViewsCounter';
 import { LikeButton } from '../LikeButton';
 import { LikesCounter } from '../LikesCounter';
 import useTranslation from '../../intl/useTranslation';
-import { PostMetadata } from '../../../types/PostMetadata';
+import { PostMetadata } from '../../types/PostMetadata';
 import { useEffect } from 'react';
 import { ShareOnLinkedIn } from '../ShareOnLinks/ShareOnLinkedIn';
 import { ShareOnTwitter } from '../ShareOnLinks/ShareOnTwitter';

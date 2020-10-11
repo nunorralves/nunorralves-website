@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { BlogPost } from '../../BlogPost';
-import BlogSeo from '../../BlogSeo';
+import { BlogPost } from '../../components/BlogPost';
+import BlogSeo from '../../components/BlogSeo';
 
 export default function BlogPostLayout({ children, frontMatter }) {
   return (

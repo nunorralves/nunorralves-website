@@ -1,5 +1,5 @@
 import { NextSeo, ArticleJsonLd } from 'next-seo';
-import { PostMetadata } from '../../../types/PostMetadata';
+import { PostMetadata } from '../../types/PostMetadata';
 import siteConfig from '../../../site.config';
 
 const BlogSeo: React.FC<PostMetadata> = ({

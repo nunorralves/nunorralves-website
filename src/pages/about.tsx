@@ -86,14 +86,14 @@ const About: React.FC = () => {
           description: DESCRIPTION
         }}
       />
-      <section style={{ width: '100%' }}>
+      <section>
         {sending ? (
           <StyledLoader />
         ) : (
           <>
             <StyledH1>{translate('about')}</StyledH1>
             <StyledP>{translate('about_description')}</StyledP>
-            <StyledH1 style={{ marginTop: '4rem' }}>
+            <StyledH1 style={{ marginTop: '3rem' }}>
               {translate('contact_me')}
             </StyledH1>
             <ContactForm

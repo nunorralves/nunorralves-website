@@ -11,7 +11,7 @@ import {
   ViewsLikesContainer
 } from './styles';
 import useTranslation from '../../intl/useTranslation';
-import { PostMetadata } from '../../../types/PostMetadata';
+import { PostMetadata } from '../../types/PostMetadata';
 
 type PostSummaryProps = {
   postMetadata: PostMetadata;
