@@ -17,11 +17,19 @@ export const ContainerNav = styled.nav`
   }
 `;
 
+export const StyledLogo = styled.div``;
+
+export const LogoStyledImg = styled.img`
+  width: 32px;
+  height: 32px;
+`;
+
 export const LogoStyledLink = styled.a`
   font-size: 2.5rem;
   letter-spacing: 0.15rem;
   font-weight: 600;
   text-decoration: none;
+  margin-left: 5px;
   color: ${props => props.theme.colors.textPrimary};
 
   &:hover {

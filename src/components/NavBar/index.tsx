@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import {
   ContainerNav,
+  LogoStyledImg,
   LogoStyledLink,
   NavWrapper,
   StyledLink,
+  StyledLogo,
   ThemeSwitcherMoon,
   ThemeSwitcherSun
 } from './styles';
@@ -19,13 +21,20 @@ type NavBarProps = {
 
 const NavBar: React.FC<NavBarProps> = ({ toggleTheme }) => {
   const { title } = useContext(ThemeContext);
-
   const { translate } = useTranslation();
 
   return (
     <ContainerNav>
       <Link href="/" passHref>
-        <LogoStyledLink>{siteConfig.site_name}</LogoStyledLink>
+        <StyledLogo>
+          {/* <LogoStyledImg
+            src={siteConfig.site_logo}
+            alt={siteConfig.site_name}
+          /> */}
+          <LogoStyledLink>
+            &lt;{siteConfig.site_name.replace(' ', '').toLowerCase()}/&gt;
+          </LogoStyledLink>
+        </StyledLogo>
       </Link>
       <NavWrapper>
         <Link href="/blog" passHref>
