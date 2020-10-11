@@ -8,6 +8,7 @@ Project Description
 
 ### In Progress
 
+- [ ] rename repo and deployed projects  
 
 ### Done ✓
 
