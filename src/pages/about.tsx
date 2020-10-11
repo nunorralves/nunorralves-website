@@ -92,7 +92,13 @@ const About: React.FC = () => {
         ) : (
           <>
             <StyledH1>{translate('about')}</StyledH1>
-            <StyledP>{translate('about_description')}</StyledP>
+            <StyledTextDiv>
+              {translate('about_description')
+                .split('\n')
+                .map((item, i) => (
+                  <StyledP key={i}>{item}</StyledP>
+                ))}
+            </StyledTextDiv>
             <StyledH1 style={{ marginTop: '3rem' }}>
               {translate('contact_me')}
             </StyledH1>
@@ -123,9 +129,14 @@ const StyledH1 = styled.h1`
   font-weight: 600;
 `;
 
+const StyledTextDiv = styled.div`
+  color: ${props => props.theme.colors.textPrimary};
+  text-align: justify;
+`;
+
 const StyledP = styled.p`
   line-height: 1.25;
-  color: ${props => props.theme.colors.textPrimary};
+  margin-bottom: 2rem;
 `;
 
 const StyledSuccess = styled.p`

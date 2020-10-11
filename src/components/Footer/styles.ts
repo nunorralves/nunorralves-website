@@ -13,7 +13,7 @@ export const FooterContainer = styled.footer`
 
 export const SocialMedia = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 32px);
+  grid-template-columns: repeat(3, 32px);
   grid-gap: 10px;
   margin-bottom: 1rem;
 `;

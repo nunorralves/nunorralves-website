@@ -37,7 +37,13 @@ const Blog: React.FC = () => {
       />
       <section>
         <StyledH1>{translate('blog')}</StyledH1>
-        <StyledP>{translate('blog_description')}</StyledP>
+        <StyledTextDiv>
+          {translate('blog_description')
+            .split('\n')
+            .map((item, i) => (
+              <StyledP key={i}>{item}</StyledP>
+            ))}
+        </StyledTextDiv>
         <StyledInput
           aria-label="Search articles"
           type="text"
@@ -62,9 +68,14 @@ const StyledH1 = styled.h1`
   font-weight: 600;
 `;
 
+const StyledTextDiv = styled.div`
+  color: ${props => props.theme.colors.textPrimary};
+  text-align: justify;
+`;
+
 const StyledP = styled.p`
   line-height: 1.25;
-  color: ${props => props.theme.colors.textPrimary};
+  margin-bottom: 1rem;
 `;
 
 const StyledInput = styled.input`
