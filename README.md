@@ -7,7 +7,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/nunorralves/nunorralves-website)
 ![GPLv3 license](https://img.shields.io/github/license/nunorralves/nunorralves-website)
 
-My Personal Website and Blog, showcasing my latest work and content about SW Development, Tutorials, Snippets and Hints, Management, Electronics, IOT and some others that might be interesting to share.
+My Personal Website and Blog, showcasing my latest work and content about SW Development, Tutorials, Programming Tips, Management, Electronics, IOT and some others that might be interesting to share.
 
 ## Prerequisites
 

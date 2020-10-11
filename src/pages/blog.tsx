@@ -44,15 +44,12 @@ const Blog: React.FC = () => {
           onChange={e => setSearchValue(e.target.value)}
           placeholder={translate('blog_search_placeholder')}
         />
-        {/* <PostsList title={'Most Popular'} posts={mostPopular(allPosts)} />
-      <br /> */}
-        {(!filteredBlogPosts.length && 'No posts found.') ||
-          (filteredBlogPosts.length && (
-            <PostsList
-              title={translate('all_posts')}
-              postsMetadata={filteredBlogPosts}
-            />
-          ))}
+        {filteredBlogPosts && (
+          <PostsList
+            title={translate('all_posts')}
+            postsMetadata={filteredBlogPosts}
+          />
+        )}
       </section>
     </>
   );

@@ -2,20 +2,21 @@ export const LangContent = {
   en: {
     en: 'English',
     pt: 'Portuguese',
-    site_description: 'My Site Description',
+    site_description:
+      'My Personal Website and Blog, showcasing my latest work and content about SW Development, Tutorials, Programming Tips, Management, Electronics, IOT and some others that might be interesting to share.',
     blog: 'Blog',
     blog_page_title: 'Blog',
     blog_page_description:
-      'Articles about software, tutorials, programming tips, tech',
+      'Articles about software, tutorials, programming tips, management, electronics, IOT and some others that might be interesting to share',
     about: 'About',
     about_page_title: 'About Me',
     about_page_description: 'Some words about me and contact form',
-    hero_name: 'John Doe',
+    hero_name: 'Nuno Alves',
     hero_name_role: 'FullStack Developer & Engineering Manager',
     hero_name_description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. At repudiandae id repellendus maxime architecto inventore esse rerum nobis, consectetur, laborum veniam neque, deleniti obcaecati doloremque amet temporibus magni et quod.',
     blog_description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque atexplicabo quia odit. Numquam nemo qui cupiditate.',
+      'Articles about software, tutorials, programming tips, management, electronics, IOT and some others that might be interesting to share',
     blog_search_placeholder: 'Search articles by title, excerpt or tag',
     copyright: 'All rights reserved',
     no_posts_found: 'No posts found.',
@@ -48,21 +49,22 @@ export const LangContent = {
   pt: {
     en: 'Inglês',
     pt: 'Português',
-    site_description: 'Descrição Site',
+    site_description:
+      'My Personal Website and Blog, showcasing my latest work and content about SW Development, Tutorials, Programming Tips, Management, Electronics, IOT and some others that might be interesting to share.',
     blog: 'Blog',
     blog_page_title: 'Blog',
     blog_page_description:
-      'Artigos sobre software, tutoriais, dicas programação, tecnologia',
-    about: 'Acerca',
-    about_page_title: 'Acerca de mim',
+      'Artigos sobre software, tutoriais, dicas de programação, gestão, electrónica, IOT e alguns outros que podem ter interesse partilhar',
+    about: 'Sobre',
+    about_page_title: 'Sobre mim',
     about_page_description:
       'Algumas palavras sobre mim e formulário de contacto',
-    hero_name: 'John Doe',
+    hero_name: 'Nuno Alves',
     hero_name_role: 'FullStack Developer & Engineering Manager',
     hero_name_description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. At repudiandae id repellendus maxime architecto inventore esse rerum nobis, consectetur, laborum veniam neque, deleniti obcaecati doloremque amet temporibus magni et quod.',
     blog_description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque atexplicabo quia odit. Numquam nemo qui cupiditate.',
+      'Artigos sobre software, tutoriais, dicas de programação, gestão, electrónica, IOT e alguns outros que podem ter interesse partilhar',
     blog_search_placeholder: 'Procurar artigos por titulo, descrição ou tags',
     copyright: 'Todos os direitos reservados',
     no_posts_found: 'Não foram encontrados artigos.',

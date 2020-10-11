@@ -4,8 +4,8 @@ import {
   Github,
   Linkedin,
   SocialMedia,
-  Twitter,
-  Youtube
+  Twitter
+  // Youtube
 } from './styles';
 import siteConfig from '../../../site.config';
 import useTranslation from '../../intl/useTranslation';
@@ -25,9 +25,9 @@ export const Footer: React.FC = () => {
         <StyledLink target="_blank" href={siteConfig.twitter}>
           <Twitter />
         </StyledLink>
-        <StyledLink target="_blank" href={siteConfig.youtube}>
+        {/* <StyledLink target="_blank" href={siteConfig.youtube}>
           <Youtube />
-        </StyledLink>
+        </StyledLink> */}
       </SocialMedia>
       <p>
         &#169;{siteConfig.site_year} {siteConfig.site_name} -{' '}
