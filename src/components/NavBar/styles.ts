@@ -17,11 +17,15 @@ export const ContainerNav = styled.nav`
   }
 `;
 
-export const StyledLogo = styled.div``;
+export const StyledLogo = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 export const LogoStyledImg = styled.img`
   width: 32px;
   height: 32px;
+  align-self: center;
 `;
 
 export const LogoStyledLink = styled.a`
