@@ -1,7 +1,7 @@
 export default {
   url: process.env.PUBLIC_URL,
   title: 'Nuno Alves',
-  image: process.env.PUBLIC_URL + '/favicons/android-chrome-192x192.png',
+  image: process.env.PUBLIC_URL + '/images/siteimage.png',
   default_publisher_logo: '',
   default_locale: 'en_US',
   site_year: '2020',
