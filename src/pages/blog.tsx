@@ -14,15 +14,17 @@ const Blog: React.FC = () => {
   const DESCRIPTION = `${translate('blog_page_description')}`;
   const [searchvalue, setSearchValue] = useState('');
 
-  const filteredBlogPosts = blogPosts
-    .filter(post => post.slug !== 'empty') // To remove empty/dummy required to have blogPost defined
-    .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
-    .filter(
-      post =>
-        post.title.toLowerCase().includes(searchvalue) ||
-        post.excerpt.toLowerCase().includes(searchvalue) ||
-        post.tags.toString().toLowerCase().includes(searchvalue)
-    );
+  const filteredBlogPosts =
+    blogPosts &&
+    blogPosts
+      .filter(post => post.slug !== 'empty') // To remove empty/dummy required to have blogPost defined
+      .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
+      .filter(
+        post =>
+          post.title.toLowerCase().includes(searchvalue) ||
+          post.excerpt.toLowerCase().includes(searchvalue) ||
+          post.tags.toString().toLowerCase().includes(searchvalue)
+      );
 
   const handleOnSearch = e => {
     e.preventDefault();
