@@ -1,7 +1,7 @@
 export default {
-  url: process.env.PUBLIC_URL,
+  url: process.env.NEXT_PUBLIC_PUBLIC_URL,
   title: 'Nuno Alves',
-  image: process.env.PUBLIC_URL + '/images/siteimage.png',
+  image: process.env.NEXT_PUBLIC_PUBLIC_URL + '/images/siteimage.png',
   default_publisher_logo: '',
   default_locale: 'en_US',
   site_year: '2020',
