@@ -26,6 +26,8 @@ const Blog: React.FC = () => {
           post.tags.toString().toLowerCase().includes(searchvalue)
       );
 
+  const tags = blogPosts && blogPosts.map(bp => bp.tags);
+
   const handleOnSearch = e => {
     e.preventDefault();
 
@@ -44,6 +46,12 @@ const Blog: React.FC = () => {
         title={TITLE}
         description={DESCRIPTION}
         canonical={URL}
+        additionalMetaTags={[
+          {
+            property: 'tags',
+            content: tags.toString()
+          }
+        ]}
         openGraph={{
           url: URL,
           title: TITLE,

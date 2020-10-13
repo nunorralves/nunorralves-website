@@ -8,7 +8,8 @@ const BlogSeo: React.FC<PostMetadata> = ({
   date,
   slug,
   coverImage,
-  author
+  author,
+  tags
 }) => {
   const dateISO = date ? new Date(date).toISOString() : '';
   const blogUrl = `${siteConfig.url}/${slug}`;
@@ -23,10 +24,18 @@ const BlogSeo: React.FC<PostMetadata> = ({
         title={title}
         description={excerpt}
         canonical={blogUrl}
+        additionalMetaTags={[
+          {
+            property: 'tags',
+            content: tags.toString()
+          }
+        ]}
         openGraph={{
           type: 'article',
           article: {
-            publishedTime: dateISO
+            publishedTime: dateISO,
+            authors: [author],
+            tags: tags
           },
           url: blogUrl,
           title,
