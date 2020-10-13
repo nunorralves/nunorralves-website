@@ -27,7 +27,7 @@ const BlogSeo: React.FC<PostMetadata> = ({
         additionalMetaTags={[
           {
             property: 'tags',
-            content: tags.toString()
+            content: tags?.toString()
           }
         ]}
         openGraph={{
