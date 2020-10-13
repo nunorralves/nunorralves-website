@@ -1,33 +1,24 @@
 import { ContainerSpan } from './styles';
-import loadDb from '../../lib/db';
-import { useEffect, useState } from 'react';
 import useTranslation from '../../intl/useTranslation';
+import useSWR from 'swr';
 
 type LikesCounterProps = {
   id: string;
 };
 
 export const LikesCounter: React.FC<LikesCounterProps> = ({ id }) => {
-  const [likes, setLikes] = useState('');
   const { translate } = useTranslation();
 
-  useEffect(() => {
-    const onLikes = newLikes => setLikes(newLikes.val());
-    let db = null;
+  const fetcher = async url => {
+    const res = await fetch(url);
+    return res.json();
+  };
 
-    const fetchData = async () => {
-      db = await loadDb('likes');
-      db.child(id).on('value', onLikes);
-    };
-
-    fetchData();
-
-    return () => {
-      if (db) {
-        db.child(id).off('value', onLikes);
-      }
-    };
-  }, [id]);
+  const { data } = useSWR(`/api/page-likes?id=${id}`, fetcher, {
+    refreshInterval: 1
+  });
+  const likes = data?.total;
+  // console.log('PAGE LIKES:', id, likes);
 
   const likesStr = likes
     ? parseInt(likes) === 1

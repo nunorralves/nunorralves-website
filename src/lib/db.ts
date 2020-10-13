@@ -4,11 +4,13 @@ const DB = async (data: string): Promise<firebase.database.Reference> => {
   await import('firebase/database');
   let ref: firebase.database.Reference = null;
   try {
-    firebase.initializeApp({
-      databaseURL: process.env.FIREBASE_DATABASE_URL
-    });
-    // return firebase.database().ref('views');
-    ref = firebase.database().ref(data);
+    if (typeof window !== 'undefined' && !firebase.apps.length) {
+      firebase.initializeApp({
+        databaseURL: process.env.FIREBASE_DATABASE_URL
+      });
+      // ref = firebase.database().ref('views');
+      ref = firebase.database().ref(data);
+    }
   } catch (error) {
     /*
      * We skip the "already exists" message which is
