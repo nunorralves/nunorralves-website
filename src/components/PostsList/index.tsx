@@ -5,11 +5,13 @@ import { PostMetadata } from '../../types/PostMetadata';
 
 type PostsListProps = {
   title: string;
+  subTitle: string;
   postsMetadata: PostMetadata[];
 };
 
 export const PostsList: React.FC<PostsListProps> = ({
   title,
+  subTitle,
   postsMetadata
 }) => {
   const { translate } = useTranslation();
@@ -17,6 +19,7 @@ export const PostsList: React.FC<PostsListProps> = ({
   return (
     <ContainerSection>
       <h2>{title}</h2>
+      <h5>{subTitle}</h5>
       {(!postsMetadata || !postsMetadata.length) && translate('no_posts_found')}
       {postsMetadata &&
         postsMetadata.map(postMetadata => (
