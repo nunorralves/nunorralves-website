@@ -31,12 +31,7 @@ type BlogPostProps = {
 };
 
 const POST_BASE_URL = siteConfig.url + '/blog';
-console.log(
-  'POST_BASE_URL:',
-  POST_BASE_URL,
-  siteConfig.url,
-  process.env.NEXT_PUBLIC_PUBLIC_URL
-);
+
 export const BlogPost: React.FC<BlogPostProps> = ({
   postMetadata,
   postContent
