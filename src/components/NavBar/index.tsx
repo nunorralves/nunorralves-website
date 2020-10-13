@@ -26,15 +26,15 @@ const NavBar: React.FC<NavBarProps> = ({ toggleTheme }) => {
   return (
     <ContainerNav>
       <Link href="/" passHref>
-        <StyledLogo>
-          <LogoStyledImg
-            src={siteConfig.site_logo}
-            alt={siteConfig.site_name}
-          />
-          <LogoStyledLink>
+        <LogoStyledLink>
+          <StyledLogo>
+            <LogoStyledImg
+              src={siteConfig.site_logo}
+              alt={siteConfig.site_name}
+            />
             {siteConfig.site_name.replace(' ', '').toLowerCase()}
-          </LogoStyledLink>
-        </StyledLogo>
+          </StyledLogo>
+        </LogoStyledLink>
       </Link>
       <NavWrapper>
         <Link href="/blog" passHref>
