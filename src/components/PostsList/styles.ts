@@ -9,6 +9,9 @@ export const ContainerSection = styled.section`
     font-weight: 600;
     margin: 0;
   }
+  h5 {
+    font-weight: 400;
+  }
 `;
 
 export const StyledLink = styled.a`
