@@ -28,7 +28,7 @@ export const PostSummary: React.FC<PostSummaryProps> = ({ postMetadata }) => {
     readingTime,
     tags
   } = postMetadata;
-  const { translate, locale } = useTranslation();
+  const { translate } = useTranslation();
 
   return (
     <Container>

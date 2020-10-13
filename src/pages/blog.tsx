@@ -5,7 +5,7 @@ import { useState } from 'react';
 import useTranslation from '../intl/useTranslation';
 import { NextSeo } from 'next-seo';
 import siteConfig from '../../site.config';
-import * as gtag from '../lib/gtag';
+// import * as gtag from '../lib/gtag';
 
 const Blog: React.FC = () => {
   const { translate } = useTranslation();
@@ -14,26 +14,29 @@ const Blog: React.FC = () => {
   const DESCRIPTION = `${translate('blog_page_description')}`;
   const [searchvalue, setSearchValue] = useState('');
 
-  const filteredBlogPosts = blogPosts
-    .filter(post => post.slug !== 'empty') // To remove empty/dummy required to have blogPost defined
-    .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
-    .filter(
-      post =>
-        post.title.toLowerCase().includes(searchvalue) ||
-        post.excerpt.toLowerCase().includes(searchvalue) ||
-        post.tags.toString().toLowerCase().includes(searchvalue)
-    );
+  const filteredBlogPosts =
+    blogPosts &&
+    blogPosts
+      .filter(post => post.slug !== 'empty') // To remove empty/dummy required to have blogPost defined
+      .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
+      .filter(
+        post =>
+          post.title.toLowerCase().includes(searchvalue) ||
+          post.excerpt.toLowerCase().includes(searchvalue) ||
+          post.tags.toString().toLowerCase().includes(searchvalue)
+      );
+
+  const tags = blogPosts && blogPosts.map(bp => bp.tags);
 
   const handleOnSearch = e => {
     e.preventDefault();
 
-    gtag.event({
-      action: 'Search_Blog',
-      category: 'Search',
-      label: e.target.value,
-      value: 0
-    });
-
+    // gtag.event({
+    //   action: 'Search_Blog',
+    //   category: 'Search',
+    //   label: e.target.value,
+    //   value: 0
+    // });
     setSearchValue(e.target.value);
   };
 
@@ -43,6 +46,12 @@ const Blog: React.FC = () => {
         title={TITLE}
         description={DESCRIPTION}
         canonical={URL}
+        additionalMetaTags={[
+          {
+            property: 'tags',
+            content: tags.toString()
+          }
+        ]}
         openGraph={{
           url: URL,
           title: TITLE,

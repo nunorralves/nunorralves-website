@@ -16,10 +16,10 @@ export const LikeButton: React.FC<LikesProps> = ({ id }) => {
       fetch(`/api/decrement-likes?id=${encodeURIComponent(id)}`);
 
       gtag.event({
-        action: 'Like_Button',
-        category: 'Add_Like',
+        action: 'Remove_Like',
+        category: 'LikePage',
         label: encodeURIComponent(id),
-        value: 0
+        value: 1
       });
 
       setLiked('');
@@ -27,10 +27,10 @@ export const LikeButton: React.FC<LikesProps> = ({ id }) => {
       fetch(`/api/increment-likes?id=${encodeURIComponent(id)}`);
 
       gtag.event({
-        action: 'Like_Button',
-        category: 'Remove_Like',
+        action: 'Add_Like',
+        category: 'LikePage',
         label: encodeURIComponent(id),
-        value: 0
+        value: 1
       });
       setLiked('like');
     }

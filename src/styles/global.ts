@@ -16,7 +16,7 @@ html{
   min-height: 100vh;
 }
 
-body, button, input{
+body, button, input, textarea{
   font: ${props => props.theme.font.defaultWeight} ${props =>
   props.theme.font.defaultSize} ${props => props.theme.font.default};
 }

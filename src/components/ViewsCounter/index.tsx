@@ -1,40 +1,24 @@
 import { ContainerSpan } from './styles';
-import loadDb from '../../lib/db';
-import { useEffect, useState } from 'react';
 import useTranslation from '../../intl/useTranslation';
+import useSWR from 'swr';
 
 type ViewsCounterProps = {
   id: string;
 };
 
 export const ViewsCounter: React.FC<ViewsCounterProps> = ({ id }) => {
-  const [views, setViews] = useState('');
   const { translate } = useTranslation();
 
-  useEffect(() => {
-    const onViews = newViews => setViews(newViews.val());
-    let db = null;
+  const fetcher = async url => {
+    const res = await fetch(url);
+    return res.json();
+  };
 
-    const fetchData = async () => {
-      db = await loadDb('views');
-      db.child(id).on('value', onViews);
-    };
-
-    fetchData();
-    //   const registerView = () =>
-    //     fetch(`/api/increment-views?id=${encodeURIComponent(id)}`);
-
-    //   if (increment) {
-    //     registerView();
-    //   }
-    //   fetchData();
-
-    return () => {
-      if (db) {
-        db.child(id).off('value', onViews);
-      }
-    };
-  }, [id]);
+  const { data } = useSWR(`/api/page-views?id=${id}`, fetcher, {
+    refreshInterval: 1
+  });
+  const views = data?.total;
+  // console.log('PAGE VIEWS:', id, views);
 
   const viewsStr = views
     ? parseInt(views) === 1
