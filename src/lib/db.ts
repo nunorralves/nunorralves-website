@@ -6,7 +6,7 @@ const DB = async (data: string): Promise<firebase.database.Reference> => {
   try {
     if (typeof window !== 'undefined' && !firebase.apps.length) {
       firebase.initializeApp({
-        databaseURL: process.env.FIREBASE_DATABASE_URL
+        databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL
       });
       // ref = firebase.database().ref('views');
       ref = firebase.database().ref(data);
