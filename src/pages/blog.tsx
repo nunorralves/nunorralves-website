@@ -25,6 +25,7 @@ const Blog: React.FC = () => {
           post.excerpt.toLowerCase().includes(searchvalue) ||
           post.tags.toString().toLowerCase().includes(searchvalue)
       );
+  const numPosts = filteredBlogPosts.length;
 
   const tags = blogPosts && blogPosts.map(bp => bp.tags);
 
@@ -76,6 +77,11 @@ const Blog: React.FC = () => {
         {filteredBlogPosts && (
           <PostsList
             title={translate('all_posts')}
+            subTitle={
+              numPosts > 0
+                ? `${numPosts} ${translate('articles')} ${translate('found')}`
+                : ''
+            }
             postsMetadata={filteredBlogPosts}
           />
         )}
