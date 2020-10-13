@@ -26,6 +26,7 @@ export const LogoStyledImg = styled.img`
   width: 32px;
   height: 32px;
   align-self: center;
+  margin-right: 5px;
 `;
 
 export const LogoStyledLink = styled.a`
@@ -33,7 +34,7 @@ export const LogoStyledLink = styled.a`
   letter-spacing: 0.15rem;
   font-weight: 600;
   text-decoration: none;
-  margin-left: 5px;
+
   color: ${props => props.theme.colors.textPrimary};
 
   &:hover {
