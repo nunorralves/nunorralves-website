@@ -5,7 +5,7 @@ import { useState } from 'react';
 import useTranslation from '../intl/useTranslation';
 import { NextSeo } from 'next-seo';
 import siteConfig from '../../site.config';
-import * as gtag from '../lib/gtag';
+// import * as gtag from '../lib/gtag';
 
 const Blog: React.FC = () => {
   const { translate } = useTranslation();
@@ -29,13 +29,12 @@ const Blog: React.FC = () => {
   const handleOnSearch = e => {
     e.preventDefault();
 
-    gtag.event({
-      action: 'Search_Blog',
-      category: 'Search',
-      label: e.target.value,
-      value: 0
-    });
-
+    // gtag.event({
+    //   action: 'Search_Blog',
+    //   category: 'Search',
+    //   label: e.target.value,
+    //   value: 0
+    // });
     setSearchValue(e.target.value);
   };
 

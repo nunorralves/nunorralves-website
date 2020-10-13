@@ -29,9 +29,9 @@ const About: React.FC = () => {
     e.preventDefault();
 
     gtag.event({
-      action: 'submit_form',
-      category: 'Contact',
-      label: emailData.email,
+      action: 'Send_Mail',
+      category: 'AboutPage',
+      label: `${emailData.email} from ${emailData.from}`,
       value: 0
     });
 
