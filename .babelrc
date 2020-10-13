@@ -5,7 +5,7 @@
     [
       "babel-plugin-styled-components",
       {
-        "ssr": false, // false for dev (true)
+        "ssr": true, // false for dev (true)
         "displayName": true, // true for dev (false) - displayName: Add the style information to the class name
         "fileName": false, // fileName: Shows the name of the file containing the code
         "pure": true, // pure: Remove unused attributes
