@@ -17,7 +17,8 @@ const MDXComponents = {
   a: props => <StyledLink target="_blank" {...props} />,
   inlineCode: props => <code {...props} style={{ color: 'lightcoral' }} />,
   ul: props => <StyledUl {...props} />,
-  ol: props => <StyledOl {...props} />
+  ol: props => <StyledOl {...props} />,
+  pre: props => <pre style={{ width: '100%' }} {...props} />
 };
 
 export default MDXComponents;

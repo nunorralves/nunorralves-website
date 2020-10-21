@@ -27,15 +27,11 @@ const CodeBlock = ({ children, className }) => {
             marginTop: '1rem',
             marginBottom: '1rem',
             padding: '20px',
-            borderRadius: '6px'
+            borderRadius: '6px',
+            width: '100%'
           }}
         >
           {tokens.map((line, i) => (
-            // <div key={i} {...getLineProps({ line, key: i })}>
-            //   {line.map((token, key) => (
-            //     <span key={key} {...getTokenProps({ token, key })} />
-            //   ))}
-            // </div>
             <Line key={i} {...getLineProps({ line, key: i })}>
               {language === 'bash' ? null : <LineNo>{i + 1}</LineNo>}
               <LineContent>
