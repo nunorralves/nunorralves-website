@@ -15,8 +15,6 @@ const Index: React.FC = () => {
       .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
       .slice(0, 3);
 
-  const numPosts = filteredBlogPosts.length;
-
   const tags = blogPosts && blogPosts.map(bp => bp.tags);
 
   return (

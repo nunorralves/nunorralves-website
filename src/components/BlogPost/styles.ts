@@ -100,6 +100,12 @@ export const Tags = styled.div`
   }
 `;
 
+export const StyledContent = styled.div`
+  text-align: justify;
+  line-height: 1.7rem;
+  font-size: 1.1rem;
+`;
+
 export const SocialMedia = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 24px);
@@ -110,6 +116,7 @@ export const SocialMedia = styled.div`
 export const FeedbackLikes = styled.div`
   display: flex;
   flex-direction: row;
+  margin: 2rem 0;
 `;
 
 export const Like = styled(FcLike)`

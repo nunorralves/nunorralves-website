@@ -10,3 +10,30 @@ export const StyledH1 = styled.h1``;
 //   padding: 2px 6px;
 //   font-size: 0.9375em;
 // `;
+
+export const StyledLink = styled.a`
+  font-size: inherit;
+  color: ${props => props.theme.colors.textTertiary};
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+`;
+
+export const StyledUl = styled.ul`
+  list-style-position: inside;
+
+  > li > ul {
+    margin-left: 1rem;
+  }
+`;
+
+export const StyledOl = styled.ol`
+  list-style-position: inside;
+
+  > li > ul {
+    margin-left: 1rem;
+  }
+`;
