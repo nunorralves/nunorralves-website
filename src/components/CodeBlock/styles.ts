@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 
 export const Line = styled.div`
-  display: table-row;
+  display: flex;
+  flex-direction: row;
 `;
 
-export const LineNo = styled.span`
-  display: table-cell;
+export const LineNo = styled.div`
   text-align: right;
   padding-right: 1rem;
   user-select: none;
   opacity: 0.8;
 `;
 
-export const LineContent = styled.span`
-  display: table-cell;
+export const LineContent = styled.div`
+  width: 100%;
+
+  span {
+    white-space: pre-wrap;
+  }
 `;

@@ -13,7 +13,7 @@ module.exports = withMdxEnhanced({
   extendFrontMatter: {
     process: (mdxContent, frontMatter) => ({
       slug: createSlugFromFile(frontMatter),
-      readingTime: blogReadingTime(mdxContent)
+      readingTime: blogReadingTime(createSlugFromFile(frontMatter), mdxContent)
     }),
     phase: 'both'
   },

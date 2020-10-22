@@ -4,6 +4,7 @@ import {
   ContainerArticle,
   FeedbackLikes,
   SocialMedia,
+  StyledContent,
   SubTitle,
   SubTitleAuthor,
   SubTitleContainer,
@@ -101,7 +102,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({
       </SubTitle>
       <Tags>{tags && tags.map(tag => <Tag key={tag} tag={tag} />)}</Tags>
       <br />
-      {postContent}
+      <StyledContent>{postContent}</StyledContent>
       <br />
       <FeedbackLikes>
         <LikeButton id={slug} />

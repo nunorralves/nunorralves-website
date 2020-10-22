@@ -19,8 +19,8 @@ function isMobileOrTablet() {
   return false;
 }
 
-const shareOnWhatsapp = (ostBaseUrl, slug, post) => {
-  const url = `${ostBaseUrl}/${encodeURI(slug)}`;
+const shareOnWhatsapp = (hostBaseUrl, slug, post) => {
+  const url = `${hostBaseUrl}/${encodeURI(slug)}`;
   const title = encodeURI(post?.title);
   const shareUrl = `https://${
     isMobileOrTablet() ? 'api' : 'web'
@@ -39,7 +39,7 @@ export const ShareOnWhatsapp: React.FC<ShareOnWhatsappProps> = ({
     <Link href={shareOnWhatsapp(postBaseUrl, slug, postMetadata)} passHref>
       <StyledLink
         target="_blank"
-        ata-action="share/whatsapp/share"
+        data-action="share/whatsapp/share"
         title={translate('share_on') + ' WhatsApp'}
       >
         <Whatsapp />
