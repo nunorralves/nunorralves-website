@@ -9,13 +9,12 @@ const Index: React.FC = () => {
   const DESCRIPTION = `${translate('site_description')}`;
 
   const filteredBlogPosts =
-    blogPosts &&
     blogPosts
-      .filter(post => post.slug !== 'empty') // To remove empty/dummy required to have blogPost defined
+      ?.filter(post => post.slug !== 'empty') // To remove empty/dummy required to have blogPost defined
       .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
-      .slice(0, 3);
+      .slice(0, 3) ?? [];
 
-  const tags = blogPosts && blogPosts.map(bp => bp.tags);
+  const tags = blogPosts?.map(bp => bp.tags) ?? [];
 
   return (
     <>

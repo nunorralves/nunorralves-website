@@ -2,7 +2,7 @@
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/vsDark';
 // import theme from 'prism-react-renderer/themes/oceanicNext';
-import lightTheme from 'prism-react-renderer/themes/nightOwl';
+import lightTheme from 'prism-react-renderer/themes/github';
 import { Line, LineContent, LineNo } from './styles';
 import { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
@@ -11,6 +11,8 @@ const CodeBlock = ({ children, className }) => {
   const { title } = useContext(ThemeContext);
   const language = className.replace(/language-/, '');
 
+  // Override Prism github background color: default was #f6f8fa
+  lightTheme.plain.backgroundColor = '#f0f2f6';
   // console.log('==============', children, className, language);
   return (
     <Highlight

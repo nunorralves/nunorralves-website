@@ -1,24 +1,24 @@
 ---
-title: How To Create a Simple Blog with Next.JS and Markdown
+title: How To Create a Simple Blog with Next.js and Markdown
 language: en
 author: Nuno Alves
-excerpt: Lets create a simple blog listing and navigation using Next.JS and Markdown
+excerpt: Lets create a simple blog listing and navigation using Next.js and Markdown
 date: 2020-10-20
 coverImage: '/images/create-simple-blog-nextjs-markdown/cover.jpg'
 tags: ['nextjs', 'markdown']
 ---
 
-![Create Simple Blog with Next.JS and Markdown](/images/create-simple-blog-nextjs-markdown/cover.jpg)
+![Create Simple Blog with Next.js and Markdown](/images/create-simple-blog-nextjs-markdown/cover.jpg)
 
-In this short tutorial i will walk you through how you can create an easy and quick (very simple) blog website for publishing your articles using [Next.js](https://nextjs.org/) and [Markdown](https://en.wikipedia.org/wiki/Markdown).
+In this short tutorial i'll walk you through how you can create an easy and quick (very simple) blog website for publishing your articles using [Next.js](https://nextjs.org/) and [Markdown](https://en.wikipedia.org/wiki/Markdown).
 
 ## What is Next.js
 
-[Next.Js](https://nextjs.org/) is a production ready open source [React](https://reactjs.org/) framework that allows quick generation of both static and dynamic websites using [JAMstack](https://jamstack.org/). It provides functionalities like Pre-rendering, both SSG (Static Site Generation) and SSR (Server Side Rendering), hybrid SSG & SSR, Client-side routing, API routes, [TypeScript](https://www.typescriptlang.org/) support to name a few.
+[Next.js](https://nextjs.org/) is a production ready open source [React](https://reactjs.org/) framework that allows quick generation of both static and dynamic websites using [JAMstack](https://jamstack.org/). It provides functionalities like Pre-rendering, both SSG (Static Site Generation) and SSR (Server Side Rendering), hybrid SSG & SSR, Client-side routing, API routes, [TypeScript](https://www.typescriptlang.org/) support to name a few.
 
 ## What is Markdown
 
-[Markdown](https://en.wikipedia.org/wiki/Markdown) is a plain text formatting syntax, used to add formatting capabilities to plain text documents
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a plain text formatting syntax, used to add formatting capabilities to plain text documents.
 
 ## Creating Next.js project
 
@@ -46,17 +46,17 @@ And development server starts on port 3000 by default. Open [http://localhost:30
 
 ![Next.js Development Server Running](/images/create-simple-blog-nextjs-markdown/developmentserver.png)
 
-If you see previous window, the starter template page, it means everything went smoothly and we are ready to proceed!
+If you see the previous window, the starter template page, it means everything went smoothly and we are ready to proceed!
 
 ## Next.js Application folder structure
 
 ![Folder Structure](/images/create-simple-blog-nextjs-markdown/nextjsfolderstructure.png)
 
-You should have the above folder structure. I'll not enter into details about [Next.Js](https://nextjs.org/) folder structure and routing since it is not on the scope of this tutorial, but you can check the official documentation [here](https://nextjs.org/).
+You should have the above folder structure. I'll not enter into details about [Next.js](https://nextjs.org/) folder structure and routing since it is not on the scope of this tutorial, but you can check the official documentation [here](https://nextjs.org/).
 
 To keep the simplicity of this article and focus on what is presented, you can delete folders `styles` and `api` under `pages`.
 
-Also, delete first line of `_app.js`:
+Also, delete the first line of `_app.js`:
 
 ```js
 import '../styles/globals.css';
@@ -89,9 +89,9 @@ You should now see on [http://localhost:3000](http://localhost:3000):
 
 ![First Screen](/images/create-simple-blog-nextjs-markdown/app1screen.png)
 
-Let's now add a little bit of page customization using layouts, but first, let me briefly explain how [Data Fetching](https://nextjs.org/docs/basic-features/data-fetching) works on [Next.Js](https://nextjs.org/):
+Let's now add a little bit of page customization using layouts, but first, let me briefly explain how [Data Fetching](https://nextjs.org/docs/basic-features/data-fetching) works on [Next.js](https://nextjs.org/):
 
-As stated in the beggining of the article, we can have two types of pre-rendering, Static Generation or Server Side Rendering. Basically we have three methods for fetching data for pre-rendering:
+As stated in the beginning of the article, we can have two types of pre-rendering, Static Generation or Server Side Rendering. Basically we have three methods for fetching data for pre-rendering:
 
 - **_Static Generation using_**
   - getStaticProps: for fetching data at build time
@@ -99,7 +99,7 @@ As stated in the beggining of the article, we can have two types of pre-renderin
 - **_Server Side Rendering using_**
   - getServerSideProps: for fetching data on each request
 
-Let's then, using static generation strategy for our blog, inject previously defined site configurations into the page. Add the following code to `index.js`
+Let's then, using Static Generation strategy for our blog, inject previously defined site configurations into the page. Add the following code to `index.js`
 
 ```js
 const Index = ({ title, description, ...props }) => {
@@ -315,7 +315,6 @@ const Post = ({ title, frontmatter, markdownContent }) => {
 };
 
 export const getStaticProps = async ({ ...ctx }) => {
-  console.log("NAME:", ctx);
   const { slug } = ctx.params;
 
   const siteConfig = await import("../../site.config.json");
@@ -352,11 +351,11 @@ export default Post;
 
 ```
 
-In `getStaticProps` we retrieve information from `site.config.js` as we've done previously, but now, we also return metadata - using gray matter to parse it - and markdown data from our blog post markdown file.
+In `getStaticProps` we retrieve information from `site.config.js` as we've done previously, but now, we also return metadata - using gray-matter to parse it - and markdown data from our blog post markdown file.
 
-In `getStaticPaths` we define the list of paths that will be rendered at build time. We iterate over all files on `posts` folder, parse files names to define respective slugs and return path list based on those ones. We also set fallback to `false` so 404 is returned in case some page is not under this list.
+In `getStaticPaths` we define the list of paths that will be rendered at build time. We iterate over all files on `posts` folder, parse files names to define respective slugs and return a path list based on those ones. We also set fallback to `false` so 404 is returned in case some page is not under this list.
 
-Let's finnally create a markdown blog post!  
+Let's finally create a markdown blog post!  
 Create a file under `posts` folder and name it whatever you like, for example `myfirstpost.md`. Use markdown and add something like the following:
 
 ```markdown
@@ -467,5 +466,5 @@ Create just another markdown post to have more on the list. You should now have 
 ![Index List Screen](/images/create-simple-blog-nextjs-markdown/app6screen.png)
 
 And that's finally it! I will leave styling for another post.
-If you prefer you can also check or download source code [here](https://github.com/nunorralves/blog-examples-tutorials/tree/main/nextjs-markdown-blog).  
-If you like this post, click `Like` button below. You can also share your comments or suggestions with [me](/about)
+If you prefer you can also check or download source code from [my github](https://github.com/nunorralves/blog-examples-tutorials/tree/main/nextjs-markdown-blog).  
+If you like this post, click `Like` button below. You can also share your comments or suggestions with [me](/about).

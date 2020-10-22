@@ -1,5 +1,14 @@
-const blogReadingTime = (text = '') => {
-  const minutes = Math.ceil(text.split(/s/g).length / 250);
+const blogReadingTime = (slug, text = '') => {
+  const minutes = Math.ceil(text.split(' ').length / 200);
+  // console.log(
+  //   'SLUG // LENGHT:',
+  //   slug,
+  //   text.split(' '),
+  //   text.split(' ').length,
+  //   Math.ceil(text.split(' ').length),
+  //   Math.ceil(text.split(/s/g).length),
+  //   minutes
+  // );
   return minutes + ' min';
 };
 
