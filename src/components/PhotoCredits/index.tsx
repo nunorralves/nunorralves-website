@@ -1,4 +1,4 @@
-import { StyledBlockquote } from './styles';
+import { StyledBlockquote, StyledLink } from './styles';
 
 type PhotoCredits = {
   credits: { author: string; authorUrl: string; site: string; siteUrl: string };
@@ -10,8 +10,8 @@ const PhotoCredits: React.FC<PhotoCredits> = ({ credits }) => {
   return (
     <StyledBlockquote>
       <p>
-        photo by <a href={authorUrl}>{author}</a> on{' '}
-        <a href={siteUrl}>{site}</a>
+        photo by <StyledLink href={authorUrl}>{author}</StyledLink> on{' '}
+        <StyledLink href={siteUrl}>{site}</StyledLink>
       </p>
     </StyledBlockquote>
   );

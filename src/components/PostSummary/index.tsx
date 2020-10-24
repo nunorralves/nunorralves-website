@@ -6,6 +6,7 @@ import { ViewsCounter } from '../ViewsCounter';
 import {
   Container,
   StyledLink,
+  StyledP,
   Tags,
   Title,
   ViewsLikesContainer
@@ -48,7 +49,7 @@ export const PostSummary: React.FC<PostSummaryProps> = ({ postMetadata }) => {
           {translate('article_in')}&nbsp;{translate(language).toLowerCase()}
         </span>
       </h5>
-      <p>{excerpt}</p>
+      <StyledP>{excerpt}</StyledP>
       <Tags>{tags && tags.map(tag => <Tag key={tag} tag={tag} />)}</Tags>
     </Container>
   );

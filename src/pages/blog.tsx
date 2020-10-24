@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { frontMatter as blogPosts } from './blog/**/*.mdx';
-import { PostsList } from '../components/PostsList';
 import { useState } from 'react';
-import useTranslation from '../intl/useTranslation';
 import { NextSeo } from 'next-seo';
 import siteConfig from '../../site.config';
+import { frontMatter as blogPosts } from './blog/**/*.mdx';
+import { PostsList } from '../components/PostsList';
+import useTranslation from '../intl/useTranslation';
 
 const Blog: React.FC = () => {
   const { translate } = useTranslation();

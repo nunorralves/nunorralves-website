@@ -1,8 +1,8 @@
 import Hero from '../components/Hero';
+import { NextSeo } from 'next-seo';
 import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { PostsList } from '../components/PostsList';
 import useTranslation from '../intl/useTranslation';
-import { NextSeo } from 'next-seo';
 
 const Index: React.FC = () => {
   const { translate } = useTranslation();

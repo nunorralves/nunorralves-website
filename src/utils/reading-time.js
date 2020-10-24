@@ -1,5 +1,5 @@
 const blogReadingTime = (slug, text = '') => {
-  const minutes = Math.ceil(text.split(' ').length / 200);
+  const minutes = Math.ceil(text.split(' ').length / 230);
   // console.log(
   //   'SLUG // LENGHT:',
   //   slug,
