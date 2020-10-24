@@ -17,5 +17,6 @@ export const LineContent = styled.div`
 
   span {
     white-space: pre-wrap;
+    word-break: break-all;
   }
 `;
