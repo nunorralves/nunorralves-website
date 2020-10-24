@@ -60,3 +60,10 @@ export const ViewsLikesContainer = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+export const StyledP = styled.p`
+  color: ${props => props.theme.colors.textPrimary};
+  line-height: 1.5;
+  /* font-size: 1.5rem;
+  font-weight: 600; */
+`;

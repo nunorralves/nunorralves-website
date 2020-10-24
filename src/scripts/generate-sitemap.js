@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs');
 
 const globby = require('globby');
@@ -48,6 +49,5 @@ const prettier = require('prettier');
     parser: 'html'
   });
 
-  // eslint-disable-next-line no-sync
   fs.writeFileSync('public/sitemap.xml', formatted);
 })();
