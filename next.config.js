@@ -18,8 +18,27 @@ module.exports = withMdxEnhanced({
     phase: 'both'
   },
   reExportDataFetching: false
-})(
-  withImages({
+})({
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./src/scripts/generate-sitemap');
+    }
+
+    return config;
+  },
+  withImages: {
     esModule: true
-  })
-);
+  }
+});
+
+/*
+module.exports = {
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/generate-sitemap');
+    }
+
+    return config;
+  }
+};
+*/
