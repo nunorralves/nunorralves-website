@@ -10,8 +10,7 @@ const Index: React.FC = () => {
 
   const filteredBlogPosts =
     blogPosts
-      ?.filter(post => post.slug !== 'empty') // To remove empty/dummy required to have blogPost defined
-      .sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
+      ?.sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
       .slice(0, 3) ?? [];
 
   const tags = blogPosts?.map(bp => bp.tags) ?? [];
