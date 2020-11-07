@@ -100,7 +100,9 @@ export const BlogPost: React.FC<BlogPostProps> = ({
           </h4>
         </ViewsLikesContainer>
       </SubTitle>
-      <Tags>{tags && tags.map(tag => <Tag key={tag} tag={tag} />)}</Tags>
+      <Tags>
+        {tags && tags.reverse().map(tag => <Tag key={tag} tag={tag} />)}
+      </Tags>
       <br />
       <StyledContent>{postContent}</StyledContent>
       <br />
