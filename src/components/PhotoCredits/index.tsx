@@ -10,8 +10,14 @@ const PhotoCredits: React.FC<PhotoCredits> = ({ credits }) => {
   return (
     <StyledBlockquote>
       <p>
-        photo by <StyledLink href={authorUrl}>{author}</StyledLink> on{' '}
-        <StyledLink href={siteUrl}>{site}</StyledLink>
+        photo by{' '}
+        <StyledLink href={authorUrl} target="_blank">
+          {author}
+        </StyledLink>{' '}
+        on{' '}
+        <StyledLink href={siteUrl} target="_blank">
+          {site}
+        </StyledLink>
       </p>
     </StyledBlockquote>
   );
