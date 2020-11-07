@@ -19,6 +19,7 @@ export const ContainerArticle = styled.article`
     line-height: 1.25;
     font-weight: 400;
     margin-bottom: 1rem;
+    text-align: justify
   }
 
   h4,

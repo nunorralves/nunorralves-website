@@ -4,6 +4,7 @@ import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { PostsList } from '../components/PostsList';
 import useTranslation from '../intl/useTranslation';
 
+// Updated on 2020-11-02
 const Index: React.FC = () => {
   const { translate } = useTranslation();
   const DESCRIPTION = `${translate('site_description')}`;

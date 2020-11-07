@@ -6,6 +6,7 @@ import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { PostsList } from '../components/PostsList';
 import useTranslation from '../intl/useTranslation';
 
+// Updated on 2020-11-02
 const Blog: React.FC = () => {
   const { translate } = useTranslation();
   const URL = `${siteConfig.url}/blog`;
