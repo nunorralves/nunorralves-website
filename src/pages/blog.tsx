@@ -39,7 +39,7 @@ const Blog: React.FC = () => {
         canonical={URL}
         additionalMetaTags={[
           {
-            property: 'tags',
+            property: 'keywords',
             content: tags.toString()
           }
         ]}
