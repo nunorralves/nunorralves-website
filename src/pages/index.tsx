@@ -23,7 +23,7 @@ const Index: React.FC = () => {
         openGraph={{ description: DESCRIPTION }}
         additionalMetaTags={[
           {
-            property: 'tags',
+            property: 'keywords',
             content: tags.toString()
           }
         ]}
