@@ -11,7 +11,7 @@ export const LangContent = {
     about: 'About',
     // Home page
     hero_name: 'Nuno Alves',
-    hero_name_role: 'FullStack Developer & Engineering Manager',
+    hero_name_role: 'Engineering Manager & FullStack Developer',
     hero_name_description:
       'This website is place of my articles and notes about Software Development, Electronics and anything else i want to write about. You can read my blog, check my projects and learn more about me.',
     // Blog page
@@ -68,7 +68,7 @@ export const LangContent = {
     about: 'Sobre',
     // Home page
     hero_name: 'Nuno Alves',
-    hero_name_role: 'FullStack Developer & Engineering Manager',
+    hero_name_role: 'Engineering Manager & FullStack Developer',
     hero_name_description:
       'Este website é o lugar dos meus artigos e notas sobre Desenvolvimento de Software, Electrónica e outros assuntos sobre os quais eu queira escrever. Pode ler o meu blog, ver os meus projectos e aprender mais sobre mim.',
     // Blog page
