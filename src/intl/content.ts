@@ -40,7 +40,7 @@ export const LangContent = {
     latest_posts: 'Latest Posts',
     all_posts: 'All Posts',
     posted_by: 'Posted by',
-    articles: 'artcles',
+    articles: 'articles',
     found: 'found',
     on: 'on',
     view: 'view',
