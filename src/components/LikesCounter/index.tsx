@@ -14,9 +14,13 @@ export const LikesCounter: React.FC<LikesCounterProps> = ({ id }) => {
     return res.json();
   };
 
-  const { data } = useSWR(`/api/page-likes?id=${id}`, fetcher, {
-    refreshInterval: 1
-  });
+  const { data } = useSWR(
+    `/api/page-likes?id=${id}`,
+    fetcher
+    // , {
+    //   refreshInterval: 1
+    // }
+  );
   const likes = data?.total;
   // console.log('PAGE LIKES:', id, likes);
 
