@@ -34,8 +34,9 @@ export const PostsViewedList: React.FC<PostsListProps> = ({
       //   refreshInterval: 5
       // }
     );
-    // console.log('DATA FROM SRW: ', data?.total);
-    const views = data?.total;
+    const response = JSON.stringify(data);
+    // console.log('DATA FROM SRW: ', response);
+    const views = data ? JSON.parse(response).total : 0;
     if (postMeta.views !== views) {
       postMeta.views = views;
       setOrderedPosts(
