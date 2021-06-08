@@ -1,10 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import dbAdmin from '../../lib/db-admin';
+import { DataSnapshot } from 'firebase/database/dist/index.cjs';
 
 export default (
   req: NextApiRequest,
   res: NextApiResponse
-): Promise<void | firebase.database.DataSnapshot> => {
+): Promise<DataSnapshot> => {
   if (!req.query.id) {
     return dbAdmin.ref('views').once('value', snapshot => {
       const views = snapshot.val();

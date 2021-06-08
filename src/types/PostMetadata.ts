@@ -12,4 +12,6 @@ export type PostMetadata = {
   slug: string;
   readingTime: string;
   __resourcePath: string;
+  // Added Later
+  views: string;
 };

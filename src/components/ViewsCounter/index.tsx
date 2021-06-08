@@ -14,9 +14,13 @@ export const ViewsCounter: React.FC<ViewsCounterProps> = ({ id }) => {
     return res.json();
   };
 
-  const { data } = useSWR(`/api/page-views?id=${id}`, fetcher, {
-    refreshInterval: 1
-  });
+  const { data } = useSWR(
+    `/api/page-views?id=${id}`,
+    fetcher
+    // ,{
+    //   refreshInterval: 1
+    // }
+  );
   const views = data?.total;
   // console.log('PAGE VIEWS:', id, views);
 

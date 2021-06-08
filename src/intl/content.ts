@@ -38,6 +38,7 @@ export const LangContent = {
     // General
     no_posts_found: 'No posts found.',
     latest_posts: 'Latest Posts',
+    most_viewed_posts: 'More Popular Posts',
     all_posts: 'All Posts',
     posted_by: 'Posted by',
     articles: 'articles',
@@ -96,6 +97,7 @@ export const LangContent = {
     // General
     no_posts_found: 'Não foram encontrados artigos.',
     latest_posts: 'Últimos Artigos',
+    most_viewed_posts: 'Artigos Mais Populares',
     all_posts: 'Todos os Artigos',
     posted_by: 'Publicado por',
     articles: 'artigos',
