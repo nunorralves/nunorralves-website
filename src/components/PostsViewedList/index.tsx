@@ -1,5 +1,5 @@
 import { PostMetadata } from '../../types/PostMetadata';
-import { useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { PostsList } from '../PostsList';
 
 type PostsListProps = {
@@ -8,12 +8,12 @@ type PostsListProps = {
   postsMetadata: PostMetadata[];
 };
 
-export const PostsViewedList: React.FC<PostsListProps> = ({
+export default function PostsViewedList({
   title,
   subTitle,
   postsMetadata
-}) => {
-  const [updatedPosts, setUpdatedPosts] = useState([]);
+}: PostsListProps): ReactElement {
+  const [updatedPosts, setUpdatedPosts] = useState();
 
   const reorder = list => {
     const orderedPosts = list?.sort((post1, post2) =>
@@ -30,25 +30,30 @@ export const PostsViewedList: React.FC<PostsListProps> = ({
       ? 'http://localhost:3000'
       : '';
   // console.log('SERVER:', server);
-  postsMetadata.forEach(postMeta => {
-    fetch(`${server}/api/page-views?id=${postMeta.slug}`)
-      .then(response => response.json())
-      .then(data => {
-        if (postMeta.views !== data.total) {
+
+  useEffect(() => {
+    console.log('Use Effect');
+    postsMetadata.forEach(postMeta => {
+      fetch(`${server}/api/page-views?id=${postMeta.slug}`)
+        .then(response => response.json())
+        .then(data => {
           // console.log('VIEWS:', postMeta.slug, data.total);
           postMeta.views = data.total;
           reorder(postsMetadata);
-        }
-      });
-  });
+        });
+    });
+  }, []);
 
   return (
-    updatedPosts && (
-      <PostsList
-        title={title}
-        subTitle={subTitle}
-        postsMetadata={updatedPosts.slice(0, 3)}
-      />
-    )
+    <>
+      {console.log('UP:', updatedPosts, postsMetadata)}
+      {updatedPosts && (
+        <PostsList
+          title={title}
+          subTitle={subTitle}
+          postsMetadata={updatedPosts.slice(0, 3)}
+        />
+      )}
+    </>
   );
-};
+}

@@ -2,7 +2,7 @@ import Hero from '../components/Hero';
 import { NextSeo } from 'next-seo';
 import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { PostsList } from '../components/PostsList';
-import { PostsViewedList } from '../components/PostsViewedList';
+import PostsViewedList from '../components/PostsViewedList';
 import useTranslation from '../intl/useTranslation';
 
 // Updated on 2020-11-02
