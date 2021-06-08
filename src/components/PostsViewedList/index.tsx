@@ -10,7 +10,6 @@ type PostsListProps = {
   subTitle: string;
   postsMetadata: PostMetadata[];
 };
-
 const fetcher = url => {
   const res = fetch(url);
   return res;
@@ -35,6 +34,7 @@ export const PostsViewedList: React.FC<PostsListProps> = ({
       //   refreshInterval: 5
       // }
     );
+    // console.log('DATA FROM SRW: ', data?.total);
     const views = data?.total;
     if (postMeta.views !== views) {
       postMeta.views = views;
