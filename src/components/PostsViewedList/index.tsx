@@ -45,15 +45,12 @@ export default function PostsViewedList({
   }, []);
 
   return (
-    <>
-      {console.log('UP:', updatedPosts, postsMetadata)}
-      {updatedPosts && (
-        <PostsList
-          title={title}
-          subTitle={subTitle}
-          postsMetadata={updatedPosts.slice(0, 3)}
-        />
-      )}
-    </>
+    updatedPosts && (
+      <PostsList
+        title={title}
+        subTitle={subTitle}
+        postsMetadata={updatedPosts.slice(0, 3)}
+      />
+    )
   );
 }

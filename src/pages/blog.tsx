@@ -6,7 +6,7 @@ import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { PostsList } from '../components/PostsList';
 import useTranslation from '../intl/useTranslation';
 
-// Updated on 2020-11-02
+// Updated on 2021-06-08
 const Blog: React.FC = () => {
   const { translate } = useTranslation();
   const URL = `${siteConfig.url}/blog`;
@@ -15,6 +15,7 @@ const Blog: React.FC = () => {
   const [searchvalue, setSearchValue] = useState('');
 
   const filteredBlogPosts = blogPosts
+    .filter(post => post.status === 'published')
     ?.sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
     .filter(
       post =>
