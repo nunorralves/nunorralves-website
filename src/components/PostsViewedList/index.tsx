@@ -13,7 +13,7 @@ export default function PostsViewedList({
   subTitle,
   postsMetadata
 }: PostsListProps): ReactElement {
-  const [updatedPosts, setUpdatedPosts] = useState();
+  const [updatedPosts, setUpdatedPosts] = useState([]);
 
   const reorder = list => {
     const orderedPosts = list?.sort((post1, post2) =>
