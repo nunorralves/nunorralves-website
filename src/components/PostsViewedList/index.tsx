@@ -1,18 +1,11 @@
-import { PostSummary } from '../PostSummary';
-import { ContainerSection } from './styles';
-import useTranslation from '../../intl/useTranslation';
 import { PostMetadata } from '../../types/PostMetadata';
-import useSWR from 'swr';
 import { useState } from 'react';
+import { PostsList } from '../PostsList';
 
 type PostsListProps = {
   title: string;
   subTitle: string;
   postsMetadata: PostMetadata[];
-};
-const fetcher = url => {
-  const res = fetch(url);
-  return res;
 };
 
 export const PostsViewedList: React.FC<PostsListProps> = ({
@@ -20,46 +13,42 @@ export const PostsViewedList: React.FC<PostsListProps> = ({
   subTitle,
   postsMetadata
 }) => {
-  const { translate } = useTranslation();
-  const [orderedPosts, setOrderedPosts] = useState([]);
+  const [updatedPosts, setUpdatedPosts] = useState([]);
 
-  // console.log("META: ", postsMetadata)
-  postsMetadata.map(postMeta => {
-    // console.log("POST SLUG: ", postMeta.slug)
-    const { data } = useSWR(
-      `/api/page-views?id=${postMeta.slug}`,
-      fetcher
-      // ,
-      // {
-      //   refreshInterval: 5
-      // }
+  const reorder = list => {
+    const orderedPosts = list?.sort((post1, post2) =>
+      parseInt(post1?.views) >= parseInt(post2?.views) ? -1 : 1
     );
-    const response = JSON.stringify(data);
-    // console.log('DATA FROM SRW: ', response);
-    const views = data ? JSON.parse(response).total : 0;
-    if (postMeta.views !== views) {
-      postMeta.views = views;
-      setOrderedPosts(
-        postsMetadata?.sort((post1, post2) =>
-          parseInt(post1?.views) >= parseInt(post2?.views) ? -1 : 1
-        )
-      );
-    }
-    // console.log("POST VIEWS: ", postMeta.views)
+    // Make sure you are calling setUpdatedPosts() with a new array,
+    // not just an updated version of the existing datas array,
+    // it needs to be a new object reference
+    setUpdatedPosts([...orderedPosts]);
+  };
+
+  const server =
+    process.env.NEXT_PUBLIC_NODE_ENV == 'development'
+      ? 'http://localhost:3000'
+      : process.env.NEXT_PUBLIC_PUBLIC_URL;
+  console.log('SERVER:', server);
+  postsMetadata.forEach(postMeta => {
+    fetch(`${server}/api/page-views?id=${postMeta.slug}`)
+      .then(response => response.json())
+      .then(data => {
+        if (postMeta.views !== data.total) {
+          // console.log('VIEWS:', postMeta.slug, data.total);
+          postMeta.views = data.total;
+          reorder(postsMetadata);
+        }
+      });
   });
-  // console.log("VIEWS: ", postsMetadata)
 
   return (
-    <ContainerSection>
-      <h2>{title}</h2>
-      <h5>{subTitle}</h5>
-      {(!postsMetadata || !postsMetadata.length) && translate('no_posts_found')}
-      {orderedPosts &&
-        orderedPosts
-          .slice(0, 3)
-          .map(postMetadata => (
-            <PostSummary key={postMetadata.title} postMetadata={postMetadata} />
-          ))}
-    </ContainerSection>
+    updatedPosts && (
+      <PostsList
+        title={title}
+        subTitle={subTitle}
+        postsMetadata={updatedPosts.slice(0, 3)}
+      />
+    )
   );
 };
