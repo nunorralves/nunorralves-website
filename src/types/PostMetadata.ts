@@ -1,6 +1,7 @@
 export type PostMetadata = {
   layout?: string;
 
+  status: string;
   language: string;
   title: string;
   author: string;

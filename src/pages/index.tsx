@@ -5,13 +5,17 @@ import { PostsList } from '../components/PostsList';
 import PostsViewedList from '../components/PostsViewedList';
 import useTranslation from '../intl/useTranslation';
 
-// Updated on 2020-11-02
+// Updated on 2021-06-08
 const Index: React.FC = () => {
   const { translate } = useTranslation();
   const DESCRIPTION = `${translate('site_description')}`;
 
-  const filteredBlogPosts =
-    blogPosts
+  const publishedBlogPosts = blogPosts.filter(
+    post => post.status === 'published'
+  );
+
+  const latestBlogPosts =
+    publishedBlogPosts
       ?.sort((post1, post2) => (post1.date >= post2.date ? -1 : 1))
       .slice(0, 3) ?? [];
 
@@ -31,19 +35,19 @@ const Index: React.FC = () => {
       />
       <section>
         <Hero />
-        {blogPosts && (
+        {publishedBlogPosts && (
           <PostsViewedList
             title={translate('most_viewed_posts')}
             subTitle=""
-            postsMetadata={blogPosts}
+            postsMetadata={publishedBlogPosts}
           />
         )}
         <hr />
-        {filteredBlogPosts && (
+        {latestBlogPosts && (
           <PostsList
             title={translate('latest_posts')}
             subTitle=""
-            postsMetadata={filteredBlogPosts}
+            postsMetadata={latestBlogPosts}
           />
         )}
       </section>
