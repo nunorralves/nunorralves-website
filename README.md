@@ -1,3 +1,13 @@
+# ⚠️ This Repository is Archived
+
+> **Note**  
+> This project is no longer maintained. I have built a brand-new, updated version of my website for 2026.
+
+👉 **View the new repository here:** [://github.com](https://://github.com)  
+🌐 **Live Site:** [https://your-new-website.com](https://your-new-website.com)
+
+---
+
 # Nuno Alves Website
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/nunorralves/nunorralves-website)
