@@ -3,8 +3,8 @@
 > **Note**  
 > This project is no longer maintained. I have built a brand-new, updated version of my website for 2026.
 
-👉 **View the new repository here:** [://github.com](https://://github.com)  
-🌐 **Live Site:** [https://your-new-website.com](https://your-new-website.com)
+👉 **View the new repository here:** [nunorralves-website-2026](https://github.com/nunorralves/nunorralves-website-2026)
+🌐 **Live Site:** [https://your-new-website.com](https://www.nunorralves.pt/)]([https://your-new-website.com](https://www.nunorralves.pt/))
 
 ---
 
